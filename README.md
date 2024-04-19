@@ -57,3 +57,5 @@ Once your post is approved, it will be published on the blog.
 ## Review process
 
 When your pull request is submitted, a few checks will run automatically to validate the post syntax and metadata. You can see a preview of your post by clicking on the "Blog preview" link in the Checks section of the Pull Request page.
+
+![GitHub interface, showing the "Checks" section of the Pull Request page, and the "Blog preview" check details link](images/06_preview.png)
