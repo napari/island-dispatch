@@ -1,0 +1,34 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.5.0
+jobs:
+  build-blog:
+    docker:
+      - image: cimg/python:3.10.13
+    steps:
+      - checkout:
+          path: blog
+      - run:
+          name: Setup virtual environment
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            python -m pip install --upgrade pip
+            python -m pip install -r blog/requirements.txt
+
+      - run:
+          name: Build blog
+          command: |
+            . venv/bin/activate
+            sphinx-build blog/source blog/build
+      - store_artifacts:
+          path: blog/build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - blog/build
+workflows:
+  build-blog:
+    jobs:
+      - build-blog
