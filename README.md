@@ -4,6 +4,8 @@ A blog for napari-related news and announcements.
 
 To contribute a post, please submit a pull request to this repository with your post written in markdown format.
 
+If you need help, join us on [Zulip](https://napari.zulipchat.com)! 
+
 ## How to submit a post
 
 If you are familiar with the GitHub workflow, you can submit a post directly via pull request. If you prefer using the GitHub web interface, follow the steps below:
