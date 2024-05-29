@@ -1,4 +1,4 @@
-# napari blog
+# The Island Dispatch 🏝️
 
 Here's the napari community blog!
 
