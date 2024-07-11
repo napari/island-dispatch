@@ -45,4 +45,10 @@ html_theme_options = {
     "pygment_light_style": "napari",
     "pygment_dark_style": "napari",
     # "announcement": "https://napari.org/dev/_static/announcement.html",
+    "analytics": {
+        # The domain you'd like to use for this analytics instance
+        "plausible_analytics_domain": "napari.org",
+        # The analytics script that is served by Plausible
+        "plausible_analytics_url": "https://plausible.io/js/plausible.js",
+    },
 }
