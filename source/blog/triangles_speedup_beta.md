@@ -38,10 +38,12 @@ To help make it stable, you could test if it works for you. If not, we would be 
 
 ## How to test it
 
-If napari 0.4.6 is not released yet, you can install it from source:
+This feature requires napari in version at least 0.4.6. At moment of publishin this annoucement the firt pre-release of napri is avialable. 
+
+If napari 0.4.6 is not released yet, you can install pre-release:
 
 ```bash
-pip install git+https://github.com/napari/napari.git
+pip install --pre napari
 pip install PartSegCore-compiled-backend
 ``` 
 otherwise you can install it from pypi:
@@ -49,6 +51,7 @@ otherwise you can install it from pypi:
 ```bash
 pip install napari PartSegCore-compiled-backend
 ```
+
 
 Then open napari, and open the menu File → Preferences → Experimental and enable "Use compiled backend to speedup create/update of Shapes layer"
 (You don't need to restart napari, just create a new Shapes layer after toggling the setting.)
