@@ -38,7 +38,7 @@ To help make it stable, you could test if it works for you. If not, we would be 
 
 ## How to test it
 
-This feature requires napari in version at least 0.4.6. At moment of publishin this annoucement the firt pre-release of napri is avialable. 
+This feature requires napari in version at least 0.5.6. At moment of publishing this announcement, the first pre-release of napari 0.5.6 is available on PyPI. 
 
 If napari 0.4.6 is not released yet, you can install pre-release:
 
