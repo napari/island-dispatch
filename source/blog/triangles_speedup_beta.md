@@ -40,20 +40,20 @@ To help make it stable, you could test if it works for you. If not, we would be 
 
 This feature requires napari in version at least 0.5.6. At moment of publishing this announcement, the first pre-release of napari 0.5.6 is available on PyPI. 
 
-If napari 0.4.6 is not released yet, you can install pre-release:
+If napari 0.5.6 is not released yet, you can install the pre-release using `pip`:
 
 ```bash
-pip install --pre napari
+pip install --pre napari[optional,pyqt6]
 pip install PartSegCore-compiled-backend
 ``` 
 otherwise you can install it from pypi:
 
 ```bash
-pip install napari PartSegCore-compiled-backend
+pip install napari[optional,pyqt6] PartSegCore-compiled-backend
 ```
 
 
-Then open napari, and open the menu File → Preferences → Experimental and enable "Use compiled backend to speedup create/update of Shapes layer"
+Then open napari, and open the menu File → Preferences → Experimental and enable "Use compiled backend to speedup create/update of Shapes layer".
 (You don't need to restart napari, just create a new Shapes layer after toggling the setting.)
 ![Experimental settings](images/speedup_triangulate_shapes.png)
 
