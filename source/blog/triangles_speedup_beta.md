@@ -11,15 +11,14 @@ language: English
 
 We are excited to announce that significant performance improvements are coming to napari shapes layers. 
 
-Thanks to the [SpatialData](https://spatialdata.scverse.org/) community, which decided to sponsor this work, we were able to implement a faster algorithm for rendering triangles used for rendering geometries in a napari shapes layer.
+Thanks to the [SpatialData](https://spatialdata.scverse.org/) community (`SpatialData` is a framework for the representation of spatial multimodal data, developed by [scverse](https://scverse.org/)), which decided to sponsor this work, we were able to implement a faster algorithm for rendering triangles used for rendering geometries in a napari shapes layer.
 
 Before this change we were using Constrained Delaunay Triangulation ([1](https://doi.org/10.1007/BF01553881),[2](https://www.cs.jhu.edu/~misha/Spring16/Chew87.pdf)) to render triangles from [vispy](https://vispy.org/).
 
 This algorithm is iterative. As vispy is implemented in Python, it is not as fast as it could be. 
 
 
-We have tested the new implementation on a few example datasets of SpatialData, and we see a significant speedup. For example, for `cell_boundaries` from `xenium2.0.0_io` which contains 162k polygons,
-we observed that creation of the shapes layer drops from 3:52 (napari 0.4.19) to 0:20 on Ubuntu 20.04 with Intel Core i7-8700 CPU @ 3.20GHz.
+We have tested the new implementation on a few example datasets of SpatialData, and we see a significant speedup. For example, in this [Xenium Human Lung Cancer dataset from 10x Genomics](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard), which is available in the SpatialData Zarr format using [these script](https://github.com/giovp/spatialdata-sandbox/tree/main/xenium_2.0.0_io), the cell boundaries are stored as 162k polygons. When visualizing these polygons in napari, we observed that creation of the shapes layer drops from 3:52 (napari 0.4.19) to 0:20 on Ubuntu 20.04 with Intel Core i7-8700 CPU @ 3.20GHz.
 Most of the time of creating the shapes layer was spent on triangulation, which takes 2.5s with the latest changes.
 
 The speedup was achieved by implementing the sweeping line triangulation algorithm ([3](https://doi.org/10.1007/978-3-540-77974-2)) in a compiled language. For the initial prototype we choose C++. The algorithm will allow us in future to implement support of holes in polygons.
@@ -62,3 +61,7 @@ If you spot any issues you may report them on [napari zulip](https://napari.zuli
 
 
 Once we release the `bermuda` we will add proper installation instruction to this post.
+
+## Acknoledgments
+
+In addition to the SpatialData development team, we would like to express our gratitude to the Chan Zuckerberg Initiative for their generous support, as their funding enabled the SpatialData team to support the work presented here. We also acknowledge the [scverse team](https://scverse.org/), a consortium of open-source developers dedicated to single-cell omics.
