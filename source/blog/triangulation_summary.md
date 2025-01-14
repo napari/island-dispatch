@@ -12,7 +12,7 @@ With a big pleasure to SpatialData community whose decided to sponsor this work 
 
 This post is a summary and retrospection of this work.
 
-## List of PR and changes. 
+## List of PR with short summaries. 
 
 ### Napari:
 
@@ -22,7 +22,7 @@ This post is a summary and retrospection of this work.
 * [#7228](https://github.com/napari/napari/pull/7228) – fix for bug introduced in [#7214](https://github.com/napari/napari/pull/7214)
 * [#7256](https://github.com/napari/napari/pull/7256) – speed up checking if shape is convex 
 * [#7144](https://github.com/napari/napari/pull/7144) – speed up of calculation which shape is under mouse in shapes layer
-* [#7332](https://github.com/napari/napari/pull/7332) þ fix for bug introduced in [#7144](https://github.com/napari/napari/pull/7144) by increase bounding box of shape for checking if shape is under mouse
+* [#7332](https://github.com/napari/napari/pull/7332) – fix for bug introduced in [#7144](https://github.com/napari/napari/pull/7144) by increase bounding box of shape for checking if shape is under mouse
 * [#7386](https://github.com/napari/napari/pull/7386) – Reduce number of highlight events in shapes layer
 * [#7268](https://github.com/napari/napari/pull/7268) - speedup of triangulation of edges in shapes layer. Using numba.
 * [#7223](https://github.com/napari/napari/pull/7223) - fix performance issue of highlight shape in shapes layer
@@ -43,5 +43,39 @@ I have used my package for testing if the speedup will be significant.
 ### `bermuda`:
 
 After getting promising result we have decided to create a new package for compiled backend for napari.
+Initial test shows that Rust version is slightly faster, and more memory safety.
 
 * [#1](https://github.com/napari/bermuda/pull/1) – Implementation of edge triangulation in Rust in our new package for compiled backend
+
+
+## Retrospection 
+
+When we start talking with SpatialData community about sponsoring 
+work on speedup of Shapes layer the initial idea was to have single PR. 
+But after fast review of work range we have decided that it will be 
+much better to work on sequence of PRs. One of the benefits of this
+approach wast that users will get some speedup since napari in version 0.5.2. 
+
+Also total amount of changes was so big that it was hard to review. 
+
+Current work contain improvements in three areas:
+
+1. Speedup Checking layer state (move task to separate thread and speedup the code),
+2. Speedup highlight of shape under mouse,
+3. Speedup triangulation of edges and shapes,
+
+Two first made usage of napari with loaded shapes layer much more pleasant.
+The last one significantly speedup load of shapes layer.
+
+When support from SpatialData allow to spend multiple days to understand the source 
+of performance issues and fix them. However sometimes PRs stuck in review process.
+One of the reasons is that only one core-dev is funded to work on this task. 
+
+In this situation it not was a big problem, as there were multiple subtasks. 
+Also, there was assumption, that if some problem was not spotted in review,
+the author will fix it fast in next PR.
+
+Such assumptions may be not correct if external contributor will work on the task.
+In such situation project may require more time to review the PRs.
+
+## Results
