@@ -79,3 +79,60 @@ Such assumptions may be not correct if external contributor will work on the tas
 In such situation project may require more time to review the PRs.
 
 ## Results
+
+## Conclusions 
+
+When part of speedup is done by changing algorithm to more efficient one, 
+the other require to use compiled language, as available algorithms cannot be vectorized, so cannot 
+be implemented fast using numpy.
+
+### Numba 
+
+As numba compiles code written in pure python,
+then it is easier for napari core-devs to review the code.
+So it reduce maintenance cost of the code. 
+Sometimes numba code is more readable than pure python code, that is 
+using some numpy functions.
+
+However numba is JIT compiler that introduces some delay at first trigger in given session, even when use
+cache between runs.
+
+It shows tha try to implement sweeping line algorithm in numba was not successful because of compilation time.
+
+### C++ and Cython 
+
+For gluing C++ code with python we have used Cython. It provides 
+Python like code for writing Python API for C++ code.
+
+For example:
+
+```cython
+def is_convex(polygon: Sequence[Sequence[float]]) -> bool:
+    """ Check if polygon is convex"""
+    cdef vector[Point] polygon_vector
+    cdef pair[bool, vector[int]] result
+
+    polygon_vector.reserve(len(polygon))
+    for point in polygon:
+        polygon_vector.push_back(Point(point[0], point[1]))
+
+    return _is_convex(polygon_vector)
+```
+
+However for creating numpy array it call numpy API, that introduced performance overhead.
+Maybe the better solution could be use [pybind11](https://github.com/pybind/pybind11) 
+that offer c++ API for creating numpy array.
+
+The C++ code was much faster than numba one and allow to use Red - Black, that are required for triangulation of shapes. 
+
+### Rust
+
+During discussion with core-devs we found that we need to increase proficiency with 
+any compiled language to have maintenance capacity. 
+
+Based on successful stories from different projects we have decided to try Rust.
+When try it on edge triangulation it shows that Rust version is slightly faster than C++ one having memory safety.
+This change may be connected with mentioned above problem with array creation in Cython.
+But even same performance with memory safety is a big win.
+Especially when we meet memory problems in C++ code because of floating point errors.
+
