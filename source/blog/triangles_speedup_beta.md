@@ -36,8 +36,18 @@ rendering triangles used for rendering geometries in a napari shapes layer.
 data and part of the single-cell omics analysis suite
 [scverse](https://scverse.org/).)
 
-We have tested the new implementation on a few example datasets of SpatialData, and we see a significant speedup. For example, in this [Xenium Human Lung Cancer dataset from 10x Genomics](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard), which is available in the SpatialData Zarr format using [these script](https://github.com/giovp/spatialdata-sandbox/tree/main/xenium_2.0.0_io), the cell boundaries are stored as 162k polygons. When visualizing these polygons in napari, we observed that creation of the shapes layer drops from 3:52 (napari 0.4.19) to 0:20 on Ubuntu 20.04 with Intel Core i7-8700 CPU @ 3.20GHz.
-Most of the time of creating the shapes layer was spent on triangulation, which takes 2.5s with the latest changes.
+We have tested the new implementation on a few example datasets of SpatialData,
+and we see a significant speedup. For example, in this [Xenium Human Lung
+Cancer dataset from 10x
+Genomics](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard)
+(available in the SpatialData Zarr format using [these
+scripts](https://github.com/giovp/spatialdata-sandbox/tree/main/xenium_2.0.0_io)),
+the cell boundaries are stored as 162,000 polygons. When visualizing these
+polygons in napari, creation of the shapes layer drops from almost 4 minutes
+(napari 0.4.19) to just 20 seconds! (Ubuntu 20.04 with Intel Core i7-8700 CPU @
+3.20GHz)
+Most of the time creating a Shapes layer with so many shapes was spent on
+triangulation, which takes just 2.5s with our changes.
 
 The speedup was achieved by implementing the sweeping line triangulation algorithm ([3](https://doi.org/10.1007/978-3-540-77974-2)) in a compiled language. For the initial prototype we choose C++. The algorithm will allow us in future to implement support of holes in polygons.
 
