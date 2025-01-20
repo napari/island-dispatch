@@ -29,7 +29,12 @@ when creating Shapes layers with thousands to hundreds of thousands of shapes.
 can be used to speed things up, but because it uses a proprietary license, we
 cannot ship it by default and we cannot use it in the napari bundled app.)
 
-Thanks to the [SpatialData](https://spatialdata.scverse.org/) community (`SpatialData` is a framework for the representation of spatial multimodal data, developed by [scverse](https://scverse.org/)), which decided to sponsor this work, we were able to implement a faster algorithm for rendering triangles used for rendering geometries in a napari shapes layer.
+Thanks to the [SpatialData](https://spatialdata.scverse.org/) community, which
+decided to sponsor this work, we were able to implement a faster algorithm for
+rendering triangles used for rendering geometries in a napari shapes layer.
+(`SpatialData` is a framework for the representation of spatial multimodal
+data and part of the single-cell omics analysis suite
+[scverse](https://scverse.org/).)
 
 We have tested the new implementation on a few example datasets of SpatialData, and we see a significant speedup. For example, in this [Xenium Human Lung Cancer dataset from 10x Genomics](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard), which is available in the SpatialData Zarr format using [these script](https://github.com/giovp/spatialdata-sandbox/tree/main/xenium_2.0.0_io), the cell boundaries are stored as 162k polygons. When visualizing these polygons in napari, we observed that creation of the shapes layer drops from 3:52 (napari 0.4.19) to 0:20 on Ubuntu 20.04 with Intel Core i7-8700 CPU @ 3.20GHz.
 Most of the time of creating the shapes layer was spent on triangulation, which takes 2.5s with the latest changes.
