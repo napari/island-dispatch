@@ -59,15 +59,14 @@ For now, our fast triangulation is implemented in
 distributing for [PartSeg](https://partseg.github.io), which is the main
 software output of my PhD and the work that brought me to napari and eventually
 the napari core team.
+In the near future we plan to create the `bermuda` package (yes, because of the
+Bermuda triangle — and with thanks to [Aperio's](https://aperiosoftware.com)
+Thomas Robitaille a.k.a. astrofrog for the PyPI package name!), which will
+contain fast spatial algorithms for the napari Shapes layer and beyond.
+We plan to develop in Rust which [seems to give us even faster
+performance](https://github.com/napari/bermuda/pull/1) on top of better memory
+safety guarantees. Plus all those shipwrecks are probably pretty rusty!
 
-During testing we observed, that sometimes the algorithm crashes because of [floating point precision](https://learn.microsoft.com/en-us/cpp/build/why-floating-point-numbers-may-lose-precision?view=msvc-170). 
-In order to address this we require equivalent, but more floating point precision resistant solutions.
-
-In the future we plan to create the `bermuda` package (yes, because of the Bermuda triangle), that will contain the compiled backend for napari shapes layer.
-Some testing showed that the usage of rust may produce even faster code ([4](https://github.com/napari/bermuda/pull/1))
-
-
-It may happen that we did not find all bugs and problems with floating point calculations, so we are looking for beta testers.
 To help make it stable, you could test if it works for you. If not, we would be happy to get your feedback by reporting any problems in a [github issue](https://github.com/napari/napari/issues) or at a [napari community meeting](https://napari.org/dev/community/meeting_schedule.html). If you could provide us with a dataset that causes problems, it will be even better, as it allows us to add problematic cases to tests.
 
 
