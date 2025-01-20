@@ -89,7 +89,7 @@ this post.
 Since this code is experimental, we have made it opt-in in napari preferences
 to enable using it. To enable it, open napari, and open the menu File →
 Preferences, then open the Experimental tab and enable the checkbox for "Use
-C++ code to speedup creation and updates of Shapes layers".
+C++ code to speed up creation and updates of Shapes layers".
 
 ![Experimental settings](images/speedup_triangulate_shapes.png)
 
