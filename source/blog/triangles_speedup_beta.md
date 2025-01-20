@@ -32,7 +32,7 @@ cannot ship it by default and we cannot use it in the napari bundled app.)
 Thanks to the [SpatialData](https://spatialdata.scverse.org/) community, which
 decided to sponsor this work, we were able to implement a faster algorithm for
 rendering triangles used for rendering geometries in a napari shapes layer.
-(`SpatialData` is a framework for the representation of spatial multimodal
+(`SpatialData` is a framework for the representation of spatial multimodal omics
 data and part of the single-cell omics analysis suite
 [scverse](https://scverse.org/).)
 
