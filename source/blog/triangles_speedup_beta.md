@@ -62,6 +62,10 @@ If you spot any issues you may report them on [napari zulip](https://napari.zuli
 
 Once we release the `bermuda` we will add proper installation instruction to this post.
 
+## Editing layer
+
+Ths job not (yet) improve code responsible for slownes of editing Shapes layer with a huge number of polygons.
+
 ## Acknoledgments
 
 In addition to the SpatialData development team, we would like to express our gratitude to the Chan Zuckerberg Initiative for their generous support, as their funding enabled the SpatialData team to support the work presented here. We also acknowledge the [scverse team](https://scverse.org/), a consortium of open-source developers dedicated to single-cell omics.
