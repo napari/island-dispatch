@@ -1,9 +1,9 @@
 ---
 blogpost: true
-date: December 22, 2024
+date: Jan 20, 2025
 author: Grzegorz Bokota
 location: World
-category: Advertisement
+category: news, help-wanted
 language: English
 ---
 
