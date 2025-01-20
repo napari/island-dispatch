@@ -30,6 +30,7 @@ This post is a summary and retrospection of this work.
 * [#7470](https://github.com/napari/napari/pull/7470) – refactor of the shapes layer to reduce changes in [#7346](https://github.com/napari/napari/pull/7346)
 * [#7346](https://github.com/napari/napari/pull/7346) – Add c++ compiled backend for triangulation 
 * [#7512](https://github.com/napari/napari/pull/7512) – fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
+* [#7537](https://github.com/napari/napari/pull/7537) - fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
 
 
 ### `PartSegCore-compiled-backend`:
