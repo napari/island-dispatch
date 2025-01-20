@@ -143,6 +143,6 @@ chat room](https://napari.zulipchat.com) or come to a [meeting suitable for
 your time zone!](https://napari.org/stable/community/meeting_schedule.html#meeting-schedule)
 We'd love to hear from you.
 
-## Acknoledgments
+## Acknowledgments
 
 In addition to the SpatialData development team, we would like to express our gratitude to the Chan Zuckerberg Initiative for their generous support, as their funding enabled the SpatialData team to support the work presented here. We also acknowledge the [scverse team](https://scverse.org/), a consortium of open-source developers dedicated to single-cell omics.
