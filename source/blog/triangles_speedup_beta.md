@@ -54,7 +54,12 @@ We obtain this dramatic speedup through a combination of algorithmic changes
 [3](https://doi.org/10.1007/978-3-540-77974-2)) and code changes —
 implementing the algorithm in C++ instead of pure Python.
 
-The prototype is implemented in `PartSegCore-compiled-backend`, a package maintained by Grzegorz Bokota, a core developer of napari.
+For now, our fast triangulation is implemented in
+`PartSegCore-compiled-backend`, a compiled Python package I was already
+distributing for [PartSeg](https://partseg.github.io), which is the main
+software output of my PhD and the work that brought me to napari and eventually
+the napari core team.
+
 During testing we observed, that sometimes the algorithm crashes because of [floating point precision](https://learn.microsoft.com/en-us/cpp/build/why-floating-point-numbers-may-lose-precision?view=msvc-170). 
 In order to address this we require equivalent, but more floating point precision resistant solutions.
 
