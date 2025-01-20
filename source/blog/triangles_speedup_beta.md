@@ -9,7 +9,16 @@ language: English
 
 # Triangles Speedup – call for beta testers
 
-We are excited to announce that significant performance improvements are coming to napari shapes layers. 
+We are excited to announce that significant performance improvements are coming to napari Shapes layers.
+
+Shapes layers in napari represent 2D geometric objects, — rectangles, circles,
+polygons, paths… — possibly embedded in a higher-dimensional space, for
+example, 2D polygons of cell outlines within a 3D image stack.
+[Vispy](https://vispy.org), which powers napari's graphics, uses OpenGL to draw
+on the screen. The fundamental unit of OpenGL graphics is *triangles*, which
+can be put together to draw more complex shapes such as polygons. This means
+that we have a preproprocessing step in napari to break down input shapes into
+triangles. This step is called *triangulation*.
 
 Thanks to the [SpatialData](https://spatialdata.scverse.org/) community (`SpatialData` is a framework for the representation of spatial multimodal data, developed by [scverse](https://scverse.org/)), which decided to sponsor this work, we were able to implement a faster algorithm for rendering triangles used for rendering geometries in a napari shapes layer.
 
