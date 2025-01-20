@@ -106,13 +106,42 @@ meetings](https://napari.org/dev/community/meeting_schedule.html).
 
 ## Ongoing work
 
-During testing we observed, that sometimes the algorithm crashes because of
+During our own testing, we sometimes observed crashes because of
 [floating point precision](https://0.30000000000000004.com) issues.
-In order to address this we require equivalent, but more floating point precision resistant solutions.
+Although we've worked around those issues for now, it's possible more issues
+are lurking. Ultimately, we may need to move to algorithms resistant to
+floating point approximation errors, which are known as *numerically stable*
+methods.
 
-The algorithm will allow us in future to implement support of holes in polygons.
+This work has focused on the initial triangulation step in the construction of
+napari Shapes layers. We haven't (yet) updated the triangulation code when
+*editing* layers with hundreds of thousands of shapes. Currently, all triangles
+in a Shapes layer live in a single big NumPy array — which means that if we
+update a shape, the whole array needs to be recomputed! 😵 This is fine for
+small datasets but can result in freezes of several seconds when editing or
+adding shapes to a list of 100,000+. There's lots of ways around this but we
+have yet to implement any — so, unfortunately, performance issues while editing
+*may* not be improved by this work.
 
-Ths job not (yet) improve code responsible for slownes of editing Shapes layer with a huge number of polygons.
+napari has longstanding issues displaying polygons with holes in them. This
+work does not address them but opens the door to doing so very efficiently. If
+you've been waiting for that, stay tuned!
+
+Finally, as mentioned above, our immediate next step is to move the code to
+Rust in the [bermuda](https://github.com/napari/bermuda) package. We hope to
+make it a core dependency of napari sooner rather than later, which will open
+the door to *many* speedups in napari! 🚀 So look forward to that.
+
+## Call for help 2
+
+All this work is happening because Python (and Pythonic) libraries for spatial
+algorithms are pretty thin on the ground. We're also mostly noobs at Rust so if
+you are interested in fast spatial algorithms, Rust, and n-dimensional data
+visualization, we could use your help! Please have a look at our [Community
+page](https://napari.org/stable/community/index.html) and join us in our [Zulip
+chat room](https://napari.zulipchat.com) or come to a [meeting suitable for
+your time zone!](https://napari.org/stable/community/meeting_schedule.html#meeting-schedule)
+We'd love to hear from you.
 
 ## Acknoledgments
 
