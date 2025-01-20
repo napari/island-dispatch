@@ -106,7 +106,8 @@ meetings](https://napari.org/dev/community/meeting_schedule.html).
 
 ## Ongoing work
 
-During testing we observed, that sometimes the algorithm crashes because of [floating point precision](https://learn.microsoft.com/en-us/cpp/build/why-floating-point-numbers-may-lose-precision?view=msvc-170). 
+During testing we observed, that sometimes the algorithm crashes because of
+[floating point precision](https://0.30000000000000004.com) issues.
 In order to address this we require equivalent, but more floating point precision resistant solutions.
 
 The algorithm will allow us in future to implement support of holes in polygons.
