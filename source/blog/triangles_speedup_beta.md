@@ -104,9 +104,12 @@ repo](https:/github.com/napari/napari/issues). You are also welcome to come ask
 for help in our [community
 meetings](https://napari.org/dev/community/meeting_schedule.html).
 
-Once we release the `bermuda` we will add proper installation instruction to this post.
+## Ongoing work
 
-## Editing layer
+During testing we observed, that sometimes the algorithm crashes because of [floating point precision](https://learn.microsoft.com/en-us/cpp/build/why-floating-point-numbers-may-lose-precision?view=msvc-170). 
+In order to address this we require equivalent, but more floating point precision resistant solutions.
+
+The algorithm will allow us in future to implement support of holes in polygons.
 
 Ths job not (yet) improve code responsible for slownes of editing Shapes layer with a huge number of polygons.
 
