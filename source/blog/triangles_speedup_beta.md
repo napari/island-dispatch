@@ -93,9 +93,16 @@ C++ code to speedup creation and updates of Shapes layers".
 
 ![Experimental settings](images/speedup_triangulate_shapes.png)
 
-You can also toggle it using the `COMPILED_TRIANGULATION` environment variable, for example activating it and launching `napari` using `COMPILED_TRIANGULATION=1 napari`.
-If you spot any issues you may report them on [napari zulip](https://napari.zulipchat.com/), or create issue on [bermuda github](https:/github.com/bermuda/napari/issues).
+You can also toggle it using the `COMPILED_TRIANGULATION` environment variable,
+for example launching `napari` using the terminal command
+`COMPILED_TRIANGULATION=1 napari`, or `COMPILED_TRIANGULATION=1 jupyter lab`
+and then using napari within Jupyter.
 
+If you spot any issues (visual or functional), please let us know in our [Zulip
+chat room](https://napari.zulipchat.com/), or create an issue on [our GitHub
+repo](https:/github.com/napari/napari/issues). You are also welcome to come ask
+for help in our [community
+meetings](https://napari.org/dev/community/meeting_schedule.html).
 
 Once we release the `bermuda` we will add proper installation instruction to this post.
 
