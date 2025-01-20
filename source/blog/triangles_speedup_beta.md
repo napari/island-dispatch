@@ -67,28 +67,30 @@ We plan to develop in Rust which [seems to give us even faster
 performance](https://github.com/napari/bermuda/pull/1) on top of better memory
 safety guarantees. Plus all those shipwrecks are probably pretty rusty!
 
-To help make it stable, you could test if it works for you. If not, we would be happy to get your feedback by reporting any problems in a [github issue](https://github.com/napari/napari/issues) or at a [napari community meeting](https://napari.org/dev/community/meeting_schedule.html). If you could provide us with a dataset that causes problems, it will be even better, as it allows us to add problematic cases to tests.
+In the meantime, this is brand-new work and the first foray into compiled code
+directly for napari, so we are looking for beta testers. If you use the Shapes
+layer, please read on for how you can help, while also benefit from the
+increased performance that this work brings!
 
+## How to use it *today*
 
-## How to test it
+This feature requires napari in version at least 0.5.6. As of this writing, a
+pre-release version of napari 0.5.6 is available on PyPI.
 
-This feature requires napari in version at least 0.5.6. At moment of publishing this announcement, the first pre-release of napari 0.5.6 is available on PyPI. 
-
-If napari 0.5.6 is not released yet, you can install the pre-release using `pip`:
-
-```bash
-pip install --pre napari[optional,pyqt6]
-pip install PartSegCore-compiled-backend
-``` 
-otherwise you can install it from pypi:
+You can install the pre-release using `pip` by specifying a version:
 
 ```bash
-pip install napari[optional,pyqt6] PartSegCore-compiled-backend
+pip install "napari[optional,pyqt6]>=0.5.6rc0"
 ```
 
+The "optional" flag ensures that you get the compiled extensions mentioned in
+this post.
 
-Then open napari, and open the menu File → Preferences → Experimental and enable "Use compiled backend to speedup create/update of Shapes layer".
-(You don't need to restart napari, just create a new Shapes layer after toggling the setting.)
+Since this code is experimental, we have made it opt-in in napari preferences
+to enable using it. To enable it, open napari, and open the menu File →
+Preferences, then open the Experimental tab and enable the checkbox for "Use
+C++ code to speedup creation and updates of Shapes layers".
+
 ![Experimental settings](images/speedup_triangulate_shapes.png)
 
 You can also toggle it using the `COMPILED_TRIANGULATION` environment variable, for example activating it and launching `napari` using `COMPILED_TRIANGULATION=1 napari`.
