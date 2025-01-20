@@ -145,4 +145,11 @@ We'd love to hear from you.
 
 ## Acknowledgments
 
-In addition to the SpatialData development team, we would like to express our gratitude to the Chan Zuckerberg Initiative for their generous support, as their funding enabled the SpatialData team to support the work presented here. We also acknowledge the [scverse team](https://scverse.org/), a consortium of open-source developers dedicated to single-cell omics.
+This work is made possible by a [Data
+Insights](https://chanzuckerberg.com/science/programs-resources/cell-science/data-insights/) grant from the Chan Zuckerberg Initiative to
+the SpatialData team. We want to acknowledge the team's support for napari
+upstream, and highlight how individual grants can be used to support collective
+software efforts that help thousands of users. We will have more to say on this
+in an upcoming blog post. Finally, we also want to thank the [scverse
+team](https://scverse.org/), a consortium of open-source developers dedicated
+to single-cell omics.
