@@ -153,3 +153,6 @@ software efforts that help thousands of users. We will have more to say on this
 in an upcoming blog post. Finally, we also want to thank the [scverse
 team](https://scverse.org/), a consortium of open-source developers dedicated
 to single-cell omics.
+
+Luca Marconato, Juan Nunez-Iglesias, Peter Sobolewski, and Wouter-Michiel
+Vierdag helped with the writing of this post.
