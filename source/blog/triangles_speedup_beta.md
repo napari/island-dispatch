@@ -49,7 +49,10 @@ polygons in napari, creation of the shapes layer drops from almost 4 minutes
 Most of the time creating a Shapes layer with so many shapes was spent on
 triangulation, which takes just 2.5s with our changes.
 
-The speedup was achieved by implementing the sweeping line triangulation algorithm ([3](https://doi.org/10.1007/978-3-540-77974-2)) in a compiled language. For the initial prototype we choose C++. The algorithm will allow us in future to implement support of holes in polygons.
+We obtain this dramatic speedup through a combination of algorithmic changes
+(using the sweeping line triangulation algorithm from
+[3](https://doi.org/10.1007/978-3-540-77974-2)) and code changes —
+implementing the algorithm in C++ instead of pure Python.
 
 The prototype is implemented in `PartSegCore-compiled-backend`, a package maintained by Grzegorz Bokota, a core developer of napari.
 During testing we observed, that sometimes the algorithm crashes because of [floating point precision](https://learn.microsoft.com/en-us/cpp/build/why-floating-point-numbers-may-lose-precision?view=msvc-170). 
