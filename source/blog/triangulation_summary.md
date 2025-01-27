@@ -47,6 +47,8 @@ After getting promising result we have decided to create a new package for compi
 Initial test shows that Rust version is slightly faster, and more memory safety.
 
 * [#1](https://github.com/napari/bermuda/pull/1) – Implementation of edge triangulation in Rust in our new package for compiled backend
+* [#3](https://github.com/napari/bermuda/pull/3) – Add support for optional arguments for `triangulate_path_edge`
+* [#4](https://github.com/napari/bermuda/pull/4) - implement intersection detection utils in Rust
 
 
 ## Retrospection 
