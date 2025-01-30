@@ -49,6 +49,8 @@ Initial test shows that Rust version is slightly faster, and more memory safety.
 * [#1](https://github.com/napari/bermuda/pull/1) – Implementation of edge triangulation in Rust in our new package for compiled backend
 * [#3](https://github.com/napari/bermuda/pull/3) – Add support for optional arguments for `triangulate_path_edge`
 * [#4](https://github.com/napari/bermuda/pull/4) - implement intersection detection utils in Rust
+* [#6](https://github.com/napari/bermuda/pull/6) - Improve test setup for faster implementing
+* [#10](https://github.com/napari/bermuda/pull/10) - Implement monotone polygon triangulation in Rust
 
 
 ## Retrospection 
