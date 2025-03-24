@@ -32,6 +32,7 @@ This post is a summary and retrospection of this work.
 * [#7512](https://github.com/napari/napari/pull/7512) – fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
 * [#7537](https://github.com/napari/napari/pull/7537) – fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
 * [#7688](https://github.com/napari/napari/pull/7688) – fix of checking if shape is convex, when shape has self intersections
+* [#7739](https://github.com/napari/napari/pull/7739) – improve benchmarking for shapes layer
 
 ### `PartSegCore-compiled-backend`:
 
