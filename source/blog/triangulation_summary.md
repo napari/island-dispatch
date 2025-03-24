@@ -30,8 +30,8 @@ This post is a summary and retrospection of this work.
 * [#7470](https://github.com/napari/napari/pull/7470) – refactor of the shapes layer to reduce changes in [#7346](https://github.com/napari/napari/pull/7346)
 * [#7346](https://github.com/napari/napari/pull/7346) – Add c++ compiled backend for triangulation 
 * [#7512](https://github.com/napari/napari/pull/7512) – fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
-* [#7537](https://github.com/napari/napari/pull/7537) - fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
-
+* [#7537](https://github.com/napari/napari/pull/7537) – fix for bug introduced in [#7346](https://github.com/napari/napari/pull/7346)
+* [#7688](https://github.com/napari/napari/pull/7688) – fix of checking if shape is convex, when shape has self intersections
 
 ### `PartSegCore-compiled-backend`:
 
@@ -39,6 +39,7 @@ I have used my package for testing if the speedup will be significant.
 
 * [#36](https://github.com/4DNucleome/PartSegCore-compiled-backend/pull/36) – Implement sweep line algorithm for triangulation in C++. Implement edge triangulation in C++.
 * [#58](https://github.com/4DNucleome/PartSegCore-compiled-backend/pull/58) – Minor performance improvements in triangulation in C++.
+* [#68](https://github.com/4DNucleome/PartSegCore-compiled-backend/pull/68) – Fix checking if shape is convex in C++ (self intersection case).
 
 
 ### `bermuda`:
@@ -52,6 +53,10 @@ Initial test shows that Rust version is slightly faster, and more memory safety.
 * [#6](https://github.com/napari/bermuda/pull/6) - Improve test setup for faster implementing
 * [#10](https://github.com/napari/bermuda/pull/10) - Implement monotone polygon triangulation in Rust
 * [#14](https://github.com/napari/bermuda/pull/14) - Deduplicate of edges for edge and face triangulation
+* [#17](https://github.com/napari/bermuda/pull/17) - Sweeping line algorithm for triangulation in Rust, Python API for face and edge triangulation in one call
+* [#27](https://github.com/napari/bermuda/pull/27) - Python API for face triangulation without edges
+* [#30](https://github.com/napari/bermuda/pull/30) - Checking if polygon is convex 
+* [#32](https://github.com/napari/bermuda/pull/32) - Add handling 3D data for face triangulation and polygon on single plane orthogonal to axis
 
 
 ## Retrospection 
