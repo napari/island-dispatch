@@ -88,15 +88,23 @@ Also, there was assumption, that if some problem was not spotted in review,
 the author will fix it fast in next PR.
 
 Such assumptions may be not correct if external contributor will work on the task.
-In such situation project may require more time to review the PRs.
+In such situation project may require more time to review the PRs. 
+Also hiring core-dev gives better knowledge retention in the project, 
+that is important for core functionality of the project.
 
 ## Results
+
+Based on benchmarks we have got speedup of loading shapes layer by 10-20 times.
+Also the triangulation of shapes is around 100 times faster.
 
 ## Conclusions 
 
 When part of speedup is done by changing algorithm to more efficient one, 
 the other require to use compiled language, as available algorithms cannot be vectorized, so cannot 
 be implemented fast using numpy.
+
+Also `numpy.unique(data, axis=x)` is not efficient. I situation when we know size of axis (2 or 3) 
+using python `set` is much faster for now. 
 
 ### Numba 
 
@@ -146,5 +154,6 @@ Based on successful stories from different projects we have decided to try Rust.
 When try it on edge triangulation it shows that Rust version is slightly faster than C++ one having memory safety.
 This change may be connected with mentioned above problem with array creation in Cython.
 But even same performance with memory safety is a big win.
-Especially when we meet memory problems in C++ code because of floating point errors.
+Especially when we meet memory problems in C++ code because of floating point errors. Current error 
+is much more readable than segmentation fault.
 
