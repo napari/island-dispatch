@@ -97,7 +97,44 @@ that is important for core functionality of the project.
 ## Results
 
 Based on benchmarks we have got speedup of loading shapes layer by 10-20 times.
-Also the triangulation of shapes is around 100 times faster.
+Also the triangulation of shapes is around 215 times faster when using bermuda backend and 100 times faster when using PartSegCore backend.
+
+```
+| Change   | Before [5535c71a] <v0.5.1^0>   | After [2d27070a] <switch_bermuda>   |   Ratio | Benchmark (Parameter)                                                                 |
+|----------|--------------------------------|-------------------------------------|---------|---------------------------------------------------------------------------------------|
+| -        | 563±7ms                        | 354±7ms                             |    0.63 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('polygon', numba)       |
+| -        | 30.2±0.6ms                     | 12.2±1ms                            |    0.41 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('polygon', triangle)    |
+| -        | 19.1±0.5ms                     | 3.97±0.4ms                          |    0.21 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('path', triangle)       |
+| -        | 18.4±0.5ms                     | 3.67±0.1ms                          |    0.2  | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('path', numba)          |
+| -        | 18.8±0.9ms                     | 582±20μs                            |    0.03 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('path', partsegcore)    |
+| -        | 19.0±0.6ms                     | 360±20μs                            |    0.02 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('path', bermuda)        |
+| -        | 556±9ms                        | 5.47±0.4ms                          |    0.01 | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('polygon', partsegcore) |
+| -        | 564±20ms                       | 2.60±0.1ms                          |    0    | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('polygon', bermuda)     |
+```
+
+And time of creation layer was reduced 20-30 times.
+
+```
+| Change   | Before [5535c71a] <v0.5.1^0>   | After [2d27070a] <switch_bermuda>   |   Ratio | Benchmark (Parameter)                                                                          |
+|----------|--------------------------------|-------------------------------------|---------|------------------------------------------------------------------------------------------------|
+| -        | 48.7±5ms                       | 26.9±0.8ms                          |    0.55 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'path', triangle)        |
+| -        | 51.4±0.9ms                     | 26.7±2ms                            |    0.52 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'polygon', triangle)     |
+| -        | 52.5±5ms                       | 26.9±0.5ms                          |    0.51 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'path', numba)           |
+| -        | 50.3±3ms                       | 24.7±0.6ms                          |    0.49 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'path', bermuda)         |
+| -        | 52.0±4ms                       | 24.7±0.6ms                          |    0.48 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'path', partsegcore)     |
+| -        | 358±20ms                       | 172±3ms                             |    0.48 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'polygon', numba)        |
+| -        | 1.27±0.02s                     | 541±10ms                            |    0.42 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'polygon', triangle)    |
+| -        | 1.00±0.03s                     | 416±30ms                            |    0.41 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'path', numba)          |
+| -        | 1.01±0.05s                     | 404±10ms                            |    0.4  | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'path', triangle)       |
+| -        | 999±50ms                       | 326±20ms                            |    0.33 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'path', partsegcore)    |
+| -        | 1.00±0.08s                     | 309±5ms                             |    0.31 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'path', bermuda)        |
+| -        | 381±20ms                       | 21.7±0.4ms                          |    0.06 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'polygon', partsegcore)  |
+| -        | 382±20ms                       | 19.6±0.9ms                          |    0.05 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(100, 'polygon', bermuda)      |
+| -        | 10.6±0.06s                     | 395±10ms                            |    0.04 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'polygon', partsegcore) |
+| -        | 10.6±0.07s                     | 336±8ms                             |    0.03 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'polygon', bermuda)     |
+```
+
+Both values are get from benchmark of shapes layer.
 
 ## Conclusions 
 
