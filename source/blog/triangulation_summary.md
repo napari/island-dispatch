@@ -61,6 +61,7 @@ Initial test shows that Rust version is slightly faster, and more memory safety.
 * [#30](https://github.com/napari/bermuda/pull/30) - Checking if polygon is convex 
 * [#32](https://github.com/napari/bermuda/pull/32) - Add handling 3D data for face triangulation and polygon on single plane orthogonal to axis
 * [#39](https://github.com/napari/bermuda/pull/39) - Remove consecutive repeated points in polygon
+* [conda-forge#29805](https://github.com/conda-forge/staged-recipes/pull/29805) - Add Bermuda to conda-forge
 
 ## Retrospection 
 
@@ -134,7 +135,30 @@ And time of creation layer was reduced 20-30 times.
 | -        | 10.6±0.07s                     | 336±8ms                             |    0.03 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'polygon', bermuda)     |
 ```
 
+For convex shapes it is 10-100x faster depending on number of vertices in the shape.
+
+```
+| Change   | Before [5535c71a] <v0.5.1^0>   | After [45a7ca24] <main>   |   Ratio | Benchmark (Parameter)                                                                                 |
+|----------|--------------------------------|---------------------------|---------|-------------------------------------------------------------------------------------------------------|
+| -        | 206±8ms                        | 17.1±0.9ms                |    0.08 | benchmark_shapes_layer.ShapeTriangulationConvexSuite.time_create_layer(100, 8, 'polygon', bermuda)    |
+| -        | 647±60ms                       | 20.3±0.2ms                |    0.03 | benchmark_shapes_layer.ShapeTriangulationConvexSuite.time_create_layer(100, 32, 'polygon', bermuda)   |
+| -        | 2.76±0.4s                      | 36.2±2ms                  |    0.01 | benchmark_shapes_layer.ShapeTriangulationConvexSuite.time_create_layer(100, 128, 'polygon', bermuda)  |
+| -        | 2.17±0.02m                     | 1.06±0.04s                |    0.01 | benchmark_shapes_layer.ShapeTriangulationConvexSuite.time_create_layer(5000, 128, 'polygon', bermuda) |
+```
+
+
 Both values are get from benchmark of shapes layer.
+
+For real data (the `xenium_2.0.0_io` from `spatialdata-sandbox`) the time to create Shapes layer drop from 224s (v0.5.1) to 17s (v0.6.0).
+When run code under profiler the steep of mesh calculation drop from 255s to 2.4s.
+
+The real data used for benchmarking contains much more shapes without intersections than our synthetic benchmark data. 
+Also the majority of shapes in current data are below 20 vertices. 
+
+These changes will allow to use much more complex shapes for better representing details in data.
+
+Next to the speedup of creation of shapes layer we have also improved interactivity of the layer, and general improvements in the code.
+That will allow to work on Shapes layer interactivity in the future.
 
 ## Conclusions 
 
@@ -195,4 +219,13 @@ This change may be connected with mentioned above problem with array creation in
 But even same performance with memory safety is a big win.
 Especially when we meet memory problems in C++ code because of floating point errors. Current error 
 is much more readable than segmentation fault.
+
+For me, the debugging tools for rust are still slightly worse than C++ one.
+
+## Future notes
+
+* Start from writing benchmark, instead of custom scripts, it will speedup the process of writing code and testing it.
+* It will be best to have a core-dev funded for reviewing PRs, as early review allow to save time. 
+* Works with multiple PR is muche better than one big PR. It speedup the review process. But require better planning to avoid bottleneck.
+* LLM are better and better in initial review of code. Not all its comments are correct, but it is good starting point. LLM works bad with huge PRs, so it is the next argument to work on smaller PRs.
 
