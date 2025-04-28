@@ -68,7 +68,7 @@ Initial test showed that the Rust version is slightly faster, and adds more memo
 When we started talking with the SpatialData team about sponsoring of
 work on speedup the Shapes layer, the initial idea was to have a single PR. 
 However, after a fast estimation of work required, we decided that it would be 
-much better to work on sequence of PRs. One of the benefits of this
+much better to work on a sequence of PRs. One of the benefits of this
 approach was that napari users already could make use of some speedup since napari version 0.5.2. 
 
 It also made the total amount of changes easier to review as the work was spread over multiple relatively small pull requests. 
