@@ -8,13 +8,13 @@ language: English
 
 # Summary of speedup of Shapes layer
 
-With a big pleasure to SpatialData community whose decided to sponsor this work in last half year one of Core-Developer of napari, Grzegorz Bokota, has been working on speedup of Shapes layer. The work has been done in the context of the napari project, and the results are already available in the latest release of napari.
+With a big thank you to  the SpatialData team, who decided to sponsor this work over the past last half year, Grzegorz Bokota, one of the Core-Developers of napari, has been working on speedup of Shapes layer. The work has been done in the context of the napari project, and the results are already available in the latest release of napari.
 
 This post is a summary and retrospection of this work.
 
 ## List of PR with short summaries. 
 
-### Napari:
+### Project pull requests in Napari:
 
 * [#7162](https://github.com/napari/napari/pull/7162) – reduce number of highlight events in shapes layer by emitting only when selection changed
 * [#7146](https://github.com/napari/napari/pull/7146) – calculate state of layer in separate thread
@@ -38,7 +38,7 @@ This post is a summary and retrospection of this work.
 
 ### `PartSegCore-compiled-backend`:
 
-I have used my package for testing if the speedup will be significant. 
+`PartSegCore-compiled-backend`, developed by Gregorz Bokota, was initially used for testing if the speedup of the Shapes layer was significant. 
 
 * [#36](https://github.com/4DNucleome/PartSegCore-compiled-backend/pull/36) – Implement sweep line algorithm for triangulation in C++. Implement edge triangulation in C++.
 * [#58](https://github.com/4DNucleome/PartSegCore-compiled-backend/pull/58) – Minor performance improvements in triangulation in C++.
@@ -47,8 +47,8 @@ I have used my package for testing if the speedup will be significant.
 
 ### `bermuda`:
 
-After getting promising result we have decided to create a new package for compiled backend for napari.
-Initial test shows that Rust version is slightly faster, and more memory safety.
+After getting promising results using `PartSegCore-compiled-backend`, we decided to create a new package for a compiled backend  in napari to speed up the Shapes layer.
+Initial test showed that the Rust version is slightly faster, and adds more memory safety.
 
 * [#1](https://github.com/napari/bermuda/pull/1) – Implementation of edge triangulation in Rust in our new package for compiled backend
 * [#3](https://github.com/napari/bermuda/pull/3) – Add support for optional arguments for `triangulate_path_edge`
@@ -65,40 +65,41 @@ Initial test shows that Rust version is slightly faster, and more memory safety.
 
 ## Retrospection 
 
-When we start talking with SpatialData community about sponsoring 
-work on speedup of Shapes layer the initial idea was to have single PR. 
-But after fast review of work range we have decided that it will be 
+When we started talking with the SpatialData team about sponsoring of
+work on speedup the Shapes layer, the initial idea was to have a single PR. 
+However, after a fast estimation of work required, we decided that it would be 
 much better to work on sequence of PRs. One of the benefits of this
-approach wast that users will get some speedup since napari in version 0.5.2. 
+approach was that napari users already could make use of some speedup since napari version 0.5.2. 
 
-Also total amount of changes was so big that it was hard to review. 
+It also made the total amount of changes easier to review as the work was spread over multiple relatively small pull requests. 
 
-Current work contain improvements in three areas:
+The work contains improvements in three areas:
 
 1. Speedup Checking layer state (move task to separate thread and speedup the code),
 2. Speedup highlight of shape under mouse,
 3. Speedup triangulation of edges and shapes,
 
-Two first made usage of napari with loaded shapes layer much more pleasant.
-The last one significantly speedup load of shapes layer.
+The first two points made usage of napari with a loaded shapes layer much more pleasant.
+The last point significantly  speeds up the loading of shapes layer.
 
-When support from SpatialData allow to spend multiple days to understand the source 
-of performance issues and fix them. However sometimes PRs stuck in review process.
+The financial support of SpatialData allowed Grzegorz to spend multiple days to understand the source 
+of performance issues and fix them. However, sometimes PRs were stuck in the review process.
 One of the reasons is that only one core-dev is funded to work on this task. 
 
-In this situation it not was a big problem, as there were multiple subtasks. 
-Also, there was assumption, that if some problem was not spotted in review,
-the author will fix it fast in next PR.
+For this project, it was not a big problem, as there were multiple subtasks. 
+Also, the assumption was that if some problem was not spotted in review,
+Grzegorz could fix it fast in a next PR.
 
-Such assumptions may be not correct if external contributor will work on the task.
-In such situation project may require more time to review the PRs. 
-Also hiring core-dev gives better knowledge retention in the project, 
-that is important for core functionality of the project.
+These assumptions may be not correct if an external contributor will work on the task.
+In such situations, a project may require more time to review the PRs. Hence, direct financial support 
+of a napari core developer was crucial for this project.
+Furthermore, hiring a core-dev gives better knowledge retention in the project, 
+that is important for sustainability of the napari project.
 
 ## Results
 
-Based on benchmarks we have got speedup of loading shapes layer by 10-20 times.
-Also the triangulation of shapes is around 215 times faster when using bermuda backend and 100 times faster when using PartSegCore backend.
+Based on benchmarks, we achieved a 10–20× speedup in loading the Shapes layer.
+Also, the triangulation of shapes is around 215 times faster when using `bermuda` backend and 100 times faster when using `PartSegCore` backend.
 
 ```
 | Change   | Before [5535c71a] <v0.5.1^0>   | After [2d27070a] <switch_bermuda>   |   Ratio | Benchmark (Parameter)                                                                 |
@@ -113,7 +114,7 @@ Also the triangulation of shapes is around 215 times faster when using bermuda b
 | -        | 564±20ms                       | 2.60±0.1ms                          |    0    | benchmark_shapes_layer.MeshTriangulationSuite.time_set_meshes('polygon', bermuda)     |
 ```
 
-And time of creation layer was reduced 20-30 times.
+The time of creation of a Shapes layer was reduced 20-30x.
 
 ```
 | Change   | Before [5535c71a] <v0.5.1^0>   | After [2d27070a] <switch_bermuda>   |   Ratio | Benchmark (Parameter)                                                                          |
@@ -135,7 +136,7 @@ And time of creation layer was reduced 20-30 times.
 | -        | 10.6±0.07s                     | 336±8ms                             |    0.03 | benchmark_shapes_layer.ShapeTriangulationMixed.time_create_layer(3000, 'polygon', bermuda)     |
 ```
 
-For convex shapes it is 10-100x faster depending on number of vertices in the shape.
+For convex shapes, it is 10-100x faster depending on the number of vertices in the shape.
 
 ```
 | Change   | Before [5535c71a] <v0.5.1^0>   | After [45a7ca24] <main>   |   Ratio | Benchmark (Parameter)                                                                                 |
@@ -147,44 +148,41 @@ For convex shapes it is 10-100x faster depending on number of vertices in the sh
 ```
 
 
-Both values are get from benchmark of shapes layer.
+These values were generated by a benchmark of the napari Shapes layer.
 
-For real data (the `xenium_2.0.0_io` from `spatialdata-sandbox`) the time to create Shapes layer drop from 224s (v0.5.1) to 17s (v0.6.0).
-When run code under profiler the steep of mesh calculation drop from 255s to 2.4s.
+For real data (the `xenium_2.0.0_io` from `spatialdata-sandbox`, test data used within the SpatialData project), the time to create the Shapes layer dropped from 224s (v0.5.1) to 17s (v0.6.0).
+When running the code under a profiler, the step of mesh calculation dropped from 255s to 2.4s.
 
-The real data used for benchmarking contains much more shapes without intersections than our synthetic benchmark data. 
-Also the majority of shapes in current data are below 20 vertices. 
+The real data used for benchmarking contains much more shapes without intersections than our synthetic benchmark data.  The majority of shapes in our current test data contain less than 20 vertices. 
 
-These changes will allow to use much more complex shapes for better representing details in data.
+These changes will allow napari users to use much more complex shapes for better representing details in data.
 
-Next to the speedup of creation of shapes layer we have also improved interactivity of the layer, and general improvements in the code.
-That will allow to work on Shapes layer interactivity in the future.
+Besides the speedup of the creation of the shapes layer we have also improved the interactivity of the layer, and general improvements in the code.
+This will allow further work on Shapes layer interactivity in the future.
 
-## Conclusions 
+## Interesting findings 
 
-When part of speedup is done by changing algorithm to more efficient one, 
-the other require to use compiled language, as available algorithms cannot be vectorized, so cannot 
-be implemented fast using numpy.
+While part of the speedup was initially done by changing the use of more efficient algorithms, 
+we ultimately had to use a compiled language. This because available algorithms cannot be vectorized, and thus not be implemented in fast vectorized fashion in numpy.
 
-Also `numpy.unique(data, axis=x)` is not efficient. I situation when we know size of axis (2 or 3) 
-using python `set` is much faster for now. 
+Also, `numpy.unique(data, axis=x)` is not efficient. In a situation where we know the number of dimensions (2 or 3) 
+using python `set` is much faster. 
 
-### Numba 
+### Considerations for using Numba 
 
 As numba compiles code written in pure python,
-then it is easier for napari core-devs to review the code.
-So it reduce maintenance cost of the code. 
-Sometimes numba code is more readable than pure python code, that is 
-using some numpy functions.
+it is easier for napari core-devs to review the code.
+With that, it reduces maintenance cost of the code. 
+Sometimes numba code is more readable than pure python code using some numpy 
+functions.
 
-However numba is JIT compiler that introduces some delay at first trigger in given session, even when use
-cache between runs.
+However, the downside is that numba is a JIT compiler that introduces some delay at first trigger in a given session, even when using a cache between runs.
 
-It shows tha try to implement sweeping line algorithm in numba was not successful because of compilation time.
+Because of that, trying to implement the sweeping line algorithm using numba was not successful.
 
 ### C++ and Cython 
 
-For gluing C++ code with python we have used Cython. It provides 
+For glueing C++ code with python we have used Cython. It provides 
 Python like code for writing Python API for C++ code.
 
 For example:
@@ -202,30 +200,28 @@ def is_convex(polygon: Sequence[Sequence[float]]) -> bool:
     return _is_convex(polygon_vector)
 ```
 
-However for creating numpy array it call numpy API, that introduced performance overhead.
-Maybe the better solution could be use [pybind11](https://github.com/pybind/pybind11) 
-that offer c++ API for creating numpy array.
+However, for creating a numpy array it calls the numpy API, which introduces a performance overhead.
+The better solution could be to use [pybind11](https://github.com/pybind/pybind11), which offers a c++ API for creating a numpy array.
 
-The C++ code was much faster than numba one and allow to use Red - Black, that are required for triangulation of shapes. 
+The C++ code turned out to be much faster than the Numba version and made it possible to use a Red-Black tree, a binary search tree. Red-Black trees are essential for efficiently managing edges during the triangulation of shapes. They they help quickly inserting, deleting and finding edges when breaking down complex shapes into simpler triangles.
 
 ### Rust
 
-During discussion with core-devs we found that we need to increase proficiency with 
+During discussion with core-developers, we found that we had to increase our proficiency with 
 any compiled language to have maintenance capacity. 
 
-Based on successful stories from different projects we have decided to try Rust.
-When try it on edge triangulation it shows that Rust version is slightly faster than C++ one having memory safety.
-This change may be connected with mentioned above problem with array creation in Cython.
-But even same performance with memory safety is a big win.
-Especially when we meet memory problems in C++ code because of floating point errors. Current error 
-is much more readable than segmentation fault.
+Based on successful stories from different projects we decided to try Rust.
+When trying it on edge triangulation, the Rust version was slightly faster than the C++ implementation and adds memory safety.
+This result may be connected with the problem mentioned earlier with array creation in Cython.
+However, even same performance with memory safety is a big win.
+Also, because when we meet memory problems in C++ code because of floating point errors, we get a cryptic segmentation fault that is hard to trace. The error in Rust is much more readable than this.
 
 For me, the debugging tools for rust are still slightly worse than C++ one.
 
-## Future notes
+## Lessons learned
 
-* Start from writing benchmark, instead of custom scripts, it will speedup the process of writing code and testing it.
-* It will be best to have a core-dev funded for reviewing PRs, as early review allow to save time. 
-* Works with multiple PR is muche better than one big PR. It speedup the review process. But require better planning to avoid bottleneck.
-* LLM are better and better in initial review of code. Not all its comments are correct, but it is good starting point. LLM works bad with huge PRs, so it is the next argument to work on smaller PRs.
+* Start with writing a benchmark, instead of custom scripts, it will speedup the process of writing code and testing it.
+* It will be best to have a core-dev funded for reviewing PRs, as early review allows to save time. 
+* Working with multiple PR is mucher better than one big PR. It speeds up the review process. However, it requires better planning to avoid bottlenecks.
+* LLMs are better and better in initial review of code. Not all its comments are correct, but it is a good starting point. LLM works bad with huge PRs, so it is an additional argument to work with smaller PRs.
 
