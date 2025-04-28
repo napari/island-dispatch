@@ -8,7 +8,7 @@ language: English
 
 # Summary of speedup of Shapes layer
 
-With a big thank you to  the SpatialData team, who decided to sponsor this work over the past last half year, Grzegorz Bokota, one of the Core-Developers of napari, has been working on speedup of Shapes layer. The work has been done in the context of the napari project, and the results are already available in the latest release of napari.
+With a big thank you to  the SpatialData team, who decided to sponsor this work over the past last half year, Grzegorz Bokota, one of the Core-Developers of napari, has been working on speedup of the Shapes layer. The work has been done in the context of the napari project, and the results are already available in the latest release of napari.
 
 This post is a summary and retrospection of this work.
 
