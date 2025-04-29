@@ -222,6 +222,6 @@ For me, the debugging tools for rust are still slightly worse than C++ one.
 
 * Start with writing a benchmark, instead of custom scripts, it will speedup the process of writing code and testing it.
 * It will be best to have a core-dev funded for reviewing PRs, as early review allows to save time. 
-* Working with multiple PR is mucher better than one big PR. It speeds up the review process. However, it requires better planning to avoid bottlenecks.
+* Working with multiple PRs is much better than one big PR. It speeds up the review process. However, it requires better planning to avoid bottlenecks.
 * LLMs are better and better in initial review of code. Not all its comments are correct, but it is a good starting point. LLM works bad with huge PRs, so it is an additional argument to work with smaller PRs.
 
