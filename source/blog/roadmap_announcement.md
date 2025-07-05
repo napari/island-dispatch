@@ -55,7 +55,7 @@ supporting a certain feature, or even implementing it with us.
 
 We view the roadmap as napari's north star to guide future work.
 Is work limited to what's on the roadmap? Absolutely not. We welcome ideas
-for additional project ideas from our napari users. We'll be reviewing the
+for additional project features from our napari users. We'll be reviewing the
 roadmap several times a year, and as science and technology changes, we
 expect to evolve to meet your needs.
 
