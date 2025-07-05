@@ -113,7 +113,7 @@ Read the [blog post](https://napari.org/island-dispatch/blog/triangles_speedup_b
 - **Community-run napari hub:** Starting from a prototype built by [Yunha Lee](https://github.com/yunhal),
 we've developed a lighter-weight, more maintainable version of the napari hub for sharing & discovering
 plugins, managed by the napari community. It's due to launch any day now, and it's *also* faster -
-though maybe not ten times faster. Check it out at https://napari.org/hub-lite!
+though maybe not ten times faster. Check it out at [https://napari.org/hub-lite]()!
 -  **Modular canvas:**  [Lorenzo Gaifas](https://github.com/brisvag) has revamped our grid mode
 to use individual view-boxes for each layer (rather than smoosh all the layers together into
 a single coordinate space). This not only makes grid-mode more powerful and more useful,
