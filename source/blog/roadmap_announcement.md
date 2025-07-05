@@ -104,7 +104,7 @@ on that front: high-priority bug fixes, improving our usage documentation and th
 and fostering our incredible community.
 
 We've already made a lot of progress on our priorities for 2025 (good thing too,
-since we're more than halfway through the year now)! 
+since we're more than halfway through the year now)! The 2025 prorities include:
 
 - Shape triangulation performance: [Grzegorz Bokota](https://github.com/czaki) has
 overhauled our triangulation machinery using a more performant triangulation algorithm.
@@ -132,10 +132,14 @@ ensure the long-term sustainability of napari. [Tim Monko](https://github.com/ti
 our new community manager, is looking at better ways to engage with our community, like
 themed meetings, demo days and better support for plugin developers. We're also working
 on a predictable and consistent release cadence, with monthly releases and dedicated release managers.
-Finally, we're investigating potential avenues for generating revenue, so that we can maintain
-our operations beyond the horizon of the scaffolding grant. To that end, we'll soon be
-trialing two pilot programs: bookable office hours with our team, and hosting training
-workshops for the broader community. We'll share more about these in the coming weeks.
+Thanks to [Carol Willing](https://github.com/willingc)'s proven open-source leadership
+experience, as a 3-term Python steering council member, we have a clear process for
+sustaining our roadmap.  With [Tracy Teal](https://github.com/tracykteal)'s expertise
+in leading large open source organizations, like the Carpentries, we're investigating
+potential avenues for generating revenue, so that we can maintain our operations beyond
+the horizon of the scaffolding grant. To that end, we'll soon be trialing two pilot
+programs: bookable office hours with our team, and hosting training workshops for
+the broader community. We'll share more about these in the coming weeks.
 
 ## Get Involved!
 
@@ -145,8 +149,10 @@ Community engagement is key to the project’s success -- whether you're interes
 contributing code, improving documentation, or helping shape priorities.
 Check out our [GitHub organisation](https://github.com/napari) to explore open issues and ongoing work,
 and consider joining our [regular community meetings](https://napari.org/stable/community/meeting_schedule.html)
-to connect with other contributors. If you represent a company interested in supporting or
-funding specific areas of development, holding a training workshop, or learning more about
-office hours please don’t hesitate to reach out to our operations manager, [Draga Doncila Pop](https://github.com/DragaDoncila),
-at draga@napari.org.
-We're on the road to tackling this roadmap, and we're excited for you to join us on the journey!
+to connect with other contributors.
+
+If you or your organization is interested in supporting or funding specific
+areas of development, holding a training workshop, or learning more about office
+hours please don’t hesitate to reach out to our Steering Council member and napari
+Operations Manager, Draga Doncila Pop, at draga@napari.org. We're on the road to tackling
+this roadmap, and we're excited for you to join us on the journey!
