@@ -33,13 +33,13 @@ bringing the goals of the roadmap to life.
 
 Thanks to a thriving community of contributors and core developers, an increasing
  user-base, and our ever-growing plugin ecosystem, napari has grown rapidly over the years.
-However, we still have a long way to go to ensure the project is reliable and
-sustainable in the long-term. Many new features are needed to enable the analysis
-workflows of our users. The project has also accrued technical debt over the years,
-making it more difficult to build these features, and making it harder for new
-contributors to join the project. As the project has grown, our maintenance
-and development processes have also become more complex. We've got a lot to do!
-And we want to make sure we're doing it efficiently, effectively, and transparently.
+Yet, we aspire to raise the bar to ensure the project is reliable and
+sustainable in the long-term. New features are critical to enable the evolving analysis
+workflows of our users. Over the past six years, the project has also accrued technical debt,
+as a natural evolution of technology. This makes it more difficult to build these new features,
+and is an obstacle for new contributors to join the project. As the project has grown, the
+complexity of our maintenance and development processes have as well. We've got a lot to do,
+and we want to make sure we're doing it efficiently, effectively, and transparently.
 
 The roadmap lays out all the wonderful things we want to get done in the near term,
 and allows us to think strategically about where we're dedicating our effort.
@@ -47,11 +47,17 @@ Regularly updating the roadmap also gives us an opportunity to track our progres
 prioritize our time, and celebrate our successes!
 
 But it's not all about us! Having an up-to-date roadmap makes it easier for the broader
-community to know where we're going, and to join us for the journey, whether that be by
+community to know where we're going. We invite you to join us for the journey, by
 expressing interest in particular items, providing feedback on implementation, financially
-supporting a certain feature, or even implementing it themselves.
+supporting a certain feature, or even implementing it with us.
 
 ## How roadmap?
+
+We view the roadmap as napari's north star to guide future work.
+Is work limited to what's on the roadmap? Absolutely not. We welcome ideas
+for additional project ideas from our napari users. We'll be reviewing the
+roadmap several times a year, and as science and technology changes, we
+expect to evolve to meet your needs.
 
 To put together the roadmap, we collected a whole bunch of information from community
 discussions, core developer meetings, the original roadmap GitHub project, grant applications
