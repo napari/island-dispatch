@@ -32,7 +32,7 @@ Speaking of the original roadmap GitHub board -- we found that while it was a us
 
 To address this, we've also developed a process for reviewing and updating the roadmap on a quarterly basis, so that it is always reflecting the current state of the project, our current priorities, and our vision for the future. "The roadmap is a living document" is by far the most important aspect of this new approach, and as a team, we are 100% committed to this process.
 
-The roadmap does not list items in priority order -- we like to think of it as a menu to choose from. Every 3-6 months (or longer, depending on much effort is involved in a particular feature), we will pick items from the menu to implement. During the review process, we'll also take the learnings from planning and implementing previous items, and use them to enhance, tweak or even remove existing deliverables on the roadmap to better reflect our desired vision for napari.
+The roadmap does not list items in priority order -- we like to think of it as a menu to choose from. Every 3-6 months (or longer, depending on much effort is involved in a particular feature), the core team will pick items from the menu to implement. During the review process, we'll also take the learnings from planning and implementing previous items, and use them to enhance, tweak or even remove existing deliverables on the roadmap to better reflect our desired vision for napari.
 
 If you're interested in reading more about the process, the roadmap itself describes the [approach and philosophy](https://napari.org/stable/roadmaps/active_roadmap.html#roadmap-strategy) we took in shaping the document.  
 
