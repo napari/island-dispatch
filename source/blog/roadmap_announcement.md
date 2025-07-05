@@ -9,7 +9,12 @@ language: English
 
 # napari roadmap blog post
 
-We’re excited to share a major update for napari: a newly defined [development roadmap](https://napari.org/stable/roadmaps/active_roadmap.html)! Thanks to the CZI scaffolding grant, we’ve secured dedicated development, community-management and project operations funding for the next 2-3 years. This is an important milestone that has allowed us to step back, assess our goals, and chart a clear path forward. This roadmap reflects our commitment to transparency, predictable releases, better documentation, and a thriving contributor community. With renewed energy and focus, we’re laying the foundation to ensure the long-term sustainability of the project. Read on to learn more about the roadmap process, our key focus areas, our 2025 priorities (and progress towards them!) and how you can get involved in bringing the goals of the roadmap to life.
+We’re excited to share a major update for napari: a newly defined [development roadmap](https://napari.org/stable/roadmaps/active_roadmap.html)! 
+
+Earlier this year, we were awarded the CZI scaffolding grant, for USD$1.7M over four years. For the first time since napari's inception, we can fund dedicated development, community-management and project operations roles. This is an important milestone that has allowed us to step back, assess our goals, and chart a clear path toward long-term
+sustainability of the project, beyond the grant duration.
+
+This roadmap reflects our commitment to transparency, predictable releases, better documentation, and a thriving contributor community. With renewed energy and focus, we’re laying the foundation to ensure napari and its community can thrive for years to come. Read on to learn more about the roadmap process, our key focus areas, our 2025 priorities (and progress towards them!) and how you can get involved in bringing the goals of the roadmap to life.
 
 ## Why roadmap?
 
