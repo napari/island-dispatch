@@ -32,7 +32,7 @@ bringing the goals of the roadmap to life.
 ## Why roadmap?
 
 Thanks to a thriving community of contributors and core developers, an increasing
- user-base, and our ever-growing plugin ecosystem, napari has grown rapidly over the years.
+user-base, and our ever-growing plugin ecosystem, napari has grown rapidly over the years.
 Yet, we aspire to raise the bar to ensure the project is reliable and
 sustainable in the long-term. New features are critical to enable the evolving analysis
 workflows of our users. Over the past six years, the project has also accrued technical debt,
