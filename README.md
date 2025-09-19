@@ -56,6 +56,65 @@ Contents of your post.
 
 Once your post is approved, it will be published on the blog.
 
+## Local Development
+
+To build and preview the blog locally, you have two options:
+
+### Option 1: Using uv (recommended)
+
+If you have [uv](https://docs.astral.sh/uv/) installed:
+
+```bash
+# Install dependencies
+uv sync
+
+# One-time build
+uv run sphinx-build source build/html
+# Or using Makefile
+uv run make html
+
+# Live reload for development
+uv run sphinx-autobuild source build/html
+```
+
+### Option 2: Using traditional venv
+
+If you prefer using traditional Python virtual environments:
+
+```bash
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# One-time build
+sphinx-build source build/html
+# Or using Makefile
+make html
+
+# Live reload for development
+sphinx-autobuild source build/html
+```
+
+### Live development
+
+The `sphinx-autobuild` command will:
+- Watch for file changes in the `source` directory
+- Automatically rebuild when files change
+- Serve the site locally (usually at http://127.0.0.1:8000)
+- Auto-refresh your browser when changes are detected
+
+### Project structure
+
+- `source/` - Source files for the blog
+- `source/blog/` - Individual blog posts
+- `source/_static/` - Static assets (images, videos, etc.)
+- `build/html/` - Generated HTML output
+- `requirements.txt` - Python dependencies for pip
+- `pyproject.toml` - Python dependencies for uv
+
 ## Review process
 
 When your pull request is submitted, a few checks will run automatically to validate the post syntax and metadata. You can see a preview of your post by clicking on the "Blog preview" link in the Checks section of the Pull Request page.
