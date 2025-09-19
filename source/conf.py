@@ -33,6 +33,7 @@ blog_baseurl = "https://napari.org"
 html_theme = 'napari_sphinx_theme'
 html_static_path = ['_static']
 html_logo = "_static/logo.png"
+html_favicon = "_static/logo.png"
 
 html_theme_options = {
     #"external_links": [{"name": "napari hub", "url": "https://napari-hub.org"}],
