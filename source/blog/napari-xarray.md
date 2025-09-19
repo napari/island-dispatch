@@ -9,6 +9,12 @@ language: English
 
 # Seamless Xarray Integration with Napari - Plan from SciPY 2025
 
+```{note}
+This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
+
+TODO: make correct link
+```
+
 ## What and Why
 
 [Napari](https://napari.org/stable/) is a high-performance GPU-backed multidimensional array viewer with support for physical coordinates, data annotation, 2 and 3D visualization, and a plugin infrastructure allowing users to customize it to their needs.
