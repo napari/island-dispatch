@@ -75,6 +75,8 @@ uv run make html
 
 # Live reload for development
 uv run sphinx-autobuild source build/html
+# Or using Makefile
+uv run make watch
 ```
 
 ### Option 2: Using traditional venv
@@ -96,6 +98,8 @@ make html
 
 # Live reload for development
 sphinx-autobuild source build/html
+# Or using Makefile
+make watch
 ```
 
 ### Live development
