@@ -7,7 +7,7 @@ category: news, help-wanted
 language: English
 ---
 
-# Seamless Xarray Integration with Napari - Plan from SciPY 2025
+# Seamless Xarray Integration with Napari - Plan from SciPy 2025
 
 ```{note}
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
@@ -32,10 +32,11 @@ TODO: make correct link
 
 However, there are still several key pain points around managing image metadata when using Napari.
 
-- Users think in physical units (microns, lat/lon) rather than pixels  
+- Users think in physical units (microns, lat/lon) rather than pixels
 - Re-indexing dimensions (e.g. Fiji’s Stack to HyperStack) is difficult with unnamed dimensions  
-- Dimensionality reductions can lead to incorrect dimension mappings in the viewer  
-  - A max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
+- Dimensionality reductions can lead to incorrect dimension mappings in the viewer due to dropping of singleton dimensions.
+  - For example, a max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
+- Users expect that provided dimension names will be matched to viewer dimension names, but presently adding a `TCZYX` image and `TYX` image will lead to the `TYX` image being aligned with `ZYX` in the viewer.
 
 [Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If Napari could utilize Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
 
@@ -69,9 +70,7 @@ But something being hard is not a reason not to try to do it. Additionally, both
 
 ### SciPY 2025
 
-**TODO** be more clear with who CZI supported. did they support napari in addition to ian?
-
-Thanks to generous support from the Chan Zuckerberg Institute the Xarray team members were able to attend SciPY 2025. At the sprints the Napari team, Xarray developers, and the CellProfiler developers collaborated to develop a plan for enhancing the integration of Xarray with Napari. The rest of this blog post is the initial roadmap we came up with for better integration of Xarray and Napari.
+Thanks to generous support from the Chan Zuckerberg Institute the napari, Xarray, and [CellProfiler](https://cellprofiler.org/) team members were able to attend SciPy 2025. At the sprints members of these three teams—Ian Hunt-Isaak, Tim Monko, Nodar Gogoberidze, Peter Psobolewski and Carol Willing—collaborated to develop a plan for enhancing the integration of Xarray with Napari. The rest of this blog post is the initial roadmap we came up with for better integration of Xarray and Napari.
 
 ### Get Involved
 
