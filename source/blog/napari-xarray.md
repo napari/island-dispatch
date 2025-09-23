@@ -129,7 +129,7 @@ Today, if you mix up the order of your axes in some pathological way (e.g. `lat,
 
 #### 4: User Personas (Plugin System)
 
-The "magic" reordering naturally leads to issues where different fields of science have different conventions for what the "right" thing to do is. Napari can't possibly know every convention across different scientific domains.
+The "magic" reordering naturally leads to issues where different fields of science have different conventions for what the "right" thing to do is. Napari can't possibly know every convention across different scientific domains. Napari now supports a [startup script](https://github.com/napari/napari/pull/8188) which can serve as an initial hook for this functionality.
 
 **Goal:** Enable domain-specific configuration through pluggable personas with well-defined schemas for converting Xarray data into how Napari should interpret it.
 
