@@ -11,8 +11,6 @@ language: English
 
 ```{note}
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
-
-TODO: make correct link
 ```
 
 ## What and Why
