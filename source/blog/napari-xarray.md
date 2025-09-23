@@ -60,9 +60,14 @@ Having Napari leverage the Xarray metadata will not only improve the experience 
 </div>
 ```
 
-This potential for Napari and Xarray to bring out the best in each other is not a new insight. In fact, the second oldest open issue on Napari [`#14`](https://github.com/napari/napari/issues/14) is titled “Pass xarray to napari-gui for autolabeling sliders.” That issue's age is a testament to the difficulty of the problems involved in this integration.
+This potential for Napari and Xarray to bring out the best in each other is not a new insight.
+In fact, the second oldest open issue on Napari [`#14`](https://github.com/napari/napari/issues/14) is titled “Pass xarray to napari-gui for autolabeling sliders.”
+That issue's age is a testament to the difficulty of the problems involved in this integration.
 
-But something being hard is not a reason not to try to do it. Additionally, both Napari and Xarray have recently implemented important changes that make this problem easier to solve. With this in mind both a group of Napari and Xarray developers are committed to improving the integration of Napari and Xarray.
+But something being hard is not a reason not to try to do it.
+Indeed, one of the most successful plugins for Napari is [napari-aicsimageio](https://github.com/AllenCellModeling/napari-aicsimageio) which is built on top of [aicsimageio](https://github.com/AllenCellModeling/aicsimageio) (now superseded by [bioio](https://bioio-devs.github.io/bioio/OVERVIEW.html)), whose data model is backed by xarray.
+Yet, both Napari and Xarray have recently implemented important changes that make this problem easier to solve.
+With this in mind both a group of Napari and Xarray developers are committed to improving the integration of Napari and Xarray.
 
 ## How
 
