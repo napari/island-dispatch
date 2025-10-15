@@ -115,7 +115,7 @@ The next step is to map array indices to Xarray coordinates. This is harder than
 
 #### 3: "Magic" Reordering (Complex)
 
-Today, if you mix up the order of your axes in some pathological way (e.g. `lat, time, lon`, or `XCZSYT`) and pass it to napari it will display as is, because it does not know about the axes! With knowledge of metadata and the conventions of a field napari could magically re-order the array to display in the "correct" order. This is a significant jump in complexity due to the magic involved - the system will need to correctly guess user intent, which can be challenging.
+Today, if you mix up the order of your axes in non-standard way (e.g. `lat, time, lon`, or `XCZSYT`) and pass it to napari it will display as is, from right to left. Thisis because napari treats all axes equally, and does not know about or distinguish spatial or temporal dimensions! With knowledge of metadata and the conventions of a field napari could magically re-order the array to display in the "correct" order, with spatial dimensionss on the right. This is a significant jump in complexity due to the "magic" involved - the system will need to correctly guess user intent, which can be challenging.
 
 **Goal:** Handle a few clear cases of problematic dimension ordering, not solve the general case of arbitrary reordering.
 
