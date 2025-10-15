@@ -15,7 +15,7 @@ This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
 
 ## What and Why
 
-[napari](https://napari.org/stable/) is a high-performance GPU-backed multidimensional array viewer with support for physical coordinates, data annotation, 2 and 3D visualization, and a plugin infrastructure allowing users to customize it to their needs.
+[napari](https://napari.org/stable/) is a high-performance, GPU-backed multidimensional array viewer with support for physical coordinates, data annotation, 2 and 3D visualization, and a plugin infrastructure, allowing users to customize it to their needs.
 
 ```{raw} html
 <div style="text-align: center;">
