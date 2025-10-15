@@ -36,15 +36,20 @@ However, there are still several key pain points around managing image metadata 
   - For example, a max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
 - Users expect that provided dimension names will be matched to viewer dimension names, but napari right-aligns axes, so if you add an image with axes `TYX` to a viewer with a `TCZYX` image, then the axes of the `TYX` image will be aligned with the 3 right-most axes, so `ZYX`, in the viewer.
 
-[Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If napari could understand Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
+```{raw} html
+<div style="text-align: center; margin: 20px 0;">
+  <iframe width="100%" style="max-width: 800px; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/b3j4GkYKkW8" title="Napari Misaligned arrays" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
 
-To get a sense of the benefits Xarray provides, read the [Accelerating Biological Analysis with Xarray](https://xarray.dev/blog/xarray-biology) blog post and look at the rich repr of an [`Xarray.DataArray`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#dataarray) for an image stack:
+[Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If napari could utilize Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
+
+To get a sense of the benefits Xarray provides, read the [Accelerating Biological Analysis with Xarray](https://xarray.dev/blog/xarray-biology) blog post and look at the rich repr of an `Xarray.DataArray` for an image stack:
 
 ```{raw} html
-<iframe src="https://xarray.dev/posts/xarray-biology/dataarray-repr.html"
-        width="100%" height="580" frameborder="0"
-        style="border: 1px solid #ccc; border-radius: 5px; margin: 10px 0;">
-</iframe>
+<div style="text-align: center; margin: 20px 0;">
+  <iframe src="../_static/xarray-dataarray-repr.html" width="100%" height="600" frameborder="0" style="border: 1px solid #ccc; border-radius: 5px;"></iframe>
+</div>
 ```
 
 Having napari leverage the Xarray metadata will not only improve the experience of napari users but also provide Xarray users with a polished interactive visualization tool.
@@ -65,7 +70,8 @@ In fact, the second oldest open issue on napari [`#14`](https://github.com/napar
 That issue's age is a testament to the difficulty of the problems involved in this integration.
 
 But something being hard is not a reason not to try to do it.
-Indeed, one of the most successful plugins for napari is [napari-aicsimageio](https://github.com/AllenCellModeling/napari-aicsimageio) which is built on top of [aicsimageio](https://github.com/AllenCellModeling/aicsimageio) (now superseded by [bioio](https://bioio-devs.github.io/bioio/OVERVIEW.html)), whose data model is backed by xarray.
+Indeed, some of the most successful plugins for napari are [napari-aicsimageio](https://github.com/AllenCellModeling/napari-aicsimageio) which is built on top of [aicsimageio](https://github.com/AllenCellModeling/aicsimageio) and its successor [bioio](https://bioio-devs.github.io/bioio/OVERVIEW.html), which use xarray to manage their data and metadata.
+
 Yet, both napari and Xarray have recently implemented important changes that make this problem easier to solve.
 With this in mind both a group of napari and Xarray developers are committed to improving the integration of napari and Xarray.
 
