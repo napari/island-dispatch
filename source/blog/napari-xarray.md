@@ -73,7 +73,7 @@ With this in mind both a group of napari and Xarray developers are committed to 
 
 ### SciPy 2025
 
-Thanks to generous support from the Chan Zuckerberg Institute the napari, Xarray, and [CellProfiler](https://cellprofiler.org/) team members were able to attend SciPy 2025. At the sprints members of these three teams—Ian Hunt-Isaak, Tim Monko, Nodar Gogoberidze, Beth Cimini, Peter Sobolewski and Carol Willing—collaborated to develop a plan for enhancing the integration of Xarray with napari. The rest of this blog post is the initial roadmap we came up with for better integration of Xarray and napari.
+Thanks to support from the Chan Zuckerberg Institute the napari, Xarray, and [CellProfiler](https://cellprofiler.org/) team members were able to attend SciPy 2025. At the sprints members of these three teams—Ian Hunt-Isaak, Tim Monko, Nodar Gogoberidze, Beth Cimini, Peter Sobolewski and Carol Willing—collaborated to develop a plan for enhancing the integration of Xarray with napari. The rest of this blog post is the initial roadmap we came up with for better integration of Xarray and napari.
 
 ### Get Involved
 
