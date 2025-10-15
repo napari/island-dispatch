@@ -30,7 +30,7 @@ This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
 
 However, there are still several key pain points around managing image metadata when using napari.
 
-- Users think in physical units (microns, lat/lon) rather than pixels
+- Most users think in physical units (microns, lat/lon) rather than pixels
 - Re-indexing dimensions (e.g. Fiji’s Stack to HyperStack) is difficult with unnamed dimensions  
 - Dimensionality reductions can lead to incorrect dimension mappings in the viewer due to dropping of singleton dimensions.
   - For example, a max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
