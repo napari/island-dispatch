@@ -34,7 +34,7 @@ However, there are still several key pain points around managing image metadata 
 - Re-indexing dimensions (e.g. Fiji’s Stack to HyperStack) is difficult with unnamed dimensions  
 - Dimensionality reductions can lead to incorrect dimension mappings in the viewer due to dropping of singleton dimensions.
   - For example, a max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
-- Users expect that provided dimension names will be matched to viewer dimension names, but presently adding a `TCZYX` image and `TYX` image will lead to the `TYX` image being aligned with `ZYX` in the viewer.
+- Users expect that provided dimension names will be matched to viewer dimension names, but napari right-aligns axes, so if you add an image with axes `TYX` to a viewer with a `TCZYX` image, then the axes of the `TYX` image will be aligned with the 3 right-most axes, so `ZYX`, in the viewer.
 
 [Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If Napari could utilize Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
 
