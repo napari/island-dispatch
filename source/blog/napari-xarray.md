@@ -36,7 +36,7 @@ However, there are still several key pain points around managing image metadata 
   - For example, a max projected image stack will no longer respond to the correct sliders as the base image (`TCZYX` vs `TCYX`)
 - Users expect that provided dimension names will be matched to viewer dimension names, but napari right-aligns axes, so if you add an image with axes `TYX` to a viewer with a `TCZYX` image, then the axes of the `TYX` image will be aligned with the 3 right-most axes, so `ZYX`, in the viewer.
 
-[Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If napari could utilize Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
+[Xarray](https://xarray.dev/) is a powerful multidimensional array library with deep support for labelled axes and managing metadata. If napari could understand Xarray objects' metadata, then this integration would provide a solution to all of these pain points.
 
 To get a sense of the benefits Xarray provides, read the [Accelerating Biological Analysis with Xarray](https://xarray.dev/blog/xarray-biology) blog post and look at the rich repr of an [`Xarray.DataArray`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#dataarray) for an image stack:
 
