@@ -37,4 +37,4 @@ Some of the ideas we've discussed for generating continued funding include offer
 
 ## We want your feedback!
 
-Before we take the next steps, we’d love to hear from you. We’ve put together a short survey and invite you to share your feedback. Your input will help shape our priorities and ensure napari continues to grow in ways that best serve the community.
+Before we take the next steps, we’d love to hear from you. We’ve put together [a short survey](https://napari.typeform.com/sustainability) and invite you to share your feedback. Your input will help shape our priorities and ensure napari continues to grow in ways that best serve the community.
