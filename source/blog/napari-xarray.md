@@ -37,7 +37,7 @@ However, there are still several key pain points around managing image metadata 
 - Most users think in physical units (microns, lat/lon) rather than pixels
 - Re-indexing dimensions (e.g. Fiji’s Stack to HyperStack) is difficult with unnamed dimensions  
 - Dimensionality reductions can lead to misaligned axes between layers, and between layers and the slider dim names
-  - For example, in the video below there are two arrays in napari. The images with shape `TZYX` and the masks with shape `TYX`. napari right-aligns axes which means that the slider nams can't match both images. The `TYX` images will use the `Z` slider for their time dimension! This means the masks will always go out of the sync with the images.
+  - For example, in the video below there are two arrays in napari. The images with shape `TZYX` and the masks with shape `TYX`. napari right-aligns axes which means that the slider names can't match both images. The `TYX` images will use the `Z` slider for their time dimension! This means the masks will always go out of the sync with the images.
 
 ```{raw} html
 <div style="text-align: center; margin: 20px 0;">
@@ -57,7 +57,7 @@ To get a sense of the benefits Xarray provides, read the [Accelerating Biologica
 
 Having napari leverage the Xarray metadata will not only improve the experience of napari users but also provide Xarray users with a polished interactive visualization tool.
 
-There is progress toward thiss already. Some of the most successful plugins for napari are [napari-aicsimageio](https://github.com/AllenCellModeling/napari-aicsimageio) which is built on top of [aicsimageio](https://github.com/AllenCellModeling/aicsimageio) and its successor [bioio](https://bioio-devs.github.io/bioio/OVERVIEW.html), which use xarray to manage their data and metadata.
+There is progress toward this already. Some of the most successful plugins for napari are [napari-aicsimageio](https://github.com/AllenCellModeling/napari-aicsimageio) which is built on top of [aicsimageio](https://github.com/AllenCellModeling/aicsimageio) and its successor [bioio](https://bioio-devs.github.io/bioio/OVERVIEW.html), which use xarray to manage their data and metadata.
 
 ```{raw} html
 <div style="text-align: center;">
@@ -74,7 +74,7 @@ This potential for napari and Xarray to bring out the best in each other is not 
 
 The second oldest open issue on napari [`#14`](https://github.com/napari/napari/issues/14) is titled “Pass xarray to napari-gui for autolabeling sliders.” That issue's age is a testament to the difficulty of the problems involved in this integration.
 
-But something being hard is not a reason not to try to do it. In that spirit both the napari and Xarray developers are committed to improving the integration of napari and Xarray. This blog post is the kickoff of that collaboration
+But something being hard is not a reason not to try to do it. In that spirit both the napari and Xarray developers are committed to improving the integration of napari and Xarray. This blog post is the kickoff of that collaboration.
 
 ## How
 
@@ -126,7 +126,7 @@ The next step is to map array indices to Xarray coordinates. This is harder than
 
 #### 3: "Magic" Reordering (Complex)
 
-Today, if you mix up the order of your axes in non-standard way (e.g. `lat, time, lon`, or `XCZSYT`) and pass it to napari it will display as is, from right to left. Thisis because napari treats all axes equally, and does not know about or distinguish spatial or temporal dimensions! With knowledge of metadata and the conventions of a field napari could magically re-order the array to display in the "correct" order, with spatial dimensionss on the right. This is a significant jump in complexity due to the "magic" involved - the system will need to correctly guess user intent, which can be challenging.
+Today, if you mix up the order of your axes in non-standard way (e.g. `lat, time, lon`, or `XCZSYT`) and pass it to napari it will display as is, from right to left. This is because napari treats all axes equally, and does not know about or distinguish spatial or temporal dimensions! With knowledge of metadata and the conventions of a field napari could magically re-order the array to display in the "correct" order, with spatial dimensions on the right. This is a significant jump in complexity due to the "magic" involved - the system will need to correctly guess user intent, which can be challenging.
 
 **Goal:** Handle a few clear cases of problematic dimension ordering, not solve the general case of arbitrary reordering.
 
