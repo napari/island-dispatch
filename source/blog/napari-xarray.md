@@ -13,6 +13,10 @@ language: English
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
 ```
 
+## TL;DR
+
+Making napari and Xarray work better together will benefit many users. This has been long desired by the community but due to various roadblocks never implemented. At the SciPy 2025 sprints we formed a plan to implement a stronger integration.
+
 ## What and Why
 
 [napari](https://napari.org/stable/) is a high-performance, GPU-backed multidimensional array viewer with support for physical coordinates, data annotation, 2 and 3D visualization, and a plugin infrastructure, allowing users to customize it to their needs.
