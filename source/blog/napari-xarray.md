@@ -32,7 +32,7 @@ However, there are still several key pain points around managing image metadata 
 
 - Most users think in physical units (microns, lat/lon) rather than pixels
 - Re-indexing dimensions (e.g. Fiji’s Stack to HyperStack) is difficult with unnamed dimensions  
-- Dimensionality reductions can lead to incorrect dimension mappings in the viewer due to dropping of singleton dimensions.
+- Dimensionality reductions can lead to misaligned axes between layers, and between layers and the slider dim names
   - For example, in the video below there are two arrays in napari. The images with shape `TZYX` and the masks with shape `TYX`. napari right-aligns axes which means that the slider nams can't match both images. The `TYX` images will use the `Z` slider for their time dimension! This means the masks will always go out of the sync with the images.
 
 ```{raw} html
