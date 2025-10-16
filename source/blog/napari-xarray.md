@@ -86,6 +86,8 @@ This is a community effort, so your contributions and thoughts are very welcome!
 
 To fully realize the potential of an integration between Xarray and napari, some deep changes in napari may be required. Therefore, we have developed a phased plan that progresses from simple to more complex enhancements, culminating in solutions that require more fundamental changes to how napari handles data.
 
+In addition to the roadmap below we are maintaining a meta-issue that tracks all relevant issues in napari. That issue is [napari-xarray #11](https://github.com/napari/napari-xarray/issues/11).
+
 #### 1: Basic Metadata Mapping (Proof of Concept)
 
 This first step is the easiest, as it requires no changes to napari's core and can be implemented in a simple script or plugin.
