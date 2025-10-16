@@ -7,7 +7,7 @@ category: news, help-wanted
 language: English
 ---
 
-# Seamless Xarray Integration with napari - Plan from SciPy 2025
+# Xarray ❤️ napari
 
 ```{note}
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
