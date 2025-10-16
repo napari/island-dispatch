@@ -9,9 +9,9 @@ language: English
 
 # Towards long-term sustainability for napari
 
-The napari project has had a big year, with lots of new releases, community initiatives, and an expanding core team. In this post, we want to share the work supported by our current grant funding, the ongoing effort required to maintain the project, our current thoughts for ensuring napari’s long-term financial sustainability and the new funding models we’re exploring to support the project’s needs. We’ve also prepared a short survey to hear your thoughts, and your feedback will help guide our next steps. 
+The napari project has had a big year, with lots of new releases, community initiatives, and an expanding core team. In this post, we want to share the work supported by our current grant funding, the ongoing effort required to maintain the project, our current thoughts for ensuring napari’s long-term financial sustainability and the new funding models that we’re exploring to support the project’s needs. 
 
-Please fill out [the survey](https://napari.typeform.com/sustainability) by November 1st!
+We want **your** thoughts and feedback, so please **fill out [this short survey](https://napari.typeform.com/sustainability) by November 1st** to help guide our next steps!
 
 ## Looking ahead
 
