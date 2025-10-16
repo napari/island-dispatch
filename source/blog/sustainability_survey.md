@@ -33,7 +33,7 @@ To sustain project development & maintenance, and support the community of contr
 
 We’re exploring mission-aligned funding options beyond traditional grants, which can be short-lived, limited in scope, and unpredictable. The nature of grant funding makes it difficult to engage maintainers on a long-term basis, as they have no guarantee of continued employment beyond the grant horizon. Aligning project direction with available funding opportunities is also tricky, and can lead to a decreased focus on maintenance, refactoring, and key features that are not "in scope" for a given grant.
 
-Some of the ideas we've discussed for generating continued funding include offering dedicated support time with core team members through private office hours (in addition to open, community drop-in hours), providing installation and setup support, running workshops - both virtually and in person - on everything from getting started with napari to building custom plugins, and an easy install license and support package, to help lower the barrier for organizations that want a straightforward way to adopt napari with dedicated assistance.
+Some of the ideas we've discussed for generating continued funding include offering dedicated support time with core team members through private office hours (in addition to open, community drop-in hours), providing installation and setup support, running workshops—both virtually and in person—on everything from getting started with napari to building custom plugins, and an easy install license and support package, to help lower the barrier for organizations that want a straightforward way to adopt napari with dedicated assistance.
 
 ## We want your feedback!
 
