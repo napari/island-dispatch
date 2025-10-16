@@ -101,7 +101,9 @@ This first step is the easiest, as it requires no changes to napari's core and c
   - [`Dataset`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#dataset) -> Multiple Layers
   - [`DataTree`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#datatree) -> Multiple Layers + Pyramidal Viewing (if applicable)
 
-**Implementation:** Script or plugin level, no napari core changes required.
+**Implementation:** Script or plugin level, no napari core changes required. This will be an opportunity 
+
+**napari enhancement** napari has laid the groundwork for success here with the ability to include `axis_labels` and `units` on layers in [this pr](https://github.com/napari/napari/pull/6979). The remaining work is to close the gap by adding connections from the napari layer list to the napari dims model. This improvement will help all napari users, not just those using xarray.
 
 #### 2: Meaningful Physical Units (Enhancement)
 
