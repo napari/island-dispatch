@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Oct 15, 2025
+date: Oct 21, 2025
 author: Draga Doncila Pop
 location: World
 category: news
@@ -8,6 +8,7 @@ language: English
 ---
 
 # Towards long-term sustainability for napari
+_Tues, Oct 21, 2025_
 
 The napari project has had a big year, with lots of new releases, community initiatives, and an expanding core team. In this post, we want to share the work supported by our current grant funding, the ongoing effort required to maintain the project, our current thoughts for ensuring napari’s long-term financial sustainability and the new funding models that we’re exploring to support the project’s needs. 
 
