@@ -25,9 +25,11 @@ We’re lucky to have a passionate and thriving core team, many of whom voluntee
 
 Maintaining open source software takes a lot of ongoing effort - even just fixing bugs, ensuring compatibility with dependencies, and keeping tests passing requires significant time and attention. On top of that, there are countless “invisible” tasks such as writing documentation, refining infrastructure, and refactoring code for easier maintenance. These activities may not be as visible as releasing new features, but they are essential to keeping the project healthy and reliable. Currently, the scaffolding grant supports up to 2.4 full-time equivalent maintainers to perform both feature development, and the less glamorous maintenance work.
 
+Through the scaffolding grant we've also been able to pay a rotating release manager to ensure releases are out the door regularly, and with as few bugs as possible! This role has been indispensable in ensuring stability and consistency in our release process, as well as in communicating updates to the community.
+
 Alongside these technical efforts, there are also important administrative responsibilities: following up on funding opportunities, managing project funds, liaising with NumFOCUS and funders, and organizing steering council and core team meetings. Since April, we've introduced the role of an operations manager to ensure we are proactive in how we administrate the project, and this has been a great addition to the project.
 
-We think these roles are essential to the long-term functioning of napari: helping sustain project development & maintenance, and support the community of contributors long-term. We are therefore looking at ways to secure continued funding for at least one maintainer, a community manager, and an operations manager. Looking further ahead, we’d love to fund additional maintainers, host annual or semi-annual hackathons, and support core team members to attend key conferences and share their work.
+We think these roles are essential to the long-term functioning of napari: helping sustain project development & maintenance, and support the community of contributors long-term. We are therefore looking at ways to secure continued funding for at least one maintainer, a community manager, a release manager, and an operations manager. Looking further ahead, we’d love to fund additional maintainers, host annual or semi-annual hackathons, and support core team members to attend key conferences and share their work.
 
 ## Our thoughts about continued funding
 
