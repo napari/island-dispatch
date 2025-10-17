@@ -41,7 +41,7 @@ However, there are still several key pain points around managing image metadata 
 
 ```{raw} html
 <div style="text-align: center; margin: 20px 0;">
-  <iframe width="100%" style="max-width: 800px; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/b3j4GkYKkW8" title="Napari Misaligned arrays" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="100%" style="max-width: 800px; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/b3j4GkYKkW8?autoplay=1&mute=1&loop=1&playlist=b3j4GkYKkW8" title="Napari Misaligned arrays" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 
