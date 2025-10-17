@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Oct 20, 2025
+date: Oct 17, 2025
 author: Ian Hunt-Isaak, Tim Monko
 location: World
 category: news, help-wanted
@@ -10,7 +10,7 @@ language: English
 # Xarray ❤️ napari
 
 ```{note}
-This post is cross-posted on the [Xarray blog](https://xarray.dev/blog).
+This post is cross-posted on the [Xarray blog](https://xarray.dev/blog/xarray-napari-plan).
 ```
 
 ## TL;DR
@@ -82,6 +82,14 @@ But something being hard is not a reason not to try to do it. In that spirit bot
 
 Thanks to support from the Chan Zuckerberg Institute the napari, Xarray, and [CellProfiler](https://cellprofiler.org/) team members were able to attend SciPy 2025. At the sprints members of these three teams—Ian Hunt-Isaak, Tim Monko, Nodar Gogoberidze, Beth Cimini, Peter Sobolewski and Carol Willing—collaborated to develop a plan for enhancing the integration of Xarray with napari. The rest of this blog post is the initial roadmap we came up with for better integration of Xarray and napari.
 
+```{figure} images/scipy-napari-xarray-sprint.png
+:width: 70%
+:align: center
+:alt: SciPy 2025 sprint participants from napari, Xarray, and CellProfiler teams collaborating on the development roadmap
+
+The napari, Xarray, and CellProfiler teams at the SciPy 2025 sprints, collaborating on the roadmap for enhanced integration.
+```
+
 ### Get Involved
 
 This is a community effort, so your contributions and thoughts are very welcome! To get involved in shaping this vision of the future, please join the napari [Zulip](https://napari.zulipchat.com/) and introduce yourself on this [introductions issue](https://github.com/napari/napari-xarray/issues/8) in the napari Xarray repository.
@@ -107,7 +115,7 @@ This first step is the easiest, as it requires no changes to napari's core and c
   - [`Dataset`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#dataset) -> Multiple Layers
   - [`DataTree`](https://docs.xarray.dev/en/latest/user-guide/data-structures.html#datatree) -> Multiple Layers + Pyramidal Viewing (if applicable)
 
-**Implementation:** Script or plugin level, no napari core changes required. This will be an opportunity 
+**Implementation:** Script or plugin level, no napari core changes required. This will be an opportunity
 
 **napari enhancement** napari has laid the groundwork for success here with the ability to include `axis_labels` and `units` on layers in [this pr](https://github.com/napari/napari/pull/6979). The remaining work is to close the gap by adding connections from the napari layer list to the napari dims model. This improvement will help all napari users, not just those using xarray.
 
