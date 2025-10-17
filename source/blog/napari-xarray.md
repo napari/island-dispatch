@@ -92,7 +92,8 @@ The napari, Xarray, and CellProfiler teams at the SciPy 2025 sprints, collaborat
 
 ### Get Involved
 
-This is a community effort, so your contributions and thoughts are very welcome! To get involved in shaping this vision of the future, please join the napari [Zulip](https://napari.zulipchat.com/) and introduce yourself on this [introductions issue](https://github.com/napari/napari-xarray/issues/8) in the napari Xarray repository.
+This is a community effort, so your contributions and thoughts are very welcome! To get involved in shaping this vision of the future, please join the napari [Zulip](
+https://napari.zulipchat.com/#narrow/channel/212875-general/topic/Announcing.20the.20Xarray.20napari.20collaboration.20initiative.21) and introduce yourself on this [introductions issue](https://github.com/napari/napari-xarray/issues/8) in the [napari-xarray repository)[https://github.com/napari/napari-xarray].
 
 ### **🗺️ Roadmap**
 
