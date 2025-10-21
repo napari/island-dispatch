@@ -17,9 +17,9 @@ We want **your** thoughts and feedback, so please **fill out [this short survey]
 
 ## Looking ahead
 
-You may have noticed a surge of activity in the napari project this year. We’ve been rolling out regular releases, sharing a fresh roadmap, welcoming new members to the core team, and gearing up for a community hackathon at the end of October! It’s been a busy and inspiring time for the project, and we’re excited about where things are headed.
+You may have noticed a surge of activity in the napari project this year. We’ve been rolling out regular releases, sharing a [public roadmap](https://napari.org/stable/roadmaps/active_roadmap.html), welcoming new members to the core team, and gearing up for a [community hackathon](https://www.globias.org/activities/bioimage-analysis-conference-2025-in-kobe#h.6qhbdmqecyg5) next week! It’s been a busy and inspiring time for the project, and we’re excited about where things are headed.
 
-The CZI Scaffolding Grant has given us the opportunity to increase maintainer time, expand community engagement, and strengthen operations management. With a four-year horizon, this support has provided the breathing room we need to plan ahead with confidence. In addition to paying down technical debt and delivering exciting new features, we’re also laying the groundwork for long-term sustainability and maintenance. As part of this work, we've been considering what sort of effort it would take to maintain napari long-term.
+The CZI Scaffolding Grant (read more [in our previous post](https://napari.org/island-dispatch/blog/roadmap_announcement.html)) has given us the opportunity to increase maintainer time, expand community engagement, and strengthen operations management. With a four-year horizon, this support has provided the breathing room we need to plan ahead with confidence. In addition to paying down technical debt and delivering exciting new features, we’re also laying the groundwork for long-term sustainability and maintenance. As part of this work, we've been considering what sort of effort it would take to maintain napari long-term.
 
 ## Maintaining napari long-term
 
@@ -29,7 +29,7 @@ Maintaining open source software takes a lot of ongoing effort - even just fixin
 
 Through the scaffolding grant we've also been able to pay a rotating release manager to ensure releases are out the door regularly, and with as few bugs as possible! This role has been indispensable in ensuring stability and consistency in our release process, as well as in communicating updates to the community.
 
-Alongside these technical efforts, there are also important administrative responsibilities: following up on funding opportunities, managing project funds, liaising with NumFOCUS and funders, and organizing steering council and core team meetings. Since April, we've introduced the role of an operations manager to ensure we are proactive in how we administrate the project, and this has been a great addition to the project.
+Alongside these technical efforts, there are also important administrative responsibilities: following up on funding opportunities, managing project funds, liaising with NumFOCUS and funders, and organizing steering council and core team meetings. Since April, we've introduced the role of an operations manager to ensure we are proactive in how we administer the project, and this has been a great addition to the project.
 
 We think these roles are essential to the long-term functioning of napari: helping sustain project development & maintenance, and support the community of contributors long-term. We are therefore looking at ways to secure continued funding for at least one maintainer, a community manager, a release manager, and an operations manager. Looking further ahead, we’d love to fund additional maintainers, host annual or semi-annual hackathons, and support core team members to attend key conferences and share their work.
 
