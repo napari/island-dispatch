@@ -29,9 +29,15 @@ exclude_patterns = [
 blog_baseurl = "https://napari.org/island-dispatch"
 blog_title = "The Island Dispatch"
 blog_path = "blog"
+blog_post_pattern = "blog/*/*"
+blog_feed_fulltext = True
+blog_feed_subtitle = "Community news and updates from the napari project"
 fontawesome_included = True
-post_auto_excerpt = 1
+post_redirect_refresh = 1
+# post_auto_image = 1
+post_auto_excerpt = 2
 post_date_format = "%B %d, %Y"
+post_date_format_short = "%b %d, %Y"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
