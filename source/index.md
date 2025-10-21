@@ -6,7 +6,7 @@ Welcome to the napari community blog!
    :list-style: circle
    :format: {title} - {date} by {author}
    :date: %d %B %Y
-   :list-style: none
+   :list-style: circle
    :excerpts:
    :expand: Read more ...
 ```
