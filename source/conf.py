@@ -39,7 +39,7 @@ html_theme_options = {
     #"external_links": [{"name": "napari hub", "url": "https://napari-hub.org"}],
     "github_url": "https://github.com/napari/napari",
     "navbar_start": ["navbar-logo", "navbar-project"],
-    "navbar_end": ["navbar-icon-links"],
+    "navbar_end": ["navbar-icon-links", "theme-switcher"],
     "navbar_persistent": [],
     "header_links_before_dropdown": 6,
     # "secondary_sidebar_items": ["page-toc"],
