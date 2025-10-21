@@ -29,7 +29,7 @@ Maintaining open source software takes a lot of ongoing effort - even just fixin
 
 Through the scaffolding grant we've also been able to pay a rotating release manager to ensure releases are out the door regularly, and with as few bugs as possible! This role has been indispensable in ensuring stability and consistency in our release process, as well as in communicating updates to the community.
 
-Alongside these technical efforts, there are also important administrative responsibilities: following up on funding opportunities, managing project funds, liaising with NumFOCUS and funders, and organizing steering council and core team meetings. Since April, we've introduced the role of an operations manager to ensure we are proactive in how we administrate the project, and this has been a great addition to the project.
+Alongside these technical efforts, there are also important administrative responsibilities: following up on funding opportunities, managing project funds, liaising with NumFOCUS and funders, and organizing steering council and core team meetings. Since April, we've introduced the role of an operations manager to ensure we are proactive in how we administer the project, and this has been a great addition to the project.
 
 We think these roles are essential to the long-term functioning of napari: helping sustain project development & maintenance, and support the community of contributors long-term. We are therefore looking at ways to secure continued funding for at least one maintainer, a community manager, a release manager, and an operations manager. Looking further ahead, we’d love to fund additional maintainers, host annual or semi-annual hackathons, and support core team members to attend key conferences and share their work.
 
