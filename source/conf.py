@@ -40,6 +40,7 @@ html_theme = 'napari_sphinx_theme'
 html_static_path = ['_static']
 html_logo = "_static/logo.png"
 html_favicon = "_static/logo.png"
+html_css_files = ['custom.css']
 
 html_theme_options = {
     "external_links": [
@@ -54,7 +55,7 @@ html_theme_options = {
     "logo": {
         "link": "https://napari.org",
     },
-    # "secondary_sidebar_items": ["page-toc"],
+    "secondary_sidebar_items": [],
     "pygments_light_style": "napari",
     "pygments_dark_style": "dracula",
     # "announcement": "https://napari.org/dev/_static/announcement.html",
@@ -69,4 +70,14 @@ html_theme_options = {
 # HTML context for theme
 html_context = {
     "default_mode": "auto",
+}
+
+# Sidebar configuration
+html_sidebars = {
+    "**": [
+        "search-field.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/archives.html",
+    ]
 }
