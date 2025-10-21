@@ -44,7 +44,7 @@ html_theme_options = {
     "header_links_before_dropdown": 6,
     # "secondary_sidebar_items": ["page-toc"],
     "pygment_light_style": "napari",
-    "pygment_dark_style": "napari",
+    "pygment_dark_style": "dracula",
     # "announcement": "https://napari.org/dev/_static/announcement.html",
     "analytics": {
         # The domain you'd like to use for this analytics instance
