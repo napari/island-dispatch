@@ -36,8 +36,8 @@ fontawesome_included = True
 post_redirect_refresh = 1
 # post_auto_image = 1
 post_auto_excerpt = 2
-post_date_format = "%B %d, %Y"
-post_date_format_short = "%b %d, %Y"
+post_date_format = "%Y %B %d"
+post_date_format_short = "%Y %b %d"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

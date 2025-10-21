@@ -3,7 +3,7 @@
 ```{postlist}
    :list-style: circle
    :format: {title} | {date} | {author}
-   :date: %d %B %Y
+   :date: %Y %B %d
    :excerpts:
    :expand: Read more ...
 ```
