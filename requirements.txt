@@ -2,3 +2,4 @@ sphinx<7.3.0
 ablog
 napari-sphinx-theme
 myst-parser
+sphinx-design

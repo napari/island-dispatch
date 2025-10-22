@@ -1,0 +1,25 @@
+/* Custom styling for postlist - multiline layout */
+
+/* More spacing between blog posts */
+.postlist .ablog-post {
+    margin-bottom: 2em;
+}
+
+/* The paragraph containing title, date, author - make it smaller and grey */
+.postlist .ablog-post-title {
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+/* Make the title link large, bold, and black - override parent styling */
+.postlist .ablog-post-title > a:first-child {
+    display: block;
+    font-size: 1.4em; /* 1.4 * 0.9em = 1.26em effectively */
+    font-weight: 700;
+    margin-bottom: 0.3em;
+    text-decoration: none;
+}
+
+.postlist .ablog-post-title a:not(:first-child) {
+    text-decoration: none;
+}
