@@ -6,7 +6,6 @@ Here's the napari community blog!
 
 ```{postlist}
    :list-style: circle
-   :category: Manual
    :format: "{title}"
    :sort:
 ```
