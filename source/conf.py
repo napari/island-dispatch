@@ -17,6 +17,7 @@ extensions = [
     "myst_parser",
     "ablog",
     "sphinx.ext.intersphinx",
+    "sphinx_design",
 ]
 
 templates_path = ['_templates']
@@ -25,7 +26,18 @@ exclude_patterns = [
 ]
 
 # ABlog configuration
-blog_baseurl = "https://napari.org"
+blog_baseurl = "https://napari.org/island-dispatch"
+blog_title = "The Island Dispatch"
+blog_path = "blog"
+blog_post_pattern = "blog/*/*"
+blog_feed_fulltext = True
+blog_feed_subtitle = "Community news and updates from the napari project"
+fontawesome_included = True
+post_redirect_refresh = 1
+# post_auto_image = 1
+post_auto_excerpt = 2
+post_date_format = "%Y %B %d"
+post_date_format_short = "%Y %b %d"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -33,17 +45,25 @@ blog_baseurl = "https://napari.org"
 html_theme = 'napari_sphinx_theme'
 html_static_path = ['_static']
 html_logo = "_static/logo.png"
+html_favicon = "_static/logo.png"
+html_css_files = ['custom.css']
 
 html_theme_options = {
-    #"external_links": [{"name": "napari hub", "url": "https://napari-hub.org"}],
+    "external_links": [
+        {"name": "napari.org", "url": "https://napari.org"},
+        {"name": "napari hub", "url": "https://napari-hub.org"},
+    ],
     "github_url": "https://github.com/napari/napari",
     "navbar_start": ["navbar-logo", "navbar-project"],
-    "navbar_end": ["navbar-icon-links"],
+    "navbar_end": ["navbar-icon-links", "theme-switcher"],
     "navbar_persistent": [],
     "header_links_before_dropdown": 6,
-    # "secondary_sidebar_items": ["page-toc"],
-    "pygment_light_style": "napari",
-    "pygment_dark_style": "napari",
+    "logo": {
+        "link": "https://napari.org",
+    },
+    "secondary_sidebar_items": [],
+    "pygments_light_style": "napari",
+    "pygments_dark_style": "dracula",
     # "announcement": "https://napari.org/dev/_static/announcement.html",
     "analytics": {
         # The domain you'd like to use for this analytics instance
@@ -51,4 +71,19 @@ html_theme_options = {
         # The analytics script that is served by Plausible
         "plausible_analytics_url": "https://plausible.io/js/plausible.js",
     },
+}
+
+# HTML context for theme
+html_context = {
+    "default_mode": "auto",
+}
+
+# Sidebar configuration
+html_sidebars = {
+    "**": [
+        "search-field.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/archives.html",
+    ]
 }

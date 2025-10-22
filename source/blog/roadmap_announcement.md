@@ -7,7 +7,7 @@ category: news
 language: English
 ---
 
-# napari roadmap blog post
+# Announcing the napari public roadmap
 
 We're excited to share what's coming next for napari! After months of listening
 to our community and carefully planning our path forward, we're ready to pull

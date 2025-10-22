@@ -1,11 +1,8 @@
-# The Island Dispatch 🏝️
-
-Here's the napari community blog!
-
-## All posts
+# Welcome to the napari community blog! 🏝️
 
 ```{postlist}
-   :list-style: circle
-   :format: "{title}"
-   :sort:
+   :format: {title} {date} | {author}
+   :date: %Y %B %d
+   :excerpts:
+   :expand: Read more ...
 ```
