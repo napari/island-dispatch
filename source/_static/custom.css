@@ -8,30 +8,13 @@
 /* The paragraph containing title, date, author - make it smaller and grey */
 .postlist .ablog-post-title {
     font-size: 0.9em;
-    color: #666;
     line-height: 1.8;
 }
 
 /* Make the title link large, bold, and black - override parent styling */
 .postlist .ablog-post-title > a:first-child {
     display: block;
-    font-size: 1.4em; /* 1.67 * 0.9em = 1.5em effectively */
+    font-size: 1.4em; /* 1.4 * 0.9em = 1.26em effectively */
     font-weight: 700;
     margin-bottom: 0.3em;
-    text-decoration: none;
-    color: var(--pst-color-text-base, #000) !important; /* Force black/normal color */
-}
-
-.postlist .ablog-post-title > a:first-child:hover {
-    text-decoration: underline;
-}
-
-/* Author links stay at the smaller size and grey (inherited from parent) */
-.postlist .ablog-post-title a:not(:first-child) {
-    text-decoration: none;
-    color: #666;
-}
-
-.postlist .ablog-post-title a:not(:first-child):hover {
-    text-decoration: underline;
 }
