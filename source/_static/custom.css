@@ -17,4 +17,9 @@
     font-size: 1.4em; /* 1.4 * 0.9em = 1.26em effectively */
     font-weight: 700;
     margin-bottom: 0.3em;
+    text-decoration: none;
+}
+
+.postlist .ablog-post-title a:not(:first-child) {
+    text-decoration: none;
 }
