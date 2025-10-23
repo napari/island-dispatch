@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Oct 17, 2025
+date: Oct 24, 2025
 author: Ian Hunt-Isaak, Tim Monko
 location: World
 category: news, help-wanted
@@ -9,7 +9,7 @@ language: English
 
 # Xarray ❤️ napari
 
-*Mon, Oct 20, 2025*
+*Fri, Oct 24, 2025*
 
 ```{note}
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog/xarray-napari-plan).
