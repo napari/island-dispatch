@@ -9,8 +9,6 @@ language: English
 
 # Xarray ❤️ napari
 
-*Fri, Oct 24, 2025*
-
 ```{note}
 This post is cross-posted on the [Xarray blog](https://xarray.dev/blog/xarray-napari-plan).
 ```
