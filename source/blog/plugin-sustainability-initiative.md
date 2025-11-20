@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Nov 24, 2025
+date: Nov 20, 2025
 author: Tim Monko
 location: World
 category: news, help-wanted
