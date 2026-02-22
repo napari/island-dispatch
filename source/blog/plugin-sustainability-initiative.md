@@ -1,126 +1,110 @@
 ---
 blogpost: true
-date: Nov 20, 2025
+date: Feb 22, 2026
 author: Tim Monko
 location: World
 category: news, help-wanted
 language: English
 ---
 
-# The napari Plugin Sustainability Initative: Building a collaborative ecosystem
+# The napari Plugin Sustainability Initiative: Building a collaborative ecosystem
 
-Foundational scientific software tools deliver innovative, yet reliable methods for research across multiple domains.
-These tools often rely on community expansion by "downstream" libraries to meet domain-specific needs. [napari](https://napari.org/), an open-source, multidimensional imagee viewer for Python, provides core infrastructure for visualizing and annotating scientific imaging data. Its extendable GUI has empowered a diverse ecosystem of over 550 [community-developed plugins](https://napari-hub.org/) (i.e., downstream libraries). Since the public announcement of napari in 2019 and the addition of plugin support soon after, collaboration among core contributors, plugin authors, and users has enabled research workflows that no single library could accomplish alone.
+[napari](https://napari.org/) is an open-source, multidimensional image viewer for Python that provides core infrastructure for visualizing and annotating scientific imaging data. Its extendable GUI has empowered a diverse ecosystem of over 550 [community-developed plugins](https://napari-hub.org/). Since the public announcement of napari in 2019 and the addition of plugin support soon after, collaboration among core contributors, plugin authors, and users has enabled research workflows that no single library could accomplish alone. One advantage of napari and its plugin ecosystem is that it enables advanced scientific processing, without necessarily requiring any code, lowering the barrier to entry for domain scientists who need powerful tools to analyze their data. In this way, napari serves as an *entry point* into scientific programming for many researchers.
 
-One advantage of napari and its plugin ecosystem is that it enables advanced scientific processing, without necessarily requiring any code! This lowers the barrier to entry for domain scientists who may be beginners to writing code, but need powerful tools to analyze their data. Then, as users meet the limits of available resources, they can learn to extend napari and their image analysis with their own code. In this way, napari serves as an *entry point* into scientific programming for many researchers, just like other foundational scientific software tools.
+In recent years, however, collaboration between plugin developers and the napari core team has declined, leading to challenges in keeping plugins up to date and aligned with napari's evolving architecture. With financial support from the [United States Research Software Sustainability Institute (URSSI) Early Career Fellowship](https://urssi.us/blog/2025/07/02/call-for-proposals-urssi-early-career-fellows-round-2/), I've been working with the napari community since October 2025 to improve the plugin ecosystem's sustainability. Our goal is to build infrastructure and practices that other scientific software communities can learn from and adapt.
 
-The napari project maintains key infrastructure for plugin developers and users, including an easily searchable [napari-hub](https://napari-hub.org/) website, a GUI to easily download plugins with the [napari-plugin-manager](https://github.com/napari/napari-plugin-manager), and tools to easily create plugins (including [documentation](https://napari.org/stable/plugins/index.html) and the [napari-plugin-template](http://github.com/napari/napari-plugin-template)). In recent years, collaboration between plugin developers and the napari core team has declined. This has led to challenges in maintaining a healthy plugin ecosystem, with many developers struggling to keep their plugins up to date and aligned with napari's evolving architecture. This sustainability problem is not unique to napari; it's a pattern repeated across scientific software, where the relationship between foundational tools and their domain-specific extensions takes on a transactional nature, rather than a collaborative one. You can read more about sustainability efforts in core napari at this [recent blog post](https://napari.org/island-dispatch/blog/sustainability_survey.html).
-
-With financial support from the [United States Research Software Sustainability Institute (URSSI) Early Career Fellowship](https://urssi.us/blog/2025/07/02/call-for-proposals-urssi-early-career-fellows-round-2/), I've been working with the napari community to improve the plugin ecosystem's sustainability. Our goal is to build infrastructure and practices that other scientific software communities can learn from and adapt to meet their own needs.
+This post is an update on where the Plugin Sustainability Initiative stands after several months of active working group meetings and development.
 
 ## How I got here
 
-In 2022, I was drawn in by a community and [Chan Zuckerberg Initiative (CZI)](https://chanzuckerberg.com/) promotion of napari as a *fast* image viewer ready for the needs of complex, large, modern scientific imaging data. In addition, the already present plugins included a number of incredibly powerful extensions that made analysis work possible without me having to know any Python. The napari plugin ecosystem was still in its infancy, but was bolstered by a number of [CZI plugin grants](https://chanzuckerberg.com/rfa/napari-plugin-grants/), the [napari plugin template](https://github.com/napari/napari-plugin-template), and a growing community of enthusiastic developers reaching out to the scientific community. Most importantly, the napari community created welcoming instructional material for new users and developers to get started.
-
-In this way, I would describe my entry into Python as mainly influenced by learning to use napari for my own scientific research. To that end, I started developing [napari-ndev](https://ndev-kit.github.io/) as a way to bring bioimage analysis tools to my collaborators, and with the goal of bringing tools, like reproducible high-throughput analyses to napari, something that I felt was missing at the time. Without the opportunity to contribute a plugin, I never would have had the learning experience that led me to become a core contributor and community manager for napari.
+In 2022, I was drawn in by the community and [Chan Zuckerberg Initiative (CZI)](https://chanzuckerberg.com/) promotion of napari as a *fast* image viewer ready for complex, modern scientific imaging data. The plugin ecosystem was bolstered by a number of [CZI plugin grants](https://chanzuckerberg.com/rfa/napari-plugin-grants/), welcoming [instructional material](https://napari.org/stable/plugins/index.html), the [napari plugin template](https://github.com/napari/napari-plugin-template), and a growing community of enthusiastic developers. I started developing [napari-ndev](https://ndev-kit.github.io/) to bring bioimage analysis tools to my collaborators—without that opportunity to contribute a plugin, I never would have had the learning experience that led me to become a core contributor and community manager for napari.
 
 ## How ecosystems drift apart
 
-The early growth of the plugin ecosystem was very exciting, but it also came with challenges: the plugin system was still maturing, many developers were new to Python and packaging, and there was little infrastructure for long-term maintenance. As initial funding ended and excitement waned, the reality of maintaining research software reared its head.
+The early growth of the plugin ecosystem was exciting, but it came with challenges: the plugin system was still maturing, many developers were new to Python and packaging, and there was little infrastructure for long-term maintenance.
 
-- Many plugins were built on top of rapidly evolving napari APIs, even if the project made efforts to inform about the instability of these features.
-- Plugins, often developed by domain scientists, had slowed maintenance or stopped receiving updates altogether.
-- Other libraries that were dependencies of the ecosystem evolved independently, causing compatibility issues.
+- Many plugins were built on top of rapidly evolving napari and plugin APIs.
+- Plugins, often developed by domain scientists, slowed in maintenance or stopped receiving updates.
+- Dependency libraries naturally diverged, causing compatibility issues.
 
-Our 2023 napari survey captured this disconnect well: 86% of respondents said creating a plugin was easy, but many mentioned the burden of maintenance. Year over year in the surveys, respondents felt it was getting harder to contribute to napari core and maintain plugins. In community meetings and discussions, certain pain points keep coming up: lacking plugin discoverability and quality assesment, dependency hell due to complex environments, deep learning and GPU-accelerated tooling, confusion about what belong in core napari versus what should be a plugin, and maybe most tellingly, that domain scientists writing research software don't have the time, resources, or expertise to maintain software. Ultimately, there is no clear path for the ecosystem to become sustainable.
+Our 2023 napari survey captured this well: 86% of respondents said creating a plugin was easy, but many mentioned the burden of maintenance. In community meetings, certain pain points keep coming up: lacking plugin discoverability and quality assessment, dependency hell due to complex environments, confusion about deep learning and GPU-accelerated tooling, and most tellingly, that domain scientists don't have the time, resources, or expertise to maintain software long-term.
 
-## But, what about users?
+These plugins are often *critical to the workflows of their users*. This creates a trust issue: users hesitate to adopt new versions of napari or novel plugins, fearing that their workflows might break. The disconnect went both ways—plugin developers felt dependent on napari but detached from its direction, while core contributors lost touch with what the broader ecosystem needed.
 
-A further consideration with all of this is that *these plugins are often critical to the workflows of their users*. This creates a trust issue in the ecosystem, where users may be hesitant to adopt new version of napari, novel plugins or update existing setups, fearing that they may become unsupported or break their workflows. After all, scientific research often depends on reproducibility and stability, and when the tools it relies on are in flux, it can hinder progress. Unfortunately, this pattern eventually led to a drifting apart between the napari core team and the plugin ecosystem, with communication becoming quieter and trust decreasing. The disconnect went both ways; plugin developers and users felt dependent on napari but disconnected from where it was headed. Core contributors, focused on stabilizing napari itself, had lost touch with what the broader ecosystem needed.
+## What we've learned from the working group
 
-## Insights from the community
+In October 2025, we [recruited](https://napari.zulipchat.com/#narrow/channel/212875-general/topic/Announcing.20the.20plugin.20sustainability.20initiative!/) community members and established the Plugin Sustainability Initiative working group. The group [meets weekly](https://napari.org/stable/community/meeting_schedule.html) at alternating times for global participation, and includes members from diverse scientific backgrounds and napari roles—core team, plugin developers, facility engineers, and users. Our [working group notes](https://hackmd.io/@napari/plugin-wg) are public.
 
-Initiation of this project involved [recruiting](https://napari.zulipchat.com/#narrow/channel/212875-general/topic/Announcing.20the.20plugin.20sustainability.20initiative!/with/544624119) community members from as many communities as possible and establishing the Plugin Sustainability Initiative. The working group [meets at different times](https://napari.org/stable/community/meeting_schedule.html) for global participation and includes members from diverse scientific (many different career levels and roles) and napari (ie. core team, plugin developers, and users) backgrounds. The most surprising part of the [working group outcomes](https://hackmd.io/@napari/plugin-wg) hasn't been the list of familiar challenges, but instead how much the community *wants to help build and shape solutions*.
+The most surprising outcome hasn't been the list of familiar challenges, but how much the community *wants to help build and shape solutions*. Plugin developers have volunteered to review each other's work. Instructors have offered to write documentation about Git and GitHub basics. Active developers have suggested programs where unmaintained plugins could find new maintainers. The conversation was never "what should napari do for us?" but rather "how can we work together to make this better?"
 
-Plugin developers have volunteered to review each other's work. Instructors have offered to write documentation about Git and GitHub basics. Active developers have suggested programs where unmaintained plugins could find new maintainers. The coversation was never "what should napari do for us?" but rather "how can we work together to make this better?"
+Several concrete themes have emerged from our meetings:
 
-In one of the working group meetings it was said well: plugin developers often see the core napari team as shephereds of the whole ecosystem, but at the same time, plugin developers rely on the core team in ways the core team doesn't always know about and can't always support. Ultimately, people want ways to be involved more broadly with the *whole ecosystem* without necessarily having to contribute to the core tools, we just need to send out the invitations and build the right infrastracture to make this possible.
+- **Plugin discoverability is broken in practice.** One developer described searching the plugin hub for deep-learning plugins with specific segmentation models and being unable to find the ones that actually work. Users need to know not just what exists, but what is maintained and what works with their version of napari.
+- **The "composable tools vs. monolith toolbox" tension is real.** napari's documentation recommends small, composable widgets, but the community has gravitated toward large, self-contained toolboxes that replicate an ImageJ-like experience for domain-specific workflows. Both patterns are valid, but they need different infrastructure, documentation, and discovery mechanisms.
+- **Reproducible environments are a solvable problem.** Working group members have championed the use of lock files with tools like [Pixi](https://pixi.sh/latest/) and [uv](https://docs.astral.sh/uv/) to create reproducible, fast-resolving environments. This opens the door to curated plugin bundles—think `pixi global install napari-essentials`—that are tested to work together.
+- **Plugin donation and stewardship resonated.** The idea that developers could "donate" unmaintained plugins to the community for new stewards to pick up got shared smiles from every meeting where it came up. We're exploring how a plugin community-led organization could facilitate this program.
+
+As one member put it: plugin developers often see the core napari team as shepherds of the whole ecosystem, but they rely on the core team in ways the core team doesn't always know about and can't always support. People want ways to be involved more broadly with the *whole ecosystem* without necessarily contributing to the core tools—we just need to build the right infrastructure.
 
 ## What we're building, together
 
-The Plugin Sustainability Initiative has indentified three main objectives:
+The working group has converged on three interconnected priorities, with the community review system emerging as the most immediate focus.
 
-### 1. Modernize plugin development infrastructure
+### 1. Automated and community review systems
 
-We're updating the [napari-plugin-template](http://github.com/napari/napari-plugin-template) and [documentation](https://napari.org/stable/plugins/index.html) to follow current best practices from resources including the venerable [PyOpenSci](https://www.pyopensci.org/),[Scientific Python](https://scientific-python.org/), and [Python Packaging User Guide](https://packaging.python.org/en/latest/). These new and updated resources will be tailored to different experience levels, so that both beginners and experienced developers have personalized napari-specific guidance. This includes:
+This is where we're starting. The working group has consistently prioritized the review system as the highest-impact effort, and we're building it with both automated and human components.
 
-- Clearer guidance for people new to Python packaging, Git, Github, testing, and continuous integration
-- Better documentation of sustainable design patterns, like how to separate computational code from user interface code from visualization code
-- Create clear, real-world-tested upgrade paths for existing plugins to adopt modern best practices
-- Create guidance for thinking about plugin interoperability and long term functionality by thinking carefully about dependencies and environment manager
-- Introduce documentation around modern tools for building and distributing reproducible python environments with [uv](https://docs.astral.sh/uv/) and [Pixi](https://pixi.sh/latest/)
+**Automated review tooling** is being developed to evaluate napari plugins against best practices. Inspired by [SciPy's repo review](https://repo-review.readthedocs.io/en/latest/) and the former [napari-hub-cli](https://github.com/chanzuckerberg/napari-hub-cli), this tooling will check plugin repositories for common issues—packaging quality, test coverage, dependency health, CI configuration—and provide actionable feedback. We're also working on using [npe2api](https://github.com/napari/npe2api) to run compatibility checks against napari itself, so we can detect when plugins break and surface that information to developers and users. A key design goal is to use CI to continuously check whether plugins install and function correctly, so that sustainability information stays current rather than becoming stale metadata.
 
-### 2. Build community review systems
+**A tiered recognition system** has taken shape through working group discussions. Rather than a binary "reviewed/not-reviewed" label, we're moving toward a system with levels like "essentials" (curated, actively maintained, broadly useful), "community-reviewed" (peer-reviewed by experienced developers), and "dependency-verified" (automated checks pass). This addresses a real need: very specific but powerful plugins like microSAM serve smaller audiences, and a flat ranking wouldn't serve them well. The tiered approach lets different kinds of quality be recognized, especially when plugins solve particular niches in a domain-specific manner.
 
-We're establishing both automated and human review processes to help plugin developers incorporate personalized feedback. The goal is to improve initial plugin quality, with better tooling and best practices, and then to create ongoing feedback loops for improved longterm maintenance.
+**Human peer review**, inspired by [PyOpenSci's model](https://www.pyopensci.org/about-peer-review/), will pair experienced community members with plugin developers for constructive feedback on maintainability, discoverability, and best practices. Community members have already volunteered to serve as reviewers, and we're exploring formats including live video review sessions. We hope to build a partnership with the [Journal of Open Source Software (JOSS)](https://joss.theoj.org/) [similar to PyOpenSci's](https://www.pyopensci.org/software-peer-review/partners/joss.html), giving reviewed plugins a fast track to publication.
 
-- **Automated tools:** We're developing a tool for gathering and evaluating napari plugins, inspired by efforts like [SciPy's repo review](https://scipy.github.io/devdocs/dev/contributor_guide/repo_review.html) and [napari-hub-cli](https://github.com/chanzuckerberg/napari-hub-cli). This will provide early feedback on common issues and suggest improvements to align with best practices. In addition, we will analyze plugin metrics gathered with [npe2api](https://github.com/napari/npe2api) to provide higher quality information about plugin sustainability.
-- **Human review:** Inspired by PyOpenSci's [peer review model](https://www.pyopensci.org/about-peer-review/), we will set up a system where experienced community members provide constructive feedback on plugin maintainability, discoverability, and best practices. We hope to setup a similar partnership with [Journal of Open Source Science (JOSS)](https://joss.theoj.org/) [as PyOpenSci](https://www.pyopensci.org/software-peer-review/partners/joss.html), and use this as an opportunity to help fasttrack plugins to publications in JOSS. Community members have already volunteered time to serve as peer reviewers, including ideas such as live video review session.
+Together, automated tooling provides continuous, scalable feedback while human review offers the nuanced, domain-aware guidance that no tool can replace. Both feed into the tiered recognition system to give users meaningful signals about plugin quality.
 
-These approaches will work together to improve developer experience, plugin quality, and user satisfaction.
+### 2. Modernize plugin development infrastructure
 
-### 3. Better communication, discoverability, and recognition
+We're actively updating the [napari-plugin-template](http://github.com/napari/napari-plugin-template) and [plugin documentation](https://napari.org/stable/plugins/index.html) to follow current best practices from [PyOpenSci](https://www.pyopensci.org/), [Scientific Python](https://scientific-python.org/), and the [Python Packaging User Guide](https://packaging.python.org/en/latest/). Working group members have contributed firsthand accounts of upgrading their own plugins, and those real-world experiences are directly informing the template and documentation updates. This includes:
 
-The community has expressed a desire to improve discoverability of their plugins and recognition of their efforts.
-This system will benefit the entire ecosystem by demonstrating maturity and collaboration. The automated tooling and review system will be the foundation of this effort, but a recognition program will be used to incentivize collaborative participation and long-term maintenance. We hope to build on models like [Astropy's affiliate program](https://www.astropy.org/affiliated/index.html). We're figuring out how to:
+- Clearer guidance for people new to Python packaging, Git, GitHub, testing, and continuous integration
+- Better documentation of sustainable design patterns, especially separating computational code from UI code—a point the working group has emphasized repeatedly
+- Real-world-tested upgrade paths for existing plugins, informed by members who have gone through the process themselves
+- Guidance for reproducible environments using lock files with Pixi and uv
+- Reorganized documentation with distinct beginner and advanced tracks, including a "your first plugin" guide prior to the template
 
-- Identify high quality plugin contributions across different domains
-- Improve plugin discoverability on the [napari hub](https://napari-hub.org/) with new metadata
-- Make collaborative maintenance easier and less intimidating
-- Enable plugin donation programs where maintainers can hand off plugins to new stewards
-- Support maintainer partnerships, potentially through a napari-plugins GitHub organization
-- Improve communication about napari API changes and new features that may impact plugins
+### 3. Better discoverability and ecosystem communication
 
-## How we're engaging the community
+The automated tooling and review system provide the foundation for improving how users find and trust plugins. We're working on:
 
-Open collaboration is central to this project:
-
-1. **Open resources**: The updated plugin template, review tools, and documentation will all be published under permissive licenses with documentation for how to adapt them
-2. **Collaborative working group**: We meet at multiple times for global participation, with open Zulip and GitHub channels for async discussion
-3. **Transparent process**: We share regular updates with the community about what we're doing and why
-4. **Cross-community learning**: We're planning to share what we learn at conferences like SciPy and through blog posts and documentation
+- Surfacing sustainability information (maintenance status, compatibility, last update) on the [napari hub](https://napari-hub.org/)
+- Distinguishing composable tool plugins from standalone toolbox plugins in search and metadata
+- Enabling plugin donation programs where maintainers can hand off plugins to new stewards
+- Exploring a napari-plugins GitHub organization for community-maintained plugins
+- Improving communication about napari API changes that may impact plugins, potentially through automated notifications
 
 ## Why it matters beyond napari
 
-These challenges—sustaining domain-specific extensions, coordinating between foundational and downstream projects, supporting novice contributors while maintaining quality—aren't unique to napari. They show up across scientific software, from Python's scientific ecosystem to astronomy tools to geosciences platforms.
+These challenges—sustaining domain-specific extensions, coordinating between foundational and downstream projects, supporting novice contributors while maintaining quality—aren't unique to napari. They show up across scientific software.
 
-What might be transferable from this work isn't any particular piece of technology, but the approach of:
+What might be transferable from this work is the approach of:
 
-1. **Thinking about extensions as collaborative partners** with the core project, not external add-ons
-2. **Creating shared ownership** through working groups that include both core and extension developers
+1. **Treating extensions as collaborative partners**, not external add-ons
+2. **Creating shared ownership** through working groups that include core and extension developers
 3. **Building infrastructure for collaboration**, not just distribution—review systems, donation programs, maintainer partnerships
-4. **Enabling cross-domain learning** where advances in one field benefit others through upstream contributions
-5. **Recognizing all kinds of contributions** across the ecosystem to support developers and users
+4. **Combining automated and human review** to provide scalable feedback without losing the nuance that domain expertise brings
+5. **Enabling cross-domain learning** where advances in one field benefit others through upstream contributions.
+6. **Recognizing all kinds of contributions** to the ecosystem, from code to documentation to review and mentorship, and providing pathways for people to get involved in different ways.
 
-Our work will produce:
-
-- Documentation of sustainable practices for coordinating foundational tools and their extensions
-- Reusable infrastructure (templates, review tools, affiliation models) that other projects can adapt
-- Lessons learned about community engagement across diverse groups
-- Support for other projects facing similar challenges
-
-Everything we create—updated templates, review tools, documentation—will be open source and documented so other communities can use and adapt it.
+Everything we create—templates, review tools, documentation—is open source and documented for other communities to adapt.
 
 ## Thank you
 
-This project is supported by the URSSI Early Career Fellowship, with funding from the Sloan Foundation. The fellowship gives me both research support and the opportunity to engage deeply with the scientific software community.
+This project is supported by the URSSI Early Career Fellowship, with funding from the Sloan Foundation. Thank you to URSSI and the Sloan Foundation for making this work possible, and to the napari community for showing up and building this together.
 
-Without this support, building these relationships and infrastructure wouldn't be possible. Thank you to URSSI and the Sloan Foundation for making this work possible, and to the napari community for showing up and being willing to build this together.
-
-Honestly, the most important outcome isn't any particular tool or program—it's the collaborative relationship between napari and its plugin ecosystem feeling healthier than it has in a while. When foundational tools and their extensions work together, everyone benefits: developers don't duplicate effort, users get more reliable tools, and research moves forward on steadier ground.
+The most important outcome isn't any particular tool or program—it's that the collaborative relationship between napari and its plugin ecosystem is healthier than it has been in a while. When foundational tools and their extensions work together, everyone benefits: developers don't duplicate effort, users get more reliable tools, and research moves forward on steadier ground.
 
 ## Contact and follow along
 
 If you're working on scientific software with an extension ecosystem, or if you're curious about sustainability practices for open source communities, we would love to hear from you.
 
-You can follow our progress and join the conversations on [Zulip](https://napari.zulipchat.com/). Keep and eye on [the napari blog](https://napari.org/island-dispatch/), where we'll be sharing updates on infrastructure releases, insights from the working group, and early results from the affiliation program over the coming months.
+You can follow our progress and join the conversations on [Zulip](https://napari.zulipchat.com/). Keep an eye on [the napari blog](https://napari.org/island-dispatch/), where we'll share updates on the review system rollout, infrastructure releases, and working group insights over the coming months.
