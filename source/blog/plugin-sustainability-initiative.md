@@ -7,7 +7,7 @@ category: news, help-wanted
 language: English
 ---
 
-# The napari Plugin Sustainability Initiative: Building a collaborative ecosystem
+# Building the napari Plugin Sustainability Initiative
 
 [napari](https://napari.org/) is an open-source, multidimensional image viewer for Python that provides core infrastructure for visualizing and annotating scientific imaging data. Its extendable GUI has empowered a diverse ecosystem of over 580 [community-developed plugins](https://napari-hub.org/). Since the public announcement of napari in 2019 and the addition of plugin support soon after, collaboration among core contributors, plugin authors, and users has enabled research workflows that no single library could accomplish alone. One advantage of napari and its plugin ecosystem is that it enables advanced scientific processing, without necessarily requiring any code, lowering the barrier to entry for domain scientists who need powerful tools to analyze their data. In this way, napari serves as an *entry point* into scientific programming for many researchers.
 
@@ -17,7 +17,11 @@ This post is an update on where the Plugin Sustainability Initiative stands afte
 
 ## How I got here
 
+<<<<<<< Updated upstream
 In 2022, I was drawn in by the community and [Chan Zuckerberg Initiative's (CZI)](https://chanzuckerberg.com/) promotion of napari as a *fast* image viewer ready for complex, modern scientific imaging data. The plugin ecosystem was bolstered by a number of [CZI plugin grants](https://chanzuckerberg.com/rfa/napari-plugin-grants/), welcoming [instructional material](https://napari.org/stable/plugins/index.html), the [napari plugin template](https://github.com/napari/napari-plugin-template), and a growing community of enthusiastic developers. I started developing [napari-ndev](https://ndev-kit.github.io/) to bring bioimage analysis tools to my collaborators—without that opportunity to contribute a plugin, I never would have had the learning experience that led me to become a core contributor and community manager for napari.
+=======
+In 2022, I was drawn in by the community and [Chan Zuckerberg Initiative (CZI)](https://chanzuckerberg.com/) promotion of napari as a *fast* image viewer ready for complex, modern scientific imaging data. The plugin ecosystem was bolstered by a number of [CZI plugin grants](https://chanzuckerberg.com/rfa/napari-plugin-grants/), welcoming [instructional material](https://napari.org/stable/plugins/index.html), the [napari plugin template](https://github.com/napari/napari-plugin-template), and a growing community of enthusiastic developers. I started developing the [ndev-kit] [](https://ndev-kit.github.io/) to bring bioimage analysis tools to my collaborators—without that opportunity to contribute a plugin, I never would have had the learning experience that led me to become a core contributor and community manager for napari.
+>>>>>>> Stashed changes
 
 ## How ecosystems drift apart
 
