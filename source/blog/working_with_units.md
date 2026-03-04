@@ -168,7 +168,14 @@ Then we can pass this metadata to the `imwrite` function:
 ```python
 import tifffile
 
-tifffile.imwrite("path_to_file.tiff", data, ome=True, metadata=metadata, software="napari-tiff", compression="ADOBE_DEFLATE")
+tifffile.imwrite(
+    "path_to_file.tiff",
+    data,
+    ome=True,
+    metadata=metadata,
+    software="napari-tiff",
+    compression="ADOBE_DEFLATE"
+)
 ```
 
 ## ImageJ TIFF
@@ -245,7 +252,15 @@ metadata = {
 }
 
 resolution = (1/x_spacing, 1/y_spacing)
-tifffile.imwrite("path_to_file.tiff", data, imagej=True, metadata=metadata, resolution=resolution, software="napari-tiff")
+
+tifffile.imwrite(
+    "path_to_file.tiff",
+    data,
+    imagej=True,
+    metadata=metadata,
+    resolution=resolution,
+    software="napari-tiff"
+)
 ```
 
 ImageJ has issues with loading compressed TIFF files, for the compression methods that we've checked. We've therefore omitted it in these examples.
