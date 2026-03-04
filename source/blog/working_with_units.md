@@ -7,28 +7,28 @@ category: tutorials
 language: English
 ---
 
-# How to read/write units and other spatial information from tiff files
+# How to read/write units and other spatial information using TIFF files
 
 ## Motivation 
 
-Since `napari` 0.7.0 we start using information about units to provide more accurate rendering data. 
-Since `napari-tiff` 0.1.6 we enhanced readers and add writers to work with units.  
+In `napari` 0.7.0 we've started using information about units to render data more accurately. 
+In `napari-tiff` 0.1.6 we enhanced readers and added writers to work with units in TIFF files.  
 
 However, we know that not all data processing will be done through napari, and it is common to create custom scripts/notebooks. 
-So we want to explain how to read write this metadata for TIFF files. Once we decide formats for other Layers than Image and Labels we will post similar information too.
+This blog post therefore explains how to read and write this metadata for TIFF files. Once we decide formats for Layers other than Image and Labels, we will post similar guides.
 
 ## Assumptions 
 
-Presented here code will be python and will use [`tifffile`](https://pypi.org/project/tifffile/) library. The information about parsing/creating OME metadata might be useful for other file formats. For higher level interface you might want to see [`bioio`](https://github.com/bioio-devs/bioio).
+We'll use Python for all the code in this guide, and the [`tifffile`](https://pypi.org/project/tifffile/) library for file processing. The information about parsing/creating OME metadata might be useful for other file formats. For a higher level interface you might want to look at the [`bioio`](https://github.com/bioio-devs/bioio) library.
 
 ## Reading/Writing data from tiff files 
 
-The `tifffile` library provide low level of abstraction above internal TIFF structure. 
-So it allows for better control, but might require get more knowledge about possible variants
+The `tifffile` library provides a low level of abstraction over the internal TIFF structure. 
+So, while it allows for better control, it might require familiarity about different ways of doing things.
 
 ### Reading 
 
-To read only data from TIFF file is simple
+Reading only the image data from TIFF files is simple:
 
 ```python
 import tifffile
@@ -36,9 +36,9 @@ import tifffile
 data = tifffile.imread("path_to_file.tiff")
 ```
 
-This will return just a NumPy array with data in the same axis order as in the file.
+This will return a NumPy array with data in the same axis order as in the file.
 
-To read metadata we need to use `tifffile.TiffFile` class. It will give us access metadata stored in TIFF file.
+To also read metadata, we need to use the `tifffile.TiffFile` class. It will give us access to metadata stored in TIFF file, such as scale, transforms and units.
 
 ```python
 import tifffile
@@ -48,7 +48,7 @@ with tifffile.TiffFile("path_to_file.tiff") as tif:
     # here we can access all tags and their value
 ```
 
-To get information about axis order we could use information stored in first series of TIFF file. It is stored in `axes` property. It will return string with axis labels in the same order as data. For example `TZCYX` means that first axis is Time, second is Z, third is Channel, fourth is Y and fifth is X.
+To get information about axis order we could use information stored in the first series of the TIFF file. It is stored in `axes` property. Accessing this property will return a string with axis labels in the same order as data. For example, `TZCYX` means the first axis is Time, second is Z, third is Channel, fourth is Y and fifth is X.
 
 ```python
 import tifffile
@@ -61,7 +61,7 @@ with tifffile.TiffFile("path_to_file.tiff") as tif:
 
 ### Writing
 
-Writing just data to tiff file is also simple
+Writing just data to TIFF files is also simple:
 
 ```python
 import tifffile
@@ -69,25 +69,25 @@ import tifffile
 tifffile.imwrite("path_to_file.tiff", data)
 ```
 
-The `imwrite` function has parameter `compression` that allows to specify compression method. 
-For many data it allows to significantly reduce file size. In `napari-tiff` we use `ADOBE_DEFLATE` compression, but there are many others available. But it might happen that not all software will be able to read all compression methods, so it is good to check if your software can read files with given compression method before using it.
+The `imwrite` function has parameter `compression` that allows specifying a compression method. 
+For many types of data, using compression allows us to significantly reduce the image file size on disk. In `napari-tiff`, we use `ADOBE_DEFLATE` compression, but there are many others available. However, not all software can read all compression methods, so it is good to check if your software can read files compressed with a given method before using it.
 
-This function could also accept metadata, the is described later.
+This function can also accept metadata -- this is described later.
 
 ## OME-TIFF 
 
-The OME-TIFF is modern standard for store data and its metadata in TIFF container. Its detailed description could be find [here](https://docs.openmicroscopy.org/ome-model/5.6.3/ome-tiff/)
+OME-TIFF is a modern standard for storing data and its metadata in a TIFF container. Its detailed description can be found [here](https://docs.openmicroscopy.org/ome-model/5.6.3/ome-tiff/)
 
 ### Reading OME-TIFF
 
-The `TiffFile` class has a property `is_ome` that allows to check if the file is OME-TIFF. If it is, we can access OME metadata through `ome_metadata` property. It will return a [xml](https://en.wikipedia.org/wiki/XML) with all metadata stored in OME format.
-To parse this xml to python dict we can use `tifffile.xml2dict` function.
+The `TiffFile` class has a property `is_ome` that allows checking if the file is OME-TIFF. If it is, we can access OME metadata through the `ome_metadata` property. It will return [xml](https://en.wikipedia.org/wiki/XML) with all metadata stored in OME format.
+To parse this xml into a Python `dict`, we can use the `tifffile.xml2dict` function.
 
-The units and scale information are stored in `Pixels` element of `Image` element. In metadata could be multiple `Image` elements, but usually there is only one. 
+The units and scale information are stored in the `Pixels` element of the `Image` element. The metadata could contain multiple `Image` elements, but usually there is only one. 
  The `Pixels` element has attributes `PhysicalSizeX`, `PhysicalSizeY`, `PhysicalSizeZ`  
  and `TimeIncrement` that store the scale for each axis. The units are stored in `PhysicalSizeXUnit`, `PhysicalSizeYUnit`, `PhysicalSizeZUnit` and `TimeIncrementUnit` attributes.
 
-So code to read this information could look like this:
+Here is some example code reading this information:
 
 ```python
 import tifffile
@@ -135,7 +135,7 @@ with tifffile.TiffFile("path_to_file.tiff") as tif:
 
 ### Writing OME-TIFF
 
-To write OME-TIFF we can use `tifffile.imwrite` function. It has a parameter `metadata` that allows to pass metadata. It should be such dict:
+To write OME-TIFF we can use the `tifffile.imwrite` function. It has a parameter, `metadata`, that allows us to pass metadata. Here is an example `dict` that could be passed to the `metadata` parameter:
 
 ```python
 pixels = {
@@ -163,7 +163,7 @@ metadata = {
 }
 ```
 
-Then we can pass this metadata to `imwrite` function:
+Then we can pass this metadata to the `imwrite` function:
 
 ```python
 import tifffile
@@ -173,18 +173,18 @@ tifffile.imwrite("path_to_file.tiff", data, ome=True, metadata=metadata, softwar
 
 ## ImageJ TIFF
 
-The ImageJ TIFF is native format for ImageJ software. It allows to store much less metadata 
+ImageJ TIFF is the native format for ImageJ. It allows storing much less metadata 
 but if your workflow is based on ImageJ it might be good idea to use this format.
 
-We do not found any formal specification of this format, but it is widely used and supported by much software.
+We have not found a formal specification for this format, but it is widely used and supported by much software.
 
 ### Reading ImageJ TIFF
 
-Similar to OME-TIFF the `TiffFile` class has a property `is_imagej` that allows to check if the file is ImageJ TIFF. If it is, we can access metadata through `imagej_metadata` property. It will return dict with all metadata stored in ImageJ format.
+Similar to OME-TIFF, the `TiffFile` class has a property, `is_imagej`, that allows checking if the file is an ImageJ TIFF. If it is, we can access metadata through the `imagej_metadata` property. It will return a `dict` with all metadata stored in the ImageJ format.
 
-The information about scale and units for X and Y axes are stored in TIFF tags `XResolution` and `YResolution` and `ResolutionUnit`. The scale for Z is stored in `imagej_metadat` under key `spacing` and its unit is stored under key `unit`. The scale for Time is stored in `imagej_metadata` under key `finterval` and its in seconds.
+The information about scale and units for X and Y axes are stored in TIFF tags `XResolution`, `YResolution`, and `ResolutionUnit`. The scale for Z is stored in `imagej_metadata` under the `spacing` key, and its unit is stored under the `unit` key. The scale for Time is stored in `imagej_metadata` under the `finterval` key and is in seconds.
 
-So code to read this information could look like this:
+Here is some example code for reading this information:
 
 ```python
 import tifffile
@@ -231,7 +231,7 @@ with tifffile.TiffFile("path_to_file.tiff") as tif:
 
 ### Writing ImageJ TIFF
 
-This time also metadata should be passed to `imwrite` function, but it should be in different format. The `resolution` is required to store scale information for X an Y. For example:
+ImageJ metadata can also be passed to the `imwrite` function, but it should be in a different format. The `resolution` is required to store scale information for X and Y. For example:
 
 ```python
 import tifffile
@@ -248,15 +248,15 @@ resolution = (1/x_spacing, 1/y_spacing)
 tifffile.imwrite("path_to_file.tiff", data, imagej=True, metadata=metadata, resolution=resolution, software="napari-tiff")
 ```
 
-ImageJ has problem with loading compressed TIFF files, for that options that we checked. So we do not use it in these examples.
+ImageJ has issues with loading compressed TIFF files, for the compression methods that we've checked. We've therefore omitted it in these examples.
 
 
 ## Using napari_tiff
 
-If you are happy napari data model you might use `napari_tiff` to read/write TIFF files. 
-It do not require to have full napari installed as it is using `napari.types.LayerDataTuple` as input and output of its functions.
+If you are happy with napari's data model, you can use `napari_tiff` to read/write TIFF files. 
+Doing so does not require a full napari installation (with a Qt frontend), as it is using `napari.types.LayerDataTuple` as the input and output of its functions.
 
-The `napari.types.FullLayerData` is tuple of three elements: data, metadata and layer type. The data is NumPy array, the metadata is dict with all metadata and the layer type is string with layer type.
+The `napari.types.FullLayerData` is a tuple of three elements: data, metadata, and layer type. The data is a NumPy array, the metadata is a `dict` with all metadata, and the layer type is a string with the napari layer type.
 
 The functions that you might use are `napari_tiff.napari_tiff_reader.reader_function` and 
 `napari_tiff.napari_tiff_writer.images_layer_writer`. 
