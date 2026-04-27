@@ -11,8 +11,9 @@ language: English
 
 ## Motivation 
 
-In `napari` 0.7.0 we've started using information about units to render data more accurately. 
-In `napari-tiff` 0.1.6 we enhanced readers and added writers to work with units in TIFF files.  
+Since `napari` 0.7.0 we've started using information about units to render data more accurately. 
+The `napari-tiff` is our plugin for reading and writing TIFF files. It is in constant development, and could be updated using napari Plugin dialog without updating napari itself.
+Since `napari-tiff` 0.1.6 we enhanced readers and added writers to work with units in TIFF files.  
 
 However, we know that not all data processing will be done through napari, and it is common to create custom scripts/notebooks. 
 This blog post therefore explains how to read and write this metadata for TIFF files. Once we decide formats for Layers other than Image and Labels, we will post similar guides.
@@ -146,20 +147,23 @@ pixels = {
     ... # for other axes
 }
 
-plane_li = [
+plane_list = [
     {"TheC": 0, "TheZ": 0, "TheT": 0},
     {"TheC": 0, "TheZ": 1, "TheT": 0},
     ...  # for each plane in the data
 ]
 
+channel_names = ["DAPI", "GFP", "RFP"]  # for example if we have 3 channels
+axes_order = "TZCYX"  # for example if we have Time, Z, Channel, Y and X axes
+
 metadata = {
     "Pixels": pixels,
-    "Plane": plane_li,
-    "Creator": "napari-tiff",  
+    "Plane": plane_list,
+    "Creator": "<Put your name here>",  
     "Channel": {
-        "Name": channel_names, # for example ["DAPI", "GFP", "RFP"]
+        "Name": channel_names,
     },
-    "axes": axes_order,  # for example "TZCYX"
+    "axes": axes_order,
 }
 ```
 
@@ -173,7 +177,7 @@ tifffile.imwrite(
     data,
     ome=True,
     metadata=metadata,
-    software="napari-tiff",
+    software="<Put your name here>",
     compression="ADOBE_DEFLATE"
 )
 ```
@@ -266,7 +270,7 @@ tifffile.imwrite(
 ImageJ has issues with loading compressed TIFF files, for the compression methods that we've checked. We've therefore omitted it in these examples.
 
 
-## Using napari_tiff
+## Using `napari_tiff` without a napari Viewer
 
 If you are happy with napari's data model, you can use `napari_tiff` to read/write TIFF files. 
 Doing so does not require a full napari installation (with a Qt frontend), as it is using `napari.types.LayerDataTuple` as the input and output of its functions.
