@@ -67,7 +67,7 @@ In this blog post, I’ll share the things we looked at and the factors that hel
 
 ## Pyrefly: Nice Features for Legacy Codebases and Speed
 
-Adding a type checker to a new project is easier than migrating from an old one, where you may have hundreds of modules and type checking that may have been quietly turned off years ago.
+Adding a type checker to a new project is easier than migrating from an old one, where you may have hundreds of modules and type checking that may have been quietly ignored and turned off years ago.
 
 That’s napari. And maybe that’s your project too. 😆
 
