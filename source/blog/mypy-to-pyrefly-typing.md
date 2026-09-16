@@ -112,7 +112,7 @@ Our key deciding factors were these three, as we thought they played an importan
 
 **Configuration and maintenance:**
 
-The Pyrefly and ty configurations are quite different. The ty configuration is about **450 lines**, while Pyrefly’s is about **140 lines**, although much of the Pyrefly configuration is a long list of ignores. I personally think Pyrefly is significantly better here, especially with its CLI commands.
+The Pyrefly and ty configurations are quite different. The ty configuration is about **450 lines** because of complexity with ignore types managed in the configuration rather than inline with the code. In comparison, napari's Pyrefly config is about **140 lines**, although is mostly a long list of ignores that we hope to eventually be zero! I personally think Pyrefly is significantly better here, especially with its CLI commands.
 
 **Error messages:**
 
