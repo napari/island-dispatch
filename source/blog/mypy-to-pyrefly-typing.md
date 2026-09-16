@@ -7,7 +7,7 @@ category: Manual
 language: English
 ---
 
-# From `Any` to Certainty: A Journey from Mypy to Pyrefly
+# From `Any` to Certainty: A Typechecking Journey
 
 ## How I Got Into Typing
 
