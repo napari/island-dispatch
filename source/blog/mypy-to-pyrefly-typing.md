@@ -1,7 +1,7 @@
 ---
 blogpost: true
 date: Sep 1, 2026
-author: Aniket Singh YAdav
+author: Aniket Singh Yadav
 location: World
 category: Manual
 language: English
