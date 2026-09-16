@@ -33,7 +33,7 @@ In napari, I sometimes came across confusing annotations that weren’t properly
 
 I faced some similar issues while working on SciPy-stubs. Things like overlapping overloads and other mypy errors were confusing at first, but slowly I started to understand them. In some cases, we even had to disable mypy for an entire module. 😆
 
-These experiences made me curious about better options. That’s when I came across newer type checkers like `ty` and `Pyrefly`. When I first tried `Pyrefly`, I was surprised by how much faster it was than `mypy`.After some time, I saw a PR in SciPy dropping `mypy` in favor of `Pyrefly`. That made me even more interested in this topic, and I wanted to open a thread for similar decision in napari.
+These experiences made me curious about better options. That’s when I came across newer type checkers like `ty` and `Pyrefly`. When I first tried `Pyrefly`, I was surprised by how much faster it was than `mypy`. After some time, I saw a PR in SciPy dropping `mypy` in favor of `Pyrefly`. That made me even more interested in this topic, and I wanted to open a thread for similar decision in napari.
 
 But unfortunately, I was already late. 😭 Lorenzo (@brisvag) had already opened a PR to migrate from mypy.
 
