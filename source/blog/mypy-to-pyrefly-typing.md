@@ -83,7 +83,7 @@ Both tools have good support for migrating existing codebases, but Pyrefly's par
 
 * **`pyrefly coverage`** — It can measure progress. The `pyrefly coverage` report tells you how much of your code is actually typed. You can also use coverage checks in CI. For example, `pyrefly coverage check --fail-under 80` can fail CI if your typing coverage drops below 80%.
 
-* **Existing `# type: ignore` comments** — Your old comments still work. Pyrefly respects `# type: ignore` by default, so existing mypy suppressions can continue to do their job.
+* **Existing `# type: ignore` comments** — Your old comments still work. Pyrefly respects `# type: ignore` by default, so existing mypy suppressions can continue to do their job; however, Pyrefly cannot self-prune bare ignores, and require an error type like `# type: ignore [<error type>]`.
 
 ### Speed
 
