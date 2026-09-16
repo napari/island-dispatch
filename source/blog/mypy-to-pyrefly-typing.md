@@ -124,7 +124,7 @@ There are some other differences that I don’t think affected our decision as m
 
 * **Conformance:** Both are above 90% conformance with the typing specification, with Pyrefly being higher.
 
-* **Maturity:** Pyrefly is 1.0+, while ty is not.
+* **Maturity:** Pyrefly is 1.0+, while ty is not, and a stable API is helpful to rest your laurels on.
 
 * **Pydantic support:** Pydantic is supported by both natively as of ty adding support in July 2026. Most information online is outdated on this.
 
