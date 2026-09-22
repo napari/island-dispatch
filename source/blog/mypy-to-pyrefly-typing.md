@@ -16,7 +16,7 @@ checker might be the best choice for your project, I hope this blog helps.
 
 ## Where It Started
 
-I ([@Aniketsy](https://github.com/Aniketsy)) started contributing to open source about a year ago, and I joined napari in April. More specifically, my [first](https://github.com/napari/napari/pull/8848) pull request was on April 2nd. I still remember Tim welcoming me on my first issue. I don’t know about others, but for me, that small gesture meant a lot ❤️. I can say it’s one of the reasons I felt so motivated to keep contributing and wanted to be part of such a welcoming and supportive community.
+I ([@Aniketsy](https://github.com/Aniketsy)) started contributing to open source about a year ago, and I joined napari in April. More specifically, my [first](https://github.com/napari/napari/pull/8848) pull request was on April 2nd. I still remember Tim ([@TimMonko](https://github.com/TimMonko)) welcoming me on my first issue. I don’t know about others, but for me, that small gesture meant a lot ❤️. I can say it’s one of the reasons I felt so motivated to keep contributing and wanted to be part of such a welcoming and supportive community.
 
 Typing wasn’t really part of the plan. I became interested in it while working on SciPy-stubs with **Joren** ([@jorenham](https://github.com/jorenham)). I still remember my late-night PRs, and Joren used to review them so quickly and merge them at light speed 😸. That’s where I started getting more interested in typing and decided to dive deeper into it.
 
