@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Sep 1, 2026
+date: Sep 22, 2026
 author: Aniket Singh Yadav
 location: World
 category: Manual
@@ -9,21 +9,30 @@ language: English
 
 # From `Any` to Certainty: A Typechecking Journey
 
-## How I Got Into Typing
-
-This is my first blog post. It’s all about how I started my open source journey and how I ended up spending most of my time working on typing in open source.
-
-I’ll also talk about how and why we decided to replace our old type checker with a new one. If you’re trying to decide which type checker might be the best choice for your project, I hope this blog helps.
+In my first ever blog post, I'm going to walk you through not only my journey through open source, but how
+I've ended up spending much of my time working on improving typing. In this journey, I've worked with the
+napari team to replace our old type checker, mypy, with [Pyrefly](https://github.com/facebook/pyrefly). If you're trying to decide which type
+checker might be the best choice for your project, I hope this blog helps.
 
 ## Where It Started
 
-I started contributing to open source about a year ago, and I joined napari in April. More specifically, my first pull request was on April 2nd. I still remember Tim welcoming me on my first issue. I don’t know about others, but for me, that small gesture meant a lot ❤️. I can say it’s one of the reasons I felt so motivated to keep contributing and wanted to be part of such a welcoming and supportive community.
+I ([@Aniketsy](https://github.com/Aniketsy)) started contributing to open source about a year ago, and I joined napari in April. More specifically, my [first](https://github.com/napari/napari/pull/8848) pull request was on April 2nd. I still remember Tim welcoming me on my first issue. I don’t know about others, but for me, that small gesture meant a lot ❤️. I can say it’s one of the reasons I felt so motivated to keep contributing and wanted to be part of such a welcoming and supportive community.
 
-Typing wasn’t really part of the plan. I became interested in it while working on SciPy-stubs with **Joren** (@jorenham). I still remember my late-night PRs, and Joren used to review them so quickly and merge them at light speed 😸. That’s where I started getting more interested in typing and decided to dive deeper into it.
+Typing wasn’t really part of the plan. I became interested in it while working on SciPy-stubs with **Joren** ([@jorenham](https://github.com/jorenham)). I still remember my late-night PRs, and Joren used to review them so quickly and merge them at light speed 😸. That’s where I started getting more interested in typing and decided to dive deeper into it.
 
 *A special thanks to Joren — I learned so many things along the way ❤️.*
 
-After that, I came back to napari and started fixing mypy errors and adding type hints across the codebase.
+After that, I came back to napari and looked for typing issues. I found [one high-level tracker issue](https://github.com/napari/napari/issues/8120) that needed a long-term effort.
+
+My steps were simple:
+1. Pick a module from the list of files that mypy was skipping.
+2. Run mypy on it and read every error.
+3. Fix the real problems and add type hints where they were missing.
+4. Repeat with the next module.
+
+Doing this over and over is how I slowly learned what the errors actually mean.
+
+Since our napari discussion, I have also started helping other projects move from mypy to Pyrefly. I opened a [discussion in nilearn](https://github.com/nilearn/nilearn/issues/6580), the maintainers agreed, and I have [opened a PR](https://github.com/nilearn/nilearn/pull/6584) there too. All the more open source love.
 
 ## Typing Across Scientific Python
 
@@ -33,15 +42,15 @@ In napari, I sometimes came across confusing annotations that weren’t properly
 
 I faced some similar issues while working on SciPy-stubs. Things like overlapping overloads and other mypy errors were confusing at first, but slowly I started to understand them. In some cases, we even had to disable mypy for an entire module. 😆
 
-These experiences made me curious about better options. That’s when I came across newer type checkers like `ty` and `Pyrefly`. When I first tried `Pyrefly`, I was surprised by how much faster it was than `mypy`. After some time, I saw a PR in SciPy dropping `mypy` in favor of `Pyrefly`. That made me even more interested in this topic, and I wanted to open a thread for similar decision in napari.
+These experiences made me curious about better options. That’s when I came across newer type checkers like `ty` and `Pyrefly`. When I first tried `Pyrefly`, I was surprised by how much faster it was than `mypy`. After some time, I saw a [PR in SciPy](https://github.com/scipy/scipy/pull/25582) dropping `mypy` in favor of `Pyrefly`. That made me even more interested in this topic, and I wanted to open a thread for a similar decision in napari.
 
-But unfortunately, I was already late. 😭 Lorenzo (@brisvag) had already opened a PR to migrate from mypy.
+But unfortunately, I was already late. 😭 Lorenzo ([@brisvag](https://github.com/brisvag)) had already opened a [PR to migrate from mypy](https://github.com/napari/napari/pull/9375).
 
-More recently, I’ve also started doing some typing work in NumPy and Matplotlib. It’s been really interesting to see how different projects in the Scientific Python ecosystem handle typing.
+More recently, I've also started doing some typing work in NumPy and Matplotlib. It's been really interesting to see how different projects in the Scientific Python ecosystem handle typing. NumPy runs both mypy and pyrefly in CI, along with `stubtest` and a pyrefly coverage check that requires 100% of the public API to be typed. Matplotlib runs mypy and `stubtest`.
 
 ## Can an LLM Do a Type Checker Migration for You?
 
-This came up while working on napari#9375, where Lorenzo migrated the project from mypy to ty. So, can an LLM do the migration for you?
+This came up while working on [napari#9375](https://github.com/napari/napari/pull/9375), where Lorenzo migrated the project from mypy to ty. So, can an LLM do the migration for you?
 
 **Partly, yes.**
 
@@ -59,11 +68,9 @@ An LLM can make the error disappear by adding an `ignore` comment, but that does
 
 *(Just a joke — Tim actually did a great job!)*
 
-After some discussion, we decided to give Pyrefly a try. Tim took the first shot at migrating the codebase from mypy to Pyrefly, and that started a bigger discussion about which type checker we should use: **ty or Pyrefly**.
+After some [discussion](https://github.com/napari/napari/issues/9466), we decided to give Pyrefly a try. Tim took the [first shot](https://github.com/napari/napari/pull/9395) at migrating the codebase from mypy to Pyrefly, and that started a bigger discussion about which type checker we should use: **ty or Pyrefly**.
 
 We spent some time comparing both options and looking at the results from our codebase. After a few discussions, we decided to go with **Pyrefly**.
-
-In this blog post, I’ll share the things we looked at and the factors that helped us make that decision. Hopefully, it can also help other projects that are trying to choose a type checker for their own codebase.
 
 ## Pyrefly: Nice Features for Legacy Codebases and Speed
 
@@ -83,18 +90,18 @@ Both tools have good support for migrating existing codebases, but Pyrefly's par
 
 * **`pyrefly coverage`** — It can measure progress. The `pyrefly coverage` report tells you how much of your code is actually typed. You can also use coverage checks in CI. For example, `pyrefly coverage check --fail-under 80` can fail CI if your typing coverage drops below 80%.
 
-* **Existing `# type: ignore` comments** — Your old comments still work. Pyrefly respects `# type: ignore` by default, so existing mypy suppressions can continue to do their job; however, Pyrefly cannot self-prune bare ignores, and require an error type like `# type: ignore [<error type>]`.
+* **Existing `# type: ignore` comments** — Your old comments still work. Pyrefly respects `# type: ignore` by default, so existing mypy suppressions can continue to do their job; however, Pyrefly cannot self-prune bare ignores; it requires an error type like `# type: ignore[<error type>]`.
 
-### Speed
+### A Tip: Delete Your Bare Ignores First
 
-Speed was another important factor for us.
+This was very useful during our migration. Because Pyrefly cannot check whether a bare `# type: ignore` is still needed, we recommend this order:
 
-Pyrefly checks over **1.85 million lines per second** and runs about **15 times faster than mypy and Pyright on PyTorch**.
+1. Grep for all bare `# type: ignore` comments and delete them.
+2. Run `pyrefly check`.
+3. Run `pyrefly suppress` to add back only the ignores that are really needed.
+4. Run `pyrefly suppress --remove-unused=all` to clean up.
 
-The napari numbers are more concrete:
-
-* **Mypy:** 15–25 seconds cold
-* **Pyrefly:** 0.9 seconds cold, 0.7 seconds warm
+We dropped at least 30 stale ignores this way. If we hadn't done the grep-and-delete step, they would have stayed stale forever, because Pyrefly had no way to check them.
 
 ## Ty vs Pyrefly: How We Decided
 
@@ -112,35 +119,90 @@ Our key deciding factors were these three, as we thought they played an importan
 
 **Configuration and maintenance:**
 
-The Pyrefly and ty configurations are quite different. The ty configuration is about **450 lines** because of complexity with ignore types managed in the configuration rather than inline with the code. In comparison, napari's Pyrefly config is about **140 lines**, although is mostly a long list of ignores that we hope to eventually be zero! I personally think Pyrefly is significantly better here, especially with its CLI commands.
+The Pyrefly and ty configurations are quite different. The ty configuration is about **450 lines** because of complexity with ignore types managed in the configuration rather than inline with the code. In comparison, napari's Pyrefly config is about **140 lines**, although it is mostly a long list of ignores that we hope to eventually be zero! I personally think Pyrefly is significantly better here, especially with its CLI commands.
 
 **Error messages:**
 
-The other user-facing part is the error message. We found ty to be more verbose and helpful, but compared with mypy, we found both to be clearer.
+Both checkers give clearer errors than mypy did. Between the two, ty is more verbose. Lorenzo compared them on the same failure, a function that declares one return type but returns another:
+
+ty:
+
+```text
+error[invalid-return-type]: Return type does not match returned value
+   --> src/napari/components/camera.py:248:16
+    |
+248 |         return up_direction_nd
+    |                ^^^^^^^^^^^^^^^ expected `ndarray[tuple[int, int], dtype[Any]] | None`, found `_Array1D[float64]`
+    |
+   ::: src/napari/components/camera.py:229:10
+    |
+229 |     ) -> np.ndarray[tuple[int, int]] | None:
+    |          ---------------------------------- Expected `ndarray[tuple[int, int], dtype[Any]] | None` because of return type
+info: type `ndarray[tuple[int], dtype[float64]]` is not assignable to any element of the union `ndarray[tuple[int, int], dtype[Any]] | None`
+info: ├─ a tuple of length 1 is not assignable to a tuple of length 2
+info: └─ ... omitted 1 union element without additional context
+```
+
+pyrefly:
+
+```text
+ERROR Returned type `ndarray[tuple[int], dtype[float64]]` is not assignable to declared return type `ndarray[tuple[int, int]] | None` [bad-return]
+   --> src/napari/components/camera.py:248:16
+    |
+248 |         return up_direction_nd
+    |                ^^^^^^^^^^^^^^^
+    |
+   ::: src/napari/components/camera.py:229:10
+    |
+229 |     ) -> np.ndarray[tuple[int, int]] | None:
+    |          ---------------------------------- declared return type
+    |
+ INFO 1 error (324 suppressed, 53 warnings not shown)
+```
+
+> Ty is more verbose, in a good way! I often get cross-eyed trying to figure out *what* is wrong with the types, when they get very messy. This is actually giving me a helpful hint that the issue is the tuple length.
+>
+> — [brisvag](https://github.com/brisvag), [napari/napari#9395 (comment)](https://github.com/napari/napari/pull/9395#issuecomment-5439762500)
+
+And [Jacopo](https://github.com/jacopoabramo) helped us at every point by sharing opinion and thoughts.
 
 ### Other Details
 
 There are some other differences that I don’t think affected our decision as much:
 
-* **Conformance:** Both are above 90% conformance with the typing specification, with Pyrefly being higher.
+* **Conformance:** Both are above 90% conformance with the [typing specification](https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html), with Pyrefly being higher.
 
-* **Maturity:** Pyrefly is 1.0+, while ty is not, and a stable API is helpful to rest your laurels on.
+* **Maturity:** Pyrefly is 1.0+, while ty is not, and a stable API is nice to build on.
 
 * **Pydantic support:** Pydantic is supported by both natively as of ty adding support in July 2026. Most information online is outdated on this.
 
-* **Cross-platform consistency:** Our Linux developers may be surprised by this, but both `ty` and `mypy` are not reproducible on Windows, even with the `tox` configuration, because they type-check against Linux only. This means there is often noise locally or false positives/negatives that then have to be dealt with between local development and CI.
+* **Cross-platform consistency:** This one surprised our Linux developers. *The problem:* `mypy` and `ty` only check the code paths for the platform they run on. With our old setup, that meant Linux only. On any other platform, `sys.platform` checks like this one send the checker down a different branch:
 
-  Pyrefly allows setting the check to all platforms, resulting in better local/CI consistency for me.
-
-  This means that:
-
-  ```bash
-  uv run pyrefly ...
+  ```python
+  if sys.platform == "win32":
+    ...  # never checked by CI, always checked on Windows
   ```
 
-  is consistent with tox as well.
+  So a Windows developer sees errors CI never reports, and misses errors CI does report. That's a lot of noise to sort through before you can trust a green (or red) check.
+
+  *The fix:* Pyrefly can check every platform in one run, with one line in [pyproject.toml](https://github.com/napari/napari/pull/9395/changes#diff-50c86b7ed8ac2cf95bd48334961bf0530cdc77b5a56f852c5c61b89d735fd711R657-R667).
+
+  ```toml
+  [tool.pyrefly]
+  python-platform = "all"
+  ```
+
+  *How to run it:* use the tox environment. It matches CI exactly, on every platform:
+
+  ```bash
+  tox -e pyrefly
+  ```
+
+  `uv run pyrefly check` is faster for quick iteration, but its results can differ a little from CI for now, because the dev environment installs extra dependencies that tox's slimmer typecheck environment does not ([napari/docs#1134](https://github.com/napari/docs/pull/1134)). When in doubt, trust `tox -e pyrefly`.
 
 * **Philosophy:** Pyrefly aggressively infers types in unannotated code, whereas ty does not report errors when you remove an annotation, so it is quieter.
+
+* **Contributing upstream:** Both projects are active and easy to contribute to. While working on the migration I hit a bug in Pyrefly, and I recently fixed it [upstream](https://github.com/facebook/pyrefly/pull/4992). It was a nice feeling to give something back to the tool we now depend on.
 
 ## Resources
 
@@ -153,9 +215,9 @@ Here are some resources that can be helpful for a more in-depth analysis:
 
 It has been a really great experience getting into typing and working on it across different projects. I’ve learned a lot along the way, and I’m definitely going to keep working on it.
 
-My next goal is to help make napari fully typed over the next few months, while continuing to contribute to other projects in the Scientific Python ecosystem. If you want to dive into the nitty-gritty details, you can find my work on GitHub: **@Aniketsy**. If you’re also interested in typing or open source, feel free to reach out. I’m always happy to learn from others and collaborate.
+My next goal is to help make napari fully typed over the next few months, while continuing to contribute to other projects in the Scientific Python ecosystem. If you want to dive into the nitty-gritty details, you can find my work on GitHub: [@Aniketsy](https://github.com/Aniketsy). If you’re also interested in typing or open source, feel free to reach out. I’m always happy to learn from others and collaborate.
 
-Finally, a big thank you to everyone on the napari team who helped with this decision and the discussions around it. And a special thanks to **Tim** (@TimMonko), who spent a lot of time researching the decision-making points and also helped me throughout the writing of this blog ❤️.
+Finally, a big thank you to everyone on the napari team who helped with this decision and the discussions around it. And a special thanks to **Tim** ([@TimMonko](https://github.com/TimMonko)), who spent a lot of time researching the decision-making points and also helped me throughout the writing of this blog ❤️.
 
 I’m excited to see where this typing journey takes me next!
 
