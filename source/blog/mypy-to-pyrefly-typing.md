@@ -68,7 +68,7 @@ An LLM can make the error disappear by adding an `ignore` comment, but that does
 
 *(Just a joke — Tim actually did a great job!)*
 
-After some [discussion](https://github.com/napari/napari/issues/9466), we decided to give Pyrefly a try. Tim took the [first shot](https://github.com/napari/napari/pull/9395) at migrating the codebase from mypy to Pyrefly, and that started a bigger discussion about which type checker we should use: **ty or Pyrefly**.
+After some [discussion](https://github.com/napari/napari/issues/9466), we decided to give Pyrefly a try. Tim took the [first shot](https://github.com/napari/napari/pull/9395) at migrating the codebase from mypy to Pyrefly, but it seemed slower than the ty attempt. However, Tim realized that following only the setup guide when migrating a legacy codebase to a new type checker leaves much of the previous configuration out and makes for an unfair comparison. So, with a better understanding of how to properly configure each for napari, we started a bigger discussion about which type checker we should use: **ty or Pyrefly**.
 
 We spent some time comparing both options and looking at the results from our codebase. After a few discussions, we decided to go with **Pyrefly**.
 
@@ -217,7 +217,7 @@ It has been a really great experience getting into typing and working on it acro
 
 My next goal is to help make napari fully typed over the next few months, while continuing to contribute to other projects in the Scientific Python ecosystem. If you want to dive into the nitty-gritty details, you can find my work on GitHub: [@Aniketsy](https://github.com/Aniketsy). If you’re also interested in typing or open source, feel free to reach out. I’m always happy to learn from others and collaborate.
 
-Finally, a big thank you to everyone on the napari team who helped with this decision and the discussions around it. And a special thanks to **Tim** ([@TimMonko](https://github.com/TimMonko)), who spent a lot of time researching the decision-making points and also helped me throughout the writing of this blog ❤️.
+Finally, a big thank you to everyone on the napari team who helped with this decision and the discussions around it. And a special thanks to **Tim**, who spent a lot of time researching the decision-making points and also helped me throughout the writing of this blog ❤️.
 
 I’m excited to see where this typing journey takes me next!
 
