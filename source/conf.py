@@ -18,6 +18,7 @@ extensions = [
     "ablog",
     "sphinx.ext.intersphinx",
     "sphinx_design",
+    "sphinx_favicon",
 ]
 
 templates_path = ['_templates']
@@ -44,9 +45,31 @@ post_date_format_short = "%Y %b %d"
 
 html_theme = 'napari_sphinx_theme'
 html_static_path = ['_static']
-html_logo = "_static/logo.png"
-html_favicon = "_static/logo.png"
+html_logo = "_static/gradient-plain-light.svg"
 html_css_files = ['custom.css']
+
+
+favicons = [
+    {
+        # the SVG is the "best" and contains code to detect OS light/dark mode
+        'static-file': 'favicon/logo-silhouette-dark-light.svg',
+        'type': 'image/svg+xml',
+    },
+    {
+        # Safari in Oct. 2022 does not support SVG
+        # an ICO would work as well, but PNG should be just as good
+        # setting sizes="any" is needed for Chrome to prefer the SVG
+        'sizes': 'any',
+        'static-file': 'favicon/logo-silhouette-192.png',
+    },
+    {
+        # this is used on iPad/iPhone for "Save to Home Screen"
+        # apparently some other apps use it as well
+        'rel': 'apple-touch-icon',
+        'sizes': '180x180',
+        'static-file': 'favicon/logo-noborder-180.png',
+    },
+]
 
 html_theme_options = {
     "external_links": [
