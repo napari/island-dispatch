@@ -19,20 +19,22 @@ the next one! — be sure to follow our updates on [BlueSky][bsky],
 [Mastodon][masto], [LinkedIn][linkedin], or on our [Zulip chat][zulip]!
 
 [naplari-announce]: https://napari.zulipchat.com/#narrow/channel/212875-general/topic/naPLari.20hackathon.20.E2.80.94.20Krak.C3.B3w.2C.20Poland.20July.2024-29.2C.202026/near/596628071
-[0.9-relnotes]:
-[bsky]:
-[masto]:
-[linkedin]:
+[0.9-relnotes]: https://napari.org/stable/release/release_0_9_0.html
+[bsky]: https://bsky.app/profile/napari.org
+[masto]: https://fosstodon.org/@napari
+[linkedin]: https://www.linkedin.com/company/napari
 [zulip]: https://napari.zulipchat.com
 
 ## Setting the stage
 
-naPLari comes hot on the heels of our successful GloBIAS hackathon in October
+naPLari comes hot on the heels of our successful [GloBIAS hackathon] in October
 2025, and included two repeat community participants, Zuzana and Aroj. (See
 below for their individual perspectives!) After GloBIAS, we knew we wanted to
 keep running these: they are a great way to focus energy, get a lot done in a
 short amount of time, and foster the community spirit that napari has become
 known for.
+
+[GloBIAS hackathon]: https://www.globias.org/activities/past-activties/bioimage-analysis-conference-2025-in-kobe#h.5n67k4il9zt
 
 We knew a few people from the core team would be at EuroSciPy, so dovetailing
 on that conference might be a great way to save on travel — and environmental —
