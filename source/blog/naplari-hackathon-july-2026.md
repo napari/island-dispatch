@@ -46,7 +46,80 @@ were able to reuse the EuroSciPy sprints space at the ACH Physics building.
 
 ## Individual thoughts
 
+It's really hard to write collectively! So we thought we'd give a space to our
+hackathon contributors to share their individual perspectives. We asked
+participants for their thoughts on these two questions:
 
+1. What made you decide to attend the hackathon?
+2. If you were attending another hackathon soon, what would you want to work
+   on?
+
+Their answers below have been lightly edited for length.
+
+### Brian Northan
+
+I have been using Napari for a few years now to visualize deconvolution and
+segmentation results and to label training data for deep learning. One
+complication I face is running different deep learning frameworks (like
+Stardist and Cellpose) in the same application or workflow, so I was motivated
+to come to the hackathon and work on solutions for this.
+
+I want to work on the napari plugin ecosystem. At the hackathon, we created a
+prototype framework to call image analysis functions in isolated environments.
+I want to explore how plugins could define environments in the napari plugin
+manifest, and map functions to those environments.
+
+### Jules Vanaret
+
+I thought the hackathon would be a great place to get feedback on contributions
+I am interested in, plugins I'm working on, and the future of napari. It was
+also a great occasion to learn about good open source practices.
+
+In the future, I'd love to make all non-raster layers (points, shapes,
+vectors...) work faster with large datasets, especially Shapes, which I am
+using a lot these days.
+
+### Zuzana Čočková
+
+I attended the previous hackathon at GloBIAS in Kobe, Japan, which was an
+amazing experience. As an image analyst, I use napari regularly in my work, and
+I am still curious to learn more about the contributor side rather than only as
+a user. Being relatively new to open source contributions, the hackathon is a
+great place to learn and gain confidence as a contributor.
+
+I'm interested in continuing to work on [axis-label related topics]. I would
+enjoy brainstorming on how napari should handle multiple datasets with
+different axis orders or axis labels, and giving users more control over which
+dataset axes are mapped to viewer dimension sliders.
+
+[axis-label related topics]: https://github.com/napari/napari/issues/9285
+
+### Margot Chazotte
+
+I wanted to learn more about contributing to napari and there is no better
+place for that than at the hackathon. I have been using napari for a long time
+now and recently started dipping my toes into contributing. The core team has
+been incredibly welcoming and nice so I was super stoked about a chance to meet
+them in person and hang out. Also this gave me the chance to add things to
+napari that I’ve been wanting as a user!
+
+I’d love to keep working on the dynamic layer controls to help them get out of
+experimental mode! They’re a super fun new feature and I’m very proud to have
+been a part of making it happen!
+
+### Giannis Liaskas
+
+I wanted to meet the people behind napari and interact with them. I got a far
+better insight of how software development works: I had never worked on such a
+big project before and it was fascinating! After attending, I felt far more
+comfortable joining [community meetings] and talking in the [group chat]!
+
+It's too early for me to say what I would like to work on next, as the
+development of napari is so fast! Certainly, I would like to work again on the
+inner machinery of napari though!
+
+[community meetings]: https://napari.org/stable/community/meeting_schedule.html
+[group chat]: https://napari.zulipchat.com
 
 ## Feature highlights
 
