@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Aug 29, 2026
+date: Sep 24, 2026
 author: Juan Nunez-Iglesias & the naPLari hackathon contributors
 location: Krakow, Poland
 category: news
@@ -11,12 +11,12 @@ language: English
 
 On May 21, we [announced][naplari-announce] our second public hackathon, timed
 to coincide with EuroSciPy 2026 in Krakow, Poland. Six core team members and
-seven community members answered the call, and a month ago today, we wrapped up
-one of the most productive weeks in napari development history! You can enjoy
-the fruits of our labor in [napari 0.9.0][0.9-relnotes], but do read on for a
-blow-by-blow, and, if it sounds appealing — we'd love to have you in the next
-one! — be sure to follow our updates on [BlueSky][bsky], [Mastodon][masto],
-[LinkedIn][linkedin], or on our [Zulip chat][zulip]!
+seven community members answered the call, and two months ago, we
+wrapped up one of the most productive weeks in napari development history! You
+can enjoy the fruits of our labor in [napari 0.9.0][0.9-relnotes], but do read
+on for a blow-by-blow, and, if it sounds appealing — we'd love to have you in
+the next one! — be sure to follow our updates on [BlueSky][bsky],
+[Mastodon][masto], [LinkedIn][linkedin], or on our [Zulip chat][zulip]!
 
 [naplari-announce]: https://napari.zulipchat.com/#narrow/channel/212875-general/topic/naPLari.20hackathon.20.E2.80.94.20Krak.C3.B3w.2C.20Poland.20July.2024-29.2C.202026/near/596628071
 [0.9-relnotes]:
