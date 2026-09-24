@@ -135,6 +135,26 @@ inner machinery of napari though!
 
 [not sure whether to include this section or just point to the release notes]
 
+## With thanks
+
+Venue hire and travel for our core team members was funded by a CZI's
+scaffolding grant to napari (CZI SVCF grant 2024-355351). We gratefully
+acknowledge their support.
+
+We also would like to acknowledge the support of the labs and institutions for
+our not-yet-core 😉 participants. It's relatively poorly understood that none
+of the napari core team, and very few of our 200+ contributors, actually come
+from a software engineering background. We all have research backgrounds, in
+which papers are king and time spent debugging is often considered wasted.
+(*Especially* time spent debugging someone else's bug!) But we came together
+out of a shared sense of purpose, and even pride, in producing software that
+benefits others, and the research enterprise as a whole. And many of us have
+stories about a supervisor who thought all this was a waste of time.
+
+So, again, a *huge* Thank You 🙏 to all the PIs and lab directors out there who
+Get It, and who are to support their staff collaborating for the benefit of
+all! 🎉
+
 ## Looking forward
 
 As mentioned at the start of this post, we're going to keep running these. If
