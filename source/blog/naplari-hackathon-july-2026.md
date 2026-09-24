@@ -40,13 +40,14 @@ We knew a few people from the core team would be at EuroSciPy, so dovetailing
 on that conference might be a great way to save on travel — and environmental —
 costs. Thanks to long-time contributor and napari Developer-in-Residence
 Grzegorz Bokota, who led the conversations with the EuroSciPy organisers, we
-were able to find a great hackathon space in the [AGH Physics & Applied
-Computer Science][agh] buildings!
+were able to find a great hackathon space in the [AGH Faculty of Physics &
+Applied Computer Science][agh] buildings!
 
 [agh]: https://www.fis.agh.edu.pl/en/faculty
 
-## Working together
+[PHOTO: hacking venue]
 
+## Working together
 
 
 ## Individual thoughts
