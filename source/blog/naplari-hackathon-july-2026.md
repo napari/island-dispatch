@@ -137,9 +137,11 @@ inner machinery of napari though!
 
 ## With thanks
 
-Venue hire and travel for our core team members was funded by a CZI's
-scaffolding grant to napari (CZI SVCF grant 2024-355351). We gratefully
+Venue hire and travel for our core team members was funded by CZI's
+[scaffolding grant] to napari (CZI SVCF grant 2024-355351). We gratefully
 acknowledge their support.
+
+[scaffolding grant]: https://napari.org/island-dispatch/blog/roadmap_announcement.html
 
 We also would like to acknowledge the support of the labs and institutions for
 our not-yet-core 😉 participants. It's relatively poorly understood that none
@@ -158,7 +160,11 @@ all! 🎉
 ## Looking forward
 
 As mentioned at the start of this post, we're going to keep running these. If
-you'd like to be notified of the next one, please [get in touch! (how?)] And,
+you'd like to be notified of the next one, please get in touch! You can email
+us at [info@napari.org], or join our [Zulip chat],  And,
 if you would like to host one, please let us know also! We're actively looking
 to run local hackathons around the world, and it would take little activation
 energy for us to run one at your institution!
+
+[info@napari.org]: mailto:info@napari.org
+[Zulip chat]: https://napari.zulipchat.com
