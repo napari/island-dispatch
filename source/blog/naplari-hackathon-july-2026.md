@@ -161,5 +161,4 @@ As mentioned at the start of this post, we're going to keep running these. If
 you'd like to be notified of the next one, please [get in touch! (how?)] And,
 if you would like to host one, please let us know also! We're actively looking
 to run local hackathons around the world, and it would take little activation
-energy for us to run one at your institution! [do we want to list some specific
-vague plans here?]
+energy for us to run one at your institution!
