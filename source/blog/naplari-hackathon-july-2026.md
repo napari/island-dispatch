@@ -49,6 +49,10 @@ Applied Computer Science][agh] buildings!
 
 ## Working together
 
+Writing code is often a solitary endeavour, particularly these days where
+remote work is common. And open source has a (good!) culture of asynchronous
+work, where one person writes code, submits it for review, and waits for
+someone else, often on the other side of the globe, to help improve it.
 
 ## Individual thoughts
 
