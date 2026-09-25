@@ -62,23 +62,14 @@ The blog is built with [Sphinx](https://www.sphinx-doc.org/) and [ABlog](https:/
 and dependencies are managed with [uv](https://docs.astral.sh/uv/).
 
 Install uv once (see the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/)),
-then everything else is a single command — this is also exactly what CI runs:
-
-
-```bash
-uv run make html      # one-off build into build/html
-uv run make watch     # live preview with auto-reload
-```
-
-The `Makefile` targets are shorthand for the following commands:
-
+then everything else is a single command:
 
 ```bash
-# One-time build into build/html (uv creates/updates the environment for you)
-uv run sphinx-build -M html source build -W
+# One-time build into build/ (uv creates/updates the environment for you) -W errors on warnings
+uv run sphinx-build source build -W
 
-# Live reload for development
-uv run sphinx-autobuild source build/html
+# Live reload for development (serves from its own scratch dir, build/live)
+uv run sphinx-autobuild source build/live
 ```
 
 ### Live development
@@ -94,7 +85,7 @@ The `sphinx-autobuild` command will:
 - `source/` - Source files for the blog
 - `source/blog/` - Individual blog posts
 - `source/_static/` - Static assets (images, videos, etc.)
-- `build/html/` - Generated HTML output
+- `build/` - Generated site (`sphinx-autobuild` writes its live-preview copy to `build/html/`)
 - `pyproject.toml` - Python dependencies
 - `uv.lock` - Pinned dependency versions
 
