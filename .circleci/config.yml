@@ -1,27 +1,17 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@4.0.0
 jobs:
   build-blog:
     docker:
-      - image: cimg/python:3.12.13
+      - image: cimg/python:3.13
     steps:
       - checkout:
           path: blog
       - run:
-          name: Setup virtual environment
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            python -m pip install --upgrade pip
-            python -m pip install -r blog/requirements.txt
-
-      - run:
           name: Build blog
           command: |
-            . venv/bin/activate
-            sphinx-build blog/source blog/build
+            cd blog
+            uv run sphinx-build -M html source build -W --keep-going
       - store_artifacts:
           path: blog/build
       - persist_to_workspace:
