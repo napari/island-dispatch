@@ -69,7 +69,7 @@ then everything else is a single command:
 uv run sphinx-build source build -W
 
 # Live reload for development (serves from its own scratch dir, build/live)
-uv run sphinx-autobuild source build/live
+uv run sphinx-autobuild source build
 ```
 
 ### Live development
@@ -85,7 +85,7 @@ The `sphinx-autobuild` command will:
 - `source/` - Source files for the blog
 - `source/blog/` - Individual blog posts
 - `source/_static/` - Static assets (images, videos, etc.)
-- `build/` - Generated site (`sphinx-autobuild` writes its live-preview copy to `build/html/`)
+- `build/` - Generated site
 - `pyproject.toml` - Python dependencies
 - `uv.lock` - Pinned dependency versions
 
