@@ -130,16 +130,15 @@ To apply, please submit the following to
 4. Representative contribution (½ page): PR, issue discussion, etc — briefly
    explain what problem you solved and your approach. Please provide a link to
    the contribution.
-5. Availability and Commitment: Are you looking for a part-time or full-time
-   position? Please specify your preferred weekly hours/FTE commitment and start
-   date availability and preference.
+5. Availability and Commitment: Please specify your preferred weekly hours/FTE
+   commitment and start date availability and preference.
 6. Interview Availability: What availability (dates and times) do you have for
    interviews, starting October 7th? Please include a timezone.
 7. Contractor Status: I confirm that I understand this is an independent
    contractor position (not an employee role), and that I have looked into what
    this means for me legally and financially in my country/region — including
    tax obligations, invoicing, and any registration requirements — before
-   applying. . Please reach out with any questions.
+   applying. Please reach out with any questions.
 
 ### Interview Selection Process
 
