@@ -7,7 +7,9 @@ category: news, help-wanted
 language: English
 ---
 
-# Job Description: Remote Developer-in-Residence
+# We're hiring Developers-in-Residence!
+
+## Job Description Overview
 
 **Organization:** napari (a NumFOCUS Sponsored Project)  
 **Position Type:** Independent contractor agreement. Global, 100% Remote.  
