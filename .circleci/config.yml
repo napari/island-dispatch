@@ -11,7 +11,7 @@ jobs:
           name: Build blog
           command: |
             cd blog
-            uv run sphinx-build -M html source build -W --keep-going
+            uv run make html
       - store_artifacts:
           path: blog/build
       - persist_to_workspace:
