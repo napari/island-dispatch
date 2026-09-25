@@ -58,48 +58,27 @@ Once your post is approved, it will be published on the blog.
 
 ## Local Development
 
-To build and preview the blog locally, you have two options:
+The blog is built with [Sphinx](https://www.sphinx-doc.org/) and [ABlog](https://ablog.readthedocs.io/),
+and dependencies are managed with [uv](https://docs.astral.sh/uv/).
 
-### Option 1: Using uv (recommended)
+Install uv once (see the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/)),
+then everything else is a single command — this is also exactly what CI runs:
 
-If you have [uv](https://docs.astral.sh/uv/) installed:
 
 ```bash
-# Install dependencies
-uv sync
+uv run make html      # one-off build into build/html
+uv run make watch     # live preview with auto-reload
+```
 
-# One-time build
-uv run sphinx-build source build/html
-# Or using Makefile
-uv run make html
+The `Makefile` targets are shorthand for the following commands:
+
+
+```bash
+# One-time build into build/html (uv creates/updates the environment for you)
+uv run sphinx-build -M html source build -W --keep-going
 
 # Live reload for development
 uv run sphinx-autobuild source build/html
-# Or using Makefile
-uv run make watch
-```
-
-### Option 2: Using traditional venv
-
-If you prefer using traditional Python virtual environments:
-
-```bash
-# Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# One-time build
-sphinx-build source build/html
-# Or using Makefile
-make html
-
-# Live reload for development
-sphinx-autobuild source build/html
-# Or using Makefile
-make watch
 ```
 
 ### Live development
@@ -116,8 +95,8 @@ The `sphinx-autobuild` command will:
 - `source/blog/` - Individual blog posts
 - `source/_static/` - Static assets (images, videos, etc.)
 - `build/html/` - Generated HTML output
-- `requirements.txt` - Python dependencies for pip
-- `pyproject.toml` - Python dependencies for uv
+- `pyproject.toml` - Python dependencies
+- `uv.lock` - Pinned dependency versions
 
 ## Review process
 
