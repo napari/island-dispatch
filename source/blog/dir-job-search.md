@@ -117,7 +117,8 @@ Your time will be distributed across three core focus areas:
 
 ## How to Apply
 
-To apply, please submit the following to the typeform
+To apply, please submit the following to
+[the application typeform](https://napari.typeform.com/2026-job-search):
 
 1. Your resume or CV.
 2. A link to your GitHub profile or other software portfolio highlighting
