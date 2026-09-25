@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Sep 24, 2026
+date: Sep 25, 2026
 author: Juan Nunez-Iglesias & the naPLari hackathon contributors
 location: Krakow, Poland
 category: news
@@ -69,6 +69,19 @@ problems, and sharing expertise, among others. Typically, each buddy group had
 at least one member of the core team and one external participant.
 
 ## Feature highlights
+
+So what good was it? Here's some of the stuff we got done.
+
+### Auto-labelling of viewer axes
+
+Zuzana Čočková and I started making napari more faithful to layer metadata,
+with axis labels on layers being correctly displayed on the viewer for the
+first time.
+
+### Automagic reading of Xarray metadata
+
+Tim Monko was then able to build on that work and close napari issue #14!!!
+That's not a typo, one-four
 
 [videos of some of the stuff we worked on]
 
