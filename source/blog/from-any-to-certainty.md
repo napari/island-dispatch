@@ -3,7 +3,7 @@ blogpost: true
 date: Sep 22, 2026
 author: Aniket Singh Yadav
 location: World
-category: Manual
+category: news
 language: English
 ---
 
