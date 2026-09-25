@@ -82,7 +82,9 @@ participants for their thoughts on these two questions:
 2. If you were attending another hackathon soon, what would you want to work
    on?
 
-Their answers below have been lightly edited for length.
+Their answers below have been lightly edited for length. We hope they inspire
+*you*, Dear Reader, to think about why you might come to the next hackathon,
+and what you would want to improve in napari when you do!
 
 ### Brian Northan
 
