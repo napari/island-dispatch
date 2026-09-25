@@ -75,7 +75,7 @@ The `Makefile` targets are shorthand for the following commands:
 
 ```bash
 # One-time build into build/html (uv creates/updates the environment for you)
-uv run sphinx-build -M html source build -W --keep-going
+uv run sphinx-build -M html source build -W
 
 # Live reload for development
 uv run sphinx-autobuild source build/html
