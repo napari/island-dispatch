@@ -52,7 +52,25 @@ Applied Computer Science][agh] buildings!
 Writing code is often a solitary endeavour, particularly these days where
 remote work is common. And open source has a (good!) culture of asynchronous
 work, where one person writes code, submits it for review, and waits for
-someone else, often on the other side of the globe, to help improve it.
+someone else, often on the other side of the globe, to help improve it. Great
+things have been built with this model, and it has major advantages! But
+ultimately, you can't beat the high bandwidth communication of being in the
+same room, both for technical discussion and for a sense of fun and camaraderie
+that you just can't get on Zoom.
+
+[Photo of co-working]
+
+[Photo of group lunch/snacking]
+
+At the hackathon, we each had our own focus areas, but for each focus area, we
+had one or two "buddies" with whom we could always check in. This makes for
+rapid progress: it helps with decision paralysis, talking through thorny
+problems, and sharing expertise, among others. Typically, each buddy group had
+at least one member of the core team and one external participant.
+
+## Feature highlights
+
+[videos of some of the stuff we worked on]
 
 ## Individual thoughts
 
@@ -130,10 +148,6 @@ inner machinery of napari though!
 
 [community meetings]: https://napari.org/stable/community/meeting_schedule.html
 [group chat]: https://napari.zulipchat.com
-
-## Feature highlights
-
-[not sure whether to include this section or just point to the release notes]
 
 ## With thanks
 
