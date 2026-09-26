@@ -183,14 +183,14 @@ benefits others, and the research enterprise as a whole. And many of us have
 stories about a supervisor who thought all this was a waste of time.
 
 So, again, a *huge* Thank You 🙏 to all the PIs and lab directors out there who
-Get It, and who are to support their staff collaborating for the benefit of
+Get It, and who support their staff collaborating for the benefit of
 all! 🎉
 
 ## Looking forward
 
 As mentioned at the start of this post, we're going to keep running these. If
 you'd like to be notified of the next one, please get in touch! You can email
-us at [info@napari.org], or join our [Zulip chat],  And,
+us at [info@napari.org], or join our [Zulip chat].  And,
 if you would like to host one, please let us know also! We're actively looking
 to run local hackathons around the world, and it would take little activation
 energy for us to run one at your institution!
