@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Sep 25, 2026
+date: Sep 27, 2026
 author: Juan Nunez-Iglesias & the naPLari hackathon contributors
 location: Krakow, Poland
 category: news
@@ -76,12 +76,44 @@ So what good was it? Here's some of the stuff we got done.
 
 Zuzana Čočková and I started making napari more faithful to layer metadata,
 with axis labels on layers being correctly displayed on the viewer for the
-first time.
+first time. This is really important because [reader plugins] don't have access
+to the viewer, so they couldn't set the axis labels, even if they could
+correctly read them from the source file.
+
+[reader plugins]: https://napari.org/stable/plugins/building_a_plugin/guides.html#readers
+
+[Video: viewer with labeled axes]
 
 ### Automagic reading of Xarray metadata
 
-Tim Monko was then able to build on that work and close napari issue #14!!!
-That's not a typo, one-four
+Tim Monko was then able to build on that work and close napari issue [#14]!!!
+That's not a typo, one-four! This is a brilliant continuation of the
+napari+xarray work Tim and Ian Hunt-Isaak [kickstarted] at the SciPy 2025
+conference.
+
+[#14]: https://github.com/napari/napari/issues/14
+[kickstarted]: ./napari-xarray.md
+
+[Video: Xarray example]
+
+### Plugin options
+
+Ever since the dawn of plugins, plugin authors have wanted to persist user
+preferences to disk. Of course, this is Python, anyone can make something that
+works. But, at the hackathon, Giannis Liaskas worked with Draga Doncila Pop to
+create a spot for plugins to declare preference settings *and* an automatically
+generated UI panel for users to set the preferences within napari. Try it out!
+
+[Screenshot: setting a plugin's preferences]
+
+### Coming soon: slicing with non-orthogonal transformations!
+
+If you ever tried to look at 3+D data with any kind of out-of-plane rotations
+or other transformations, you'll know that napari just ignores the out-of-plane
+component. That will be a thing of the past once Jules Vanaret's
+[non-orthogonal transformations PR] is merged!
+
+[non-orthogonal transformations PR]: https://github.com/napari/napari/pull/9337
 
 [videos of some of the stuff we worked on]
 
