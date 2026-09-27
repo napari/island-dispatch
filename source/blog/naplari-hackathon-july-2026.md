@@ -115,7 +115,25 @@ component. That will be a thing of the past once Jules Vanaret's
 
 [non-orthogonal transformations PR]: https://github.com/napari/napari/pull/9337
 
-[videos of some of the stuff we worked on]
+This will be incredibly, *cough*, transformative, *cough* for viewing lattice
+light sheet data, for example, which is displayed skewed in napari in 2D, or
+for 3D registration data, as displayed by [OME-Zarr 0.6] datasets.
+
+[OME-Zarr 0.6]: https://bsky.app/profile/jo-soltwedel.bsky.social/post/3mw6mdn5rpc2v
+
+### Auto-generated layer controls
+
+Margot Chazotte, like many others before her, was annoyed at having to change
+some layer settings, such as contrast limits, separately on each individual
+layer. With Lorenzo Gaifas's help, she developed a system that builds the layer
+controls dynamically when one or multiple layers are selected, based on their
+common attributes. You can now change the contrast limits on many layers at
+once, for example! Or make several layers invisible/visible/translucent.
+
+We didn't have much time for testing and refining, so it's labelled as
+experimental for now, but you can use it today and will be the default shortly!
+
+[Video: adjusting multiple layers]
 
 ## Individual thoughts
 
