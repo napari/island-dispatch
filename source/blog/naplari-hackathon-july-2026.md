@@ -132,7 +132,7 @@ conference.
 </figure>
 ```
 
-### Plugin options
+### Plugin settings
 
 Ever since the dawn of plugins, plugin authors have wanted to persist user
 preferences to disk. Of course, this is Python, anyone can make something that
