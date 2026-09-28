@@ -82,7 +82,23 @@ correctly read them from the source file.
 
 [reader plugins]: https://napari.org/stable/plugins/building_a_plugin/guides.html#readers
 
-[Video: viewer with labeled axes]
+
+```{raw} html
+<figure>
+  <video width="100%" controls autoplay loop muted playsinline>
+    <source src="../_static/auto-labeled-axes.webm" type="video/webm">
+    <source src="../_static/auto-labeled-axes.mp4" type="video/mp4">
+    <img src="../_static/auto-labeled-axes.jpg"
+      title="napari displaying a 5-dimensional multichannel array, with all axes correctly labeled."
+      alt="napari displaying a 5-dimensional multichannel array, with all axes correctly labeled."
+    >
+  </video>
+  <caption>
+    <p>napari displaying a 5-dimensional multichannel array, with all axes
+    correctly labeled.</p>
+  </caption>
+</figure>
+```
 
 ### Automagic reading of Xarray metadata
 
@@ -94,7 +110,21 @@ conference.
 [#14]: https://github.com/napari/napari/issues/14
 [kickstarted]: ./napari-xarray.md
 
-[Video: Xarray example]
+```{raw} html
+<figure>
+  <video width="100%" controls autoplay loop muted playsinline>
+    <source src="../_static/xarray-auto-label.webm" type="video/webm">
+    <source src="../_static/xarray-auto-label.mp4" type="video/mp4">
+    <img src="../_static/xarray-auto-label.jpg"
+      title="napari displaying an xarray-based climate dataset with correctly labeled axes and units."
+      alt="napari displaying an xarray-based climate dataset with correctly labeled axes and units."
+    >
+  </video>
+  <caption>
+    <p>napari displaying an xarray-based climate dataset with correctly labeled axes and units.</p>
+  </caption>
+</figure>
+```
 
 ### Plugin options
 
@@ -119,6 +149,51 @@ This will be incredibly, *cough*, transformative, *cough* for viewing lattice
 light sheet data, for example, which is displayed skewed in napari in 2D, or
 for 3D registration data, as displayed by [OME-Zarr 0.6] datasets.
 
+```{raw} html
+<figure>
+
+<table>
+  <tr>
+    <td align="center">
+      <video width="100%" controls autoplay loop muted playsinline>
+        <source src="../_static/non-ortho-before.webm" type="video/webm">
+        <source src="../_static/non-ortho-before.mp4" type="video/mp4">
+        <img src="../_static/non-ortho-before.jpg"
+          title="before: non-orthogonal slicing shows only a rotation
+          orthogonal to the slicing plane"
+          alt="2D slicing across an incorrectly-transformed 3D volume"
+        >
+      </video>
+      <br>
+      <b>Before <a href="https://github.com/napari/napari/pull/9337">#9337</a></b>
+    </td>
+    <td align="center">
+      <video width="100%" controls autoplay loop muted playsinline>
+        <source src="../_static/non-ortho-after.webm" type="video/webm">
+        <source src="../_static/non-ortho-after.mp4" type="video/mp4">
+        <img src="../_static/non-ortho-after.jpg"
+          title="after: full non-orthogonal slicing across a volume"
+          alt="2D slicing through the same volume after adding support for non-orthogonal
+          transformations. The cut through the rectangle is clearly not
+          parallel to any of the faces."
+        >
+      </video>
+      <br>
+      <b>After <a href="https://github.com/napari/napari/pull/9337">#9337</a></b>
+    </td>
+  </tr>
+</table>
+
+<caption>
+<p>Before and after comparison of slicing a volume with a non-orthogonal
+transformation in napari. (That is, a transformation that is not completely
+contained within the slicing plane.)</p>
+</caption>
+
+</figure>
+```
+
+[#9337]: https://github.com/napari/napari/pull/9337
 [OME-Zarr 0.6]: https://bsky.app/profile/jo-soltwedel.bsky.social/post/3mw6mdn5rpc2v
 
 ### Auto-generated layer controls
@@ -133,7 +208,24 @@ once, for example! Or make several layers invisible/visible/translucent.
 We didn't have much time for testing and refining, so it's labelled as
 experimental for now, but you can use it today and will be the default shortly!
 
-[Video: adjusting multiple layers]
+```{raw} html
+<figure>
+  <video width="100%" controls autoplay loop muted playsinline>
+    <source src="../_static/multi-layer-controls.webm" type="video/webm">
+    <source src="../_static/multi-layer-controls.mp4" type="video/mp4">
+    <img src="../_static/multi-layer-controls.jpg"
+      title="napari's multi-layer controls"
+      alt="video of a napari viewer showing an image of a galaxy. The red and
+      blue color channels get adjusted together by selecting them on the layer
+      list and ajusting the parameters."
+    >
+  </video>
+  <caption>
+    <p>Since napari 0.9.0, you can adjust parameters of multiple layers at
+    once.</p>
+  </caption>
+</figure>
+```
 
 ## Individual thoughts
 
