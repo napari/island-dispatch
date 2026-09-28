@@ -83,7 +83,8 @@ Zuzana Čočková and I started making napari more faithful to layer metadata,
 with axis labels on layers being correctly displayed on the viewer for the
 first time. This is really important because [reader plugins] don't have access
 to the viewer, so they couldn't set the axis labels, even if they could
-correctly read them from the source file.
+correctly read them from the source file. Now, if a reader sets the axis labels
+on a layer, the viewer respects and displays them!
 
 [reader plugins]: https://napari.org/stable/plugins/building_a_plugin/guides.html#readers
 
