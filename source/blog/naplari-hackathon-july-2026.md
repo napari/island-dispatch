@@ -58,10 +58,11 @@ ultimately, you can't beat the high bandwidth communication of being in the
 same room, both for technical discussion and for a sense of fun and camaraderie
 that you just can't get on Zoom.
 
-![co-working 1]()
-![co-working 2]()
-![lunch]()
-![social]()
+![co-working 0](../_static/naplari-coworking-0.jpg)
+![co-working 1](../_static/naplari-coworking-1.jpg)
+![co-working 2](../_static/naplari-coworking-2.jpg)
+![group dinner](../_static/naplari-dinner.jpg)
+![Look for napari core team members Draga and Tim participating in a traditional Polish dance with the crowd at Krakow's main square!](../_static/naplari-social.jpg)
 
 At the hackathon, we each had our own focus areas, but for each focus area, we
 had one or two "buddies" with whom we could always check in. This makes for
@@ -289,6 +290,8 @@ prototype framework to call image analysis functions in isolated environments.
 I want to explore how plugins could define environments in the napari plugin
 manifest, and map functions to those environments.
 
+![Brian and Curtis](../_static/naplari-brian-and-curtis.jpg)
+
 ### Jules Vanaret
 
 I thought the hackathon would be a great place to get feedback on contributions
@@ -298,6 +301,8 @@ also a great occasion to learn about good open source practices.
 In the future, I'd love to make all non-raster layers (points, shapes,
 vectors...) work faster with large datasets, especially Shapes, which I am
 using a lot these days.
+
+![Jules demonstrates non-orthogonal slicing in napari](../_static/naplari-jules.jpg)
 
 ### Zuzana Čočková
 
@@ -314,6 +319,8 @@ dataset axes are mapped to viewer dimension sliders.
 
 [axis-label related topics]: https://github.com/napari/napari/issues/9285
 
+![Zuzana shows off auto-axis labels](../_static/naplari-zuzana.jpg)
+
 ### Margot Chazotte
 
 I wanted to learn more about contributing to napari and there is no better
@@ -326,6 +333,8 @@ napari that I’ve been wanting as a user!
 I’d love to keep working on the dynamic layer controls to help them get out of
 experimental mode! They’re a super fun new feature and I’m very proud to have
 been a part of making it happen!
+
+![Margot shows off multi-layer controls](../_static/naplari-margot.jpg)
 
 ### Giannis Liaskas
 
@@ -340,6 +349,8 @@ inner machinery of napari though!
 
 [community meetings]: https://napari.org/stable/community/meeting_schedule.html
 [group chat]: https://napari.zulipchat.com
+
+![Giannis in deep work](../_static/naplari-giannis.jpg)
 
 ## With thanks
 
@@ -374,3 +385,5 @@ energy for us to run one at your institution!
 
 [info@napari.org]: mailto:info@napari.org
 [Zulip chat]: https://napari.zulipchat.com
+
+![naPLari group photo](../_static/naplari-group-photo.jpg)
