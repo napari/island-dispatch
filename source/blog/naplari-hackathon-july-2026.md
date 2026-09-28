@@ -134,7 +134,7 @@ works. But, at the hackathon, Giannis Liaskas worked with Draga Doncila Pop to
 create a spot for plugins to declare preference settings *and* an automatically
 generated UI panel for users to set the preferences within napari. Try it out!
 
-[Screenshot: setting a plugin's preferences]
+![Screenshot: setting a plugin's preferences](../_static/napari-ome-zarr-prefs.png)
 
 ### Coming soon: slicing with non-orthogonal transformations!
 
