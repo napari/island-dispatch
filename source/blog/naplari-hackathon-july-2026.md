@@ -136,9 +136,10 @@ conference.
 
 Ever since the dawn of plugins, plugin authors have wanted to persist user
 preferences to disk. Of course, this is Python, anyone can make something that
-works. But, at the hackathon, Giannis Liaskas worked with Draga Doncila Pop to
-create a spot for plugins to declare preference settings *and* an automatically
-generated UI panel for users to set the preferences within napari. Try it out!
+works. But, at the hackathon, Giannis Liaskas and Draga Doncila Pop built on
+earlier work by Talley Lambert and Nathan Clack to create a spot for plugins to
+declare preference settings *and* an automatically generated UI panel for users
+to set the preferences within napari. Try it out!
 
 ![Screenshot: setting a plugin's preferences](../_static/napari-ome-zarr-prefs.png)
 
