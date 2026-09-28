@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Sep 27, 2026
+date: Sep 28, 2026
 author: Juan Nunez-Iglesias & the naPLari hackathon contributors
 location: Krakow, Poland
 category: news
@@ -45,7 +45,7 @@ Applied Computer Science][agh] buildings!
 
 [agh]: https://www.fis.agh.edu.pl/en/faculty
 
-[PHOTO: hacking venue]
+![naPLari hacking venue](../static/naplari-hacking-venue.jpg)
 
 ## Working together
 
@@ -58,9 +58,10 @@ ultimately, you can't beat the high bandwidth communication of being in the
 same room, both for technical discussion and for a sense of fun and camaraderie
 that you just can't get on Zoom.
 
-[Photo of co-working]
-
-[Photo of group lunch/snacking]
+![co-working 1]()
+![co-working 2]()
+![lunch]()
+![social]()
 
 At the hackathon, we each had our own focus areas, but for each focus area, we
 had one or two "buddies" with whom we could always check in. This makes for
@@ -226,6 +227,33 @@ experimental for now, but you can use it today and will be the default shortly!
   </caption>
 </figure>
 ```
+
+### Isolated plugin functions
+
+Curtis Rueden, of [Fiji] fame, and Brian Northan, famous for his deep dives
+into user questions on [image.sc], recently joined the napari Steering Council
+(about which we feel very lucky!), and joined us also for the hackathon. They
+brought their full cross-platform, cross-language, user-centric expertise to
+bear, and developed [scikit-ops], a library to define image processing and
+analysis functions that run on isolated environments.
+
+[Fiji]: https://fiji.sc/
+[image.sc]: https://forum.image.sc/
+[scikit-ops]: https://github.com/apposed/scikit-ops
+
+If you use a plugin that defines Ops (roughly: annotated functions describing both
+their input and output types, *and* their dependencies, such as TensorFlow
+1.15 in Python 3.8), you will never again run into environment conflicts: Ops
+use [Appose] to create their own conda environment, then run the function in
+that environment *without* copying the array data.
+
+[Appose]: https://github.com/apposed/appose
+
+The really cool thing about Ops is that they can be called from both Python and
+Java, so plugin authors can write once and then have their functions usable
+from both napari and Fiji!
+
+![napari running a scikit-ops workflow](../_static/naplari-skops-screenshot.png)
 
 ## Individual thoughts
 
