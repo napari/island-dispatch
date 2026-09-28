@@ -341,9 +341,9 @@ inner machinery of napari though!
 
 ## With thanks
 
-Venue hire and travel for our core team members was funded by CZI's
-[scaffolding grant] to napari (CZI SVCF grant 2024-355351). We gratefully
-acknowledge their support.
+Venue hire, travel for our core team members, and food, snacks and coffee were
+funded by CZI's [scaffolding grant] to napari (CZI SVCF grant 2024-355351). We
+gratefully acknowledge their support!
 
 [scaffolding grant]: https://napari.org/island-dispatch/blog/roadmap_announcement.html
 
