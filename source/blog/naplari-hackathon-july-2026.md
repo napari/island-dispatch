@@ -28,8 +28,8 @@ the next one! — be sure to follow our updates on [BlueSky][bsky],
 ## Setting the stage
 
 naPLari comes hot on the heels of our successful [GloBIAS hackathon] in October
-2025, and included two repeat community participants, Zuzana and Aroj. (See
-below for their individual perspectives!) After GloBIAS, we knew we wanted to
+2025, and included two repeat community participants, Aroj and Zuzana. (See
+below for some individual perspectives!) After GloBIAS, we knew we wanted to
 keep running these: they are a great way to focus energy, get a lot done in a
 short amount of time, and foster the community spirit that napari has become
 known for.
