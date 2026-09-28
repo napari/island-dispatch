@@ -212,7 +212,8 @@ common attributes. You can now change the contrast limits on many layers at
 once, for example! Or make several layers invisible/visible/translucent.
 
 We didn't have much time for testing and refining, so it's labelled as
-experimental for now, but you can use it today and will be the default shortly!
+experimental for now, but you can use it today and it will be the default
+shortly!
 
 ```{raw} html
 <figure>
