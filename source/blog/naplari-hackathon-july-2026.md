@@ -69,6 +69,10 @@ rapid progress: it helps with decision paralysis, talking through thorny
 problems, and sharing expertise, among others. Typically, each buddy group had
 at least one member of the core team and one external participant.
 
+We also did morning check-ins daily to catch people up on what we'd worked on
+the previous day, and plan for any group discussions needed to iron out some of
+the tougher challenges!
+
 ## Feature highlights
 
 So what good was it? Here's some of the stuff we got done.
