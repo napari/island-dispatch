@@ -348,10 +348,10 @@ gratefully acknowledge their support!
 [scaffolding grant]: https://napari.org/island-dispatch/blog/roadmap_announcement.html
 
 We also would like to acknowledge the support of the labs and institutions for
-our not-yet-core 😉 participants. It's relatively poorly understood that none
-of the napari core team, and very few of our 200+ contributors, actually come
-from a software engineering background. We all have research backgrounds, in
-which papers are king and time spent debugging is often considered wasted.
+our not-yet-core 😉 participants. It's relatively poorly understood that almost
+none of the napari core team, and very few of our 200+ contributors, actually
+come from a software engineering background. We all have research backgrounds,
+in which papers are king and time spent debugging is often considered wasted.
 (*Especially* time spent debugging someone else's bug!) But we came together
 out of a shared sense of purpose, and even pride, in producing software that
 benefits others, and the research enterprise as a whole. And many of us have
