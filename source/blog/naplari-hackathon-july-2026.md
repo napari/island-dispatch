@@ -45,7 +45,7 @@ Applied Computer Science][agh] buildings!
 
 [agh]: https://www.fis.agh.edu.pl/en/faculty
 
-![naPLari hacking venue](../static/naplari-hacking-venue.jpg)
+![naPLari hacking venue](../_static/naplari-hacking-venue.jpg)
 
 ## Working together
 
@@ -387,3 +387,12 @@ energy for us to run one at your institution!
 [Zulip chat]: https://napari.zulipchat.com
 
 ![naPLari group photo](../_static/naplari-group-photo.jpg)
+
+<video width="100%" controls autoplay loop muted playsinline>
+  <source src="../_static/naplari-pierogi-logo-transition.webm" type="video/webm">
+  <source src="../_static/naplari-pierogi-logo-transition.mp4" type="video/mp4">
+  <img src="../_static/naplari-pierogi-logo-transition.jpg"
+    title="napari showing a rotated + scaled image of some pierogi. The napari logo fades in to exactly match the pierogi arrangement."
+    alt="napari showing a rotated + scaled image of some pierogi. The napari logo fades in to exactly match the pierogi arrangement."
+  >
+</video>
