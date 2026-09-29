@@ -58,10 +58,26 @@ ultimately, you can't beat the high bandwidth communication of being in the
 same room, both for technical discussion and for a sense of fun and camaraderie
 that you just can't get on Zoom.
 
+````{grid} 2
+:gutter: 2
+
+```{grid-item}
 ![co-working 0](../_static/naplari-coworking-0.jpg)
+```
+
+```{grid-item}
 ![co-working 1](../_static/naplari-coworking-1.jpg)
+```
+
+```{grid-item}
 ![co-working 2](../_static/naplari-coworking-2.jpg)
+```
+
+```{grid-item}
 ![group dinner](../_static/naplari-dinner.jpg)
+```
+````
+
 ![Look for napari core team members Draga and Tim participating in a traditional Polish dance with the crowd at Krakow's main square!](../_static/naplari-social.jpg)
 
 At the hackathon, we each had our own focus areas, but for each focus area, we
