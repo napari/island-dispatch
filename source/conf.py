@@ -85,6 +85,7 @@ html_theme_options = {
         "link": "https://napari.org",
     },
     "secondary_sidebar_items": [],
+    "article_header_start": ["breadcrumbs", "post-meta"],
     "pygments_light_style": "napari",
     "pygments_dark_style": "dracula",
     # "announcement": "https://napari.org/dev/_static/announcement.html",
@@ -105,8 +106,8 @@ html_context = {
 html_sidebars = {
     "**": [
         "search-field.html",
-        "ablog/postcard.html",
         "ablog/recentposts.html",
         "ablog/archives.html",
     ]
 }
+

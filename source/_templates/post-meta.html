@@ -1,0 +1,32 @@
+{% if pagename in ablog %}
+{% set fa = ablog.fontawesome %}
+{% set post = ablog[pagename] %}
+<div class="post-meta">
+  <ul>
+    {% if post.date %}
+    <li>
+      {% if fa %}<i class="fa fa-fw fa-calendar"></i>{% endif %}
+      {{ post.date.strftime(ablog.post_date_format) }}
+    </li>
+    {% endif %}
+    {% if post.published and post.date != post.update %}
+    <li>
+      {% if fa %}<i class="fa fa-fw fa-edit"></i>{% endif %}
+      Updated: {{ post.update.strftime(ablog.post_date_format) }}
+    </li>
+    {% endif %}
+    {% for name, icon, label, items in [
+      ("author", "fa-user", "Author", post.author),
+      ("location", "fa-location-arrow", "Location", post.location),
+      ("category", "fa-folder-open", "Category", post.category),
+      ("tags", "fa-tags", "Tags", post.tags)] %}
+    {% if items %}
+    <li class="post-meta-{{ name }}">
+      {% if fa %}<i class="fa fa-fw {{ icon }}" title="{{ label }}"></i>{% else %}{{ label }}:{% endif %}
+      {% for coll in items %}{% if coll|length %}<a href="{{ pathto(coll.docname) }}">{{ coll }}</a>{% else %}{{ coll }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
