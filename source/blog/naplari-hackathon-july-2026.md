@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Sep 28, 2026
+date: Sep 29, 2026
 author: Juan Nunez-Iglesias & the naPLari hackathon contributors
 location: Krakow, Poland
 category: news
