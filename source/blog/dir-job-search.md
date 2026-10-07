@@ -9,6 +9,8 @@ language: English
 
 # We're hiring Developers-in-Residence!
 
+**Applications Close October 13th, 2026 11:59pm AoE (Anywhere on Earth).**
+
 ## Job Description Overview
 
 **Organization:** napari (a NumFOCUS Sponsored Project)  
@@ -140,7 +142,9 @@ To apply, please submit the following to
    contractor position (not an employee role), and that I have looked into what
    this means for me legally and financially in my country/region — including
    tax obligations, invoicing, and any registration requirements — before
-   applying. Please reach out with any questions.
+   applying.
+
+Please reach out to info@napari.org with any questions.
 
 ### Interview Selection Process
 
